@@ -1,0 +1,892 @@
+[
+  {
+    "id": null,
+    "name": "Acessórios decorativos",
+    "slug": "acessorios-decorativos",
+    "parent_slug": null,
+    "level": 1,
+    "url": "https://www.feiradossofas.pt/acessorios-decorativos",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/acessorios-decorativos",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Ver tudo",
+    "slug": "decoracao",
+    "parent_slug": null,
+    "level": 1,
+    "url": "https://www.feiradossofas.pt/decoracao",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/decoracao",
+    "parent_id": null
+  },
+  {
+    "id": 294,
+    "name": "DECORAÇÃO",
+    "slug": "decoracao-1",
+    "parent_slug": null,
+    "level": 1,
+    "url": "https://www.feiradossofas.pt/decoracao-1",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/decoracao-1",
+    "parent_id": null
+  },
+  {
+    "id": 41,
+    "name": "Ver tudo",
+    "slug": "descanso",
+    "parent_slug": null,
+    "level": 1,
+    "url": "https://www.feiradossofas.pt/descanso",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/descanso",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "ELECTRODOMÉSTICOS",
+    "slug": "electrodomesticos",
+    "parent_slug": null,
+    "level": 1,
+    "url": "https://www.feiradossofas.pt/electrodomesticos",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/electrodomesticos",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Ver tudo",
+    "slug": "mobiliario",
+    "parent_slug": null,
+    "level": 1,
+    "url": "https://www.feiradossofas.pt/mobiliario",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/mobiliario",
+    "parent_id": null
+  },
+  {
+    "id": 293,
+    "name": "MOBILIÁRIO",
+    "slug": "mobiliario-2",
+    "parent_slug": null,
+    "level": 1,
+    "url": "https://www.feiradossofas.pt/mobiliario-2",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/mobiliario-2",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Ver tudo",
+    "slug": "mobiliario-de-exterior",
+    "parent_slug": null,
+    "level": 1,
+    "url": "https://www.feiradossofas.pt/mobiliario-de-exterior",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/mobiliario-de-exterior",
+    "parent_id": null
+  },
+  {
+    "id": 1,
+    "name": "Ver tudo",
+    "slug": "sofas",
+    "parent_slug": null,
+    "level": 1,
+    "url": "https://www.feiradossofas.pt/sofas",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/sofas",
+    "parent_id": null
+  },
+  {
+    "id": 6,
+    "name": "2 lugares",
+    "slug": "2-lugares",
+    "parent_slug": "sofas",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/2-lugares",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/2-lugares",
+    "parent_id": 1
+  },
+  {
+    "id": 5,
+    "name": "3 lugares",
+    "slug": "3-lugares",
+    "parent_slug": "sofas",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/3-lugares",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/3-lugares",
+    "parent_id": 1
+  },
+  {
+    "id": 42,
+    "name": "Almofadas",
+    "slug": "almofadas",
+    "parent_slug": "descanso",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/almofadas",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/almofadas",
+    "parent_id": 41
+  },
+  {
+    "id": 18,
+    "name": "Aparadores",
+    "slug": "aparadores",
+    "parent_slug": "salas-de-jantar",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/aparadores",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/aparadores",
+    "parent_id": null
+  },
+  {
+    "id": 290,
+    "name": "Armários",
+    "slug": "armarios",
+    "parent_slug": "moveis-auxiliares",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/armarios",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/armarios",
+    "parent_id": null
+  },
+  {
+    "id": 196,
+    "name": "Baloiços",
+    "slug": "baloicos",
+    "parent_slug": "mobiliario-de-exterior",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/baloicos",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/baloicos",
+    "parent_id": null
+  },
+  {
+    "id": 130,
+    "name": "Bancos",
+    "slug": "bancos",
+    "parent_slug": "mobiliario-1",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/bancos",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/bancos",
+    "parent_id": null
+  },
+  {
+    "id": 287,
+    "name": "Bancos",
+    "slug": "bancos-2",
+    "parent_slug": "salas-de-jantar",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/bancos-2",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/bancos-2",
+    "parent_id": null
+  },
+  {
+    "id": 21,
+    "name": "Base tv",
+    "slug": "base-tv",
+    "parent_slug": "salas-de-estar",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/base-tv",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/base-tv",
+    "parent_id": null
+  },
+  {
+    "id": 54,
+    "name": "Bases",
+    "slug": "bases",
+    "parent_slug": "camas",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/bases",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/bases",
+    "parent_id": null
+  },
+  {
+    "id": 55,
+    "name": "Cabeceiras",
+    "slug": "cabeceiras",
+    "parent_slug": "camas",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/cabeceiras",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/cabeceiras",
+    "parent_id": null
+  },
+  {
+    "id": 16,
+    "name": "Cadeiras",
+    "slug": "cadeiras",
+    "parent_slug": "salas-de-jantar",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/cadeiras",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/cadeiras",
+    "parent_id": null
+  },
+  {
+    "id": 192,
+    "name": "Cadeiras",
+    "slug": "cadeiras-exterior",
+    "parent_slug": "mobiliario-de-exterior",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/cadeiras-exterior",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/cadeiras-exterior",
+    "parent_id": null
+  },
+  {
+    "id": 10,
+    "name": "Cadeirões",
+    "slug": "cadeiroes",
+    "parent_slug": "sofas",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/cadeiroes",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/cadeiroes",
+    "parent_id": 1
+  },
+  {
+    "id": null,
+    "name": "Camas",
+    "slug": "camas",
+    "parent_slug": "descanso",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/camas",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/camas",
+    "parent_id": 41
+  },
+  {
+    "id": 30,
+    "name": "Camas mobiliario",
+    "slug": "camas-mobiliario",
+    "parent_slug": "quartos",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/camas-mobiliario",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/camas-mobiliario",
+    "parent_id": null
+  },
+  {
+    "id": 34,
+    "name": "Camiseiros",
+    "slug": "camiseiros",
+    "parent_slug": "quartos",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/camiseiros",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/camiseiros",
+    "parent_id": null
+  },
+  {
+    "id": 158,
+    "name": "Carpetes",
+    "slug": "carpetes",
+    "parent_slug": "texteis-1",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/carpetes",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/carpetes",
+    "parent_id": null
+  },
+  {
+    "id": 4,
+    "name": "Chaise longue",
+    "slug": "chaise-longue",
+    "parent_slug": "sofas",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/chaise-longue",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/chaise-longue",
+    "parent_id": 1
+  },
+  {
+    "id": 43,
+    "name": "Colchões",
+    "slug": "colchoes",
+    "parent_slug": "descanso",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/colchoes",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/colchoes",
+    "parent_id": 41
+  },
+  {
+    "id": 33,
+    "name": "Comodas",
+    "slug": "comodas",
+    "parent_slug": "quartos",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/comodas",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/comodas",
+    "parent_id": null
+  },
+  {
+    "id": 19,
+    "name": "Conjunto mesa + cadeiras",
+    "slug": "conjunto-mesa-cadeiras",
+    "parent_slug": "salas-de-jantar",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/conjunto-mesa-cadeiras",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/conjunto-mesa-cadeiras",
+    "parent_id": null
+  },
+  {
+    "id": 193,
+    "name": "Conjuntos",
+    "slug": "conjuntos",
+    "parent_slug": "mobiliario-de-exterior",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/conjuntos",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/conjuntos",
+    "parent_id": null
+  },
+  {
+    "id": 135,
+    "name": "Consolas",
+    "slug": "consolas",
+    "parent_slug": "mobiliario-1",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/consolas",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/consolas",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Cozinha",
+    "slug": "cozinha",
+    "parent_slug": "decoracao",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/cozinha",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/cozinha",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Decoração de parede",
+    "slug": "decoracao-de-parede",
+    "parent_slug": "decoracao",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/decoracao-de-parede",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/decoracao-de-parede",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "DECORAÇÃO DIVERSA",
+    "slug": "decoracao-diversa",
+    "parent_slug": "decoracao",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/decoracao-diversa",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/decoracao-diversa",
+    "parent_id": null
+  },
+  {
+    "id": 59,
+    "name": "Edredons",
+    "slug": "edredons",
+    "parent_slug": "texteis",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/edredons",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/edredons",
+    "parent_id": null
+  },
+  {
+    "id": 195,
+    "name": "Espreguiçadeiras",
+    "slug": "espreguicadeiras",
+    "parent_slug": "mobiliario-de-exterior",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/espreguicadeiras",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/espreguicadeiras",
+    "parent_id": null
+  },
+  {
+    "id": 26,
+    "name": "Estantes",
+    "slug": "estantes",
+    "parent_slug": "salas-de-estar",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/estantes",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/estantes",
+    "parent_id": null
+  },
+  {
+    "id": 47,
+    "name": "Estrados",
+    "slug": "estrados",
+    "parent_slug": "descanso",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/estrados",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/estrados",
+    "parent_id": 41
+  },
+  {
+    "id": 122,
+    "name": "JARDIM",
+    "slug": "jardim",
+    "parent_slug": "decoracao",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/jardim",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/jardim",
+    "parent_id": null
+  },
+  {
+    "id": 32,
+    "name": "Mesas de cabeceira",
+    "slug": "mesas-de-cabeceira",
+    "parent_slug": "quartos",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/mesas-de-cabeceira",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/mesas-de-cabeceira",
+    "parent_id": null
+  },
+  {
+    "id": 22,
+    "name": "Mesas de centro",
+    "slug": "mesas-de-centro",
+    "parent_slug": "salas-de-estar",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/mesas-de-centro",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/mesas-de-centro",
+    "parent_id": null
+  },
+  {
+    "id": 17,
+    "name": "Mesas de jantar",
+    "slug": "mesas-de-jantar",
+    "parent_slug": "salas-de-jantar",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/mesas-de-jantar",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/mesas-de-jantar",
+    "parent_id": null
+  },
+  {
+    "id": 143,
+    "name": "Mesas decorativas",
+    "slug": "mesas-decorativas",
+    "parent_slug": "mobiliario-1",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/mesas-decorativas",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/mesas-decorativas",
+    "parent_id": null
+  },
+  {
+    "id": 194,
+    "name": "Mesas",
+    "slug": "mesas-exterior",
+    "parent_slug": "mobiliario-de-exterior",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/mesas-exterior",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/mesas-exterior",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Mobiliário",
+    "slug": "mobiliario-1",
+    "parent_slug": "decoracao",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/mobiliario-1",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/mobiliario-1",
+    "parent_id": null
+  },
+  {
+    "id": 25,
+    "name": "Modulos suspensos",
+    "slug": "modulos-suspensos",
+    "parent_slug": "salas-de-estar",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/modulos-suspensos",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/modulos-suspensos",
+    "parent_id": null
+  },
+  {
+    "id": 44,
+    "name": "Molas",
+    "slug": "molas",
+    "parent_slug": "colchoes",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/molas",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/molas",
+    "parent_id": 43
+  },
+  {
+    "id": 35,
+    "name": "Molduras",
+    "slug": "molduras-2",
+    "parent_slug": "quartos",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/molduras-2",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/molduras-2",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Móveis auxiliares",
+    "slug": "moveis-auxiliares",
+    "parent_slug": "mobiliario",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/moveis-auxiliares",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/moveis-auxiliares",
+    "parent_id": null
+  },
+  {
+    "id": 289,
+    "name": "Móveis de bar",
+    "slug": "moveis-de-bar",
+    "parent_slug": "moveis-auxiliares",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/moveis-de-bar",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/moveis-de-bar",
+    "parent_id": null
+  },
+  {
+    "id": 38,
+    "name": "Móveis de entrada",
+    "slug": "moveis-de-entrada",
+    "parent_slug": "moveis-auxiliares",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/moveis-de-entrada",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/moveis-de-entrada",
+    "parent_id": null
+  },
+  {
+    "id": 45,
+    "name": "Nucleo",
+    "slug": "nucleo",
+    "parent_slug": "colchoes",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/nucleo",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/nucleo",
+    "parent_id": 43
+  },
+  {
+    "id": 268,
+    "name": "OUTROS",
+    "slug": "outros",
+    "parent_slug": "electrodomesticos",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/outros",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/outros",
+    "parent_id": null
+  },
+  {
+    "id": 56,
+    "name": "Packs",
+    "slug": "packs",
+    "parent_slug": "camas",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/packs",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/packs",
+    "parent_id": null
+  },
+  {
+    "id": 58,
+    "name": "Protectores de colchões",
+    "slug": "protectores-de-colchoes",
+    "parent_slug": "texteis",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/protectores-de-colchoes",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/protectores-de-colchoes",
+    "parent_id": null
+  },
+  {
+    "id": 145,
+    "name": "Puffs",
+    "slug": "puffs-mobiliario",
+    "parent_slug": "mobiliario-1",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/puffs-mobiliario",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/puffs-mobiliario",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Quartos",
+    "slug": "quartos",
+    "parent_slug": "mobiliario",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/quartos",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/quartos",
+    "parent_id": null
+  },
+  {
+    "id": 36,
+    "name": "Quartos",
+    "slug": "quartos-completos",
+    "parent_slug": "quartos",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/quartos-completos",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/quartos-completos",
+    "parent_id": null
+  },
+  {
+    "id": 9,
+    "name": "Relax",
+    "slug": "relax",
+    "parent_slug": "sofas",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/relax",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/relax",
+    "parent_id": 1
+  },
+  {
+    "id": 104,
+    "name": "Relógios",
+    "slug": "relogios",
+    "parent_slug": "decoracao-de-parede",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/relogios",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/relogios",
+    "parent_id": null
+  },
+  {
+    "id": 31,
+    "name": "Roupeiros",
+    "slug": "roupeiros",
+    "parent_slug": "quartos",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/roupeiros",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/roupeiros",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Salas de estar",
+    "slug": "salas-de-estar",
+    "parent_slug": "mobiliario",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/salas-de-estar",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/salas-de-estar",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Salas de jantar",
+    "slug": "salas-de-jantar",
+    "parent_slug": "mobiliario",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/salas-de-jantar",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/salas-de-jantar",
+    "parent_id": null
+  },
+  {
+    "id": 39,
+    "name": "Sapateiras",
+    "slug": "sapateiras",
+    "parent_slug": "moveis-auxiliares",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/sapateiras",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/sapateiras",
+    "parent_id": null
+  },
+  {
+    "id": 27,
+    "name": "Secretárias",
+    "slug": "secretarias",
+    "parent_slug": "salas-de-estar",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/secretarias",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/secretarias",
+    "parent_id": null
+  },
+  {
+    "id": 11,
+    "name": "Sofás cama",
+    "slug": "sofas-cama",
+    "parent_slug": "sofas",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/sofas-cama",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/sofas-cama",
+    "parent_id": 1
+  },
+  {
+    "id": 3,
+    "name": "Sofás de canto",
+    "slug": "sofas-de-canto",
+    "parent_slug": "sofas",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/sofas-de-canto",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/sofas-de-canto",
+    "parent_id": 1
+  },
+  {
+    "id": 53,
+    "name": "Sommiers",
+    "slug": "sommiers",
+    "parent_slug": "camas",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/sommiers",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/sommiers",
+    "parent_id": null
+  },
+  {
+    "id": 105,
+    "name": "Telas",
+    "slug": "telas",
+    "parent_slug": "decoracao-de-parede",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/telas",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/telas",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Texteis",
+    "slug": "texteis",
+    "parent_slug": "descanso",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/texteis",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/texteis",
+    "parent_id": 41
+  },
+  {
+    "id": null,
+    "name": "Texteis",
+    "slug": "texteis-1",
+    "parent_slug": "decoracao",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/texteis-1",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/texteis-1",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Toppers",
+    "slug": "toppers",
+    "parent_slug": "colchoes",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/toppers",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/toppers",
+    "parent_id": 43
+  },
+  {
+    "id": 24,
+    "name": "Vitrines",
+    "slug": "vitrines",
+    "parent_slug": "salas-de-estar",
+    "level": 2,
+    "url": "https://www.feiradossofas.pt/vitrines",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/vitrines",
+    "parent_id": null
+  },
+  {
+    "id": 156,
+    "name": "ALMOFADAS DECORATIVAS",
+    "slug": "almofadas-decorativas",
+    "parent_slug": "texteis-1",
+    "level": 3,
+    "url": "https://www.feiradossofas.pt/almofadas-decorativas",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/almofadas-decorativas",
+    "parent_id": null
+  },
+  {
+    "id": 129,
+    "name": "APARADORES",
+    "slug": "aparadores-1",
+    "parent_slug": "mobiliario-1",
+    "level": 3,
+    "url": "https://www.feiradossofas.pt/aparadores-1",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/aparadores-1",
+    "parent_id": null
+  },
+  {
+    "id": 96,
+    "name": "BANDEJAS",
+    "slug": "bandejas",
+    "parent_slug": "cozinha",
+    "level": 3,
+    "url": "https://www.feiradossofas.pt/bandejas",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/bandejas",
+    "parent_id": null
+  },
+  {
+    "id": 131,
+    "name": "BANQUETAS",
+    "slug": "banquetas",
+    "parent_slug": "mobiliario-1",
+    "level": 3,
+    "url": "https://www.feiradossofas.pt/banquetas",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/banquetas",
+    "parent_id": null
+  },
+  {
+    "id": 132,
+    "name": "BASE TV",
+    "slug": "base-tv-1",
+    "parent_slug": "mobiliario-1",
+    "level": 3,
+    "url": "https://www.feiradossofas.pt/base-tv-1",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/base-tv-1",
+    "parent_id": null
+  },
+  {
+    "id": 110,
+    "name": "CABIDES",
+    "slug": "cabides",
+    "parent_slug": "decoracao-diversa",
+    "level": 3,
+    "url": "https://www.feiradossofas.pt/cabides",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/cabides",
+    "parent_id": null
+  },
+  {
+    "id": 133,
+    "name": "CADEIRAS",
+    "slug": "cadeiras-2",
+    "parent_slug": "mobiliario-1",
+    "level": 3,
+    "url": "https://www.feiradossofas.pt/cadeiras-2",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/cadeiras-2",
+    "parent_id": null
+  },
+  {
+    "id": 134,
+    "name": "COMODAS",
+    "slug": "comodas-1",
+    "parent_slug": "mobiliario-1",
+    "level": 3,
+    "url": "https://www.feiradossofas.pt/comodas-1",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/comodas-1",
+    "parent_id": null
+  },
+  {
+    "id": 102,
+    "name": "ESPELHOS",
+    "slug": "espelhos",
+    "parent_slug": "decoracao-de-parede",
+    "level": 3,
+    "url": "https://www.feiradossofas.pt/espelhos",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/espelhos",
+    "parent_id": null
+  },
+  {
+    "id": 49,
+    "name": "ESTRADOS ARTICULADOS",
+    "slug": "estrados-articulados",
+    "parent_slug": "estrados",
+    "level": 3,
+    "url": "https://www.feiradossofas.pt/estrados-articulados",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/estrados-articulados",
+    "parent_id": 47
+  },
+  {
+    "id": 48,
+    "name": "ESTRADOS DE RIPAS",
+    "slug": "estrados-de-ripas",
+    "parent_slug": "estrados",
+    "level": 3,
+    "url": "https://www.feiradossofas.pt/estrados-de-ripas",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/estrados-de-ripas",
+    "parent_id": 47
+  },
+  {
+    "id": 141,
+    "name": "MESAS",
+    "slug": "mesas",
+    "parent_slug": "mobiliario-1",
+    "level": 3,
+    "url": "https://www.feiradossofas.pt/mesas",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/mesas",
+    "parent_id": null
+  },
+  {
+    "id": 139,
+    "name": "MESAS JANTAR",
+    "slug": "mesas-jantar",
+    "parent_slug": "mobiliario-1",
+    "level": 3,
+    "url": "https://www.feiradossofas.pt/mesas-jantar",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/mesas-jantar",
+    "parent_id": null
+  },
+  {
+    "id": 51,
+    "name": "PÉS DE ESTRADOS",
+    "slug": "pes-de-estrados",
+    "parent_slug": "estrados",
+    "level": 3,
+    "url": "https://www.feiradossofas.pt/pes-de-estrados",
+    "catalog_url": "https://www.feiradossofas.pt/catalogo/pes-de-estrados",
+    "parent_id": 47
+  }
+]
