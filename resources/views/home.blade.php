@@ -269,7 +269,7 @@
 
   	<div class="container" style="text-align:center">
 	<video width="80%" style="margin-top:40px" preload="auto" loop playsinline autoplay muted>
-		<source src="/videos/promo.mp4" type="video/mp4" />
+		<source src="/videos/promo.mp4?v=4" type="video/mp4" />
 	Your browser does not support the video tag.
 	</video>
 		
