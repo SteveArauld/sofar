@@ -22,7 +22,7 @@ Route::get('/videos/{file}', [StoreController::class, 'video'])
     ->where('file', '[A-Za-z0-9._-]+')
     ->name('video');
 
-// Pages institutionnelles (gabarits officiels : resources/mirror/pages/*)
+// Pages institutionnelles (vues Blade resources/views/pages/*)
 Route::get('/lojas', [StoreController::class, 'page'])->defaults('key', 'lojas')->name('lojas');
 Route::get('/carrinho', [StoreController::class, 'page'])->defaults('key', 'carrinho')->name('carrinho');
 Route::get('/wishlist', [StoreController::class, 'page'])->defaults('key', 'wishlist')->name('wishlist');

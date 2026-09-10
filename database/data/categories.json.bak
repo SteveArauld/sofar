@@ -1,0 +1,892 @@
+[
+  {
+    "id": null,
+    "name": "Acessórios decorativos",
+    "slug": "acessorios-decorativos",
+    "parent_slug": null,
+    "level": 1,
+    "url": "https://www.sofalar.example/acessorios-decorativos",
+    "catalog_url": "https://www.sofalar.example/catalogo/acessorios-decorativos",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Ver tudo",
+    "slug": "decoracao",
+    "parent_slug": null,
+    "level": 1,
+    "url": "https://www.sofalar.example/decoracao",
+    "catalog_url": "https://www.sofalar.example/catalogo/decoracao",
+    "parent_id": null
+  },
+  {
+    "id": 294,
+    "name": "DECORAÇÃO",
+    "slug": "decoracao-1",
+    "parent_slug": null,
+    "level": 1,
+    "url": "https://www.sofalar.example/decoracao-1",
+    "catalog_url": "https://www.sofalar.example/catalogo/decoracao-1",
+    "parent_id": null
+  },
+  {
+    "id": 41,
+    "name": "Ver tudo",
+    "slug": "descanso",
+    "parent_slug": null,
+    "level": 1,
+    "url": "https://www.sofalar.example/descanso",
+    "catalog_url": "https://www.sofalar.example/catalogo/descanso",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "ELECTRODOMÉSTICOS",
+    "slug": "electrodomesticos",
+    "parent_slug": null,
+    "level": 1,
+    "url": "https://www.sofalar.example/electrodomesticos",
+    "catalog_url": "https://www.sofalar.example/catalogo/electrodomesticos",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Ver tudo",
+    "slug": "mobiliario",
+    "parent_slug": null,
+    "level": 1,
+    "url": "https://www.sofalar.example/mobiliario",
+    "catalog_url": "https://www.sofalar.example/catalogo/mobiliario",
+    "parent_id": null
+  },
+  {
+    "id": 293,
+    "name": "MOBILIÁRIO",
+    "slug": "mobiliario-2",
+    "parent_slug": null,
+    "level": 1,
+    "url": "https://www.sofalar.example/mobiliario-2",
+    "catalog_url": "https://www.sofalar.example/catalogo/mobiliario-2",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Ver tudo",
+    "slug": "mobiliario-de-exterior",
+    "parent_slug": null,
+    "level": 1,
+    "url": "https://www.sofalar.example/mobiliario-de-exterior",
+    "catalog_url": "https://www.sofalar.example/catalogo/mobiliario-de-exterior",
+    "parent_id": null
+  },
+  {
+    "id": 1,
+    "name": "Ver tudo",
+    "slug": "sofas",
+    "parent_slug": null,
+    "level": 1,
+    "url": "https://www.sofalar.example/sofas",
+    "catalog_url": "https://www.sofalar.example/catalogo/sofas",
+    "parent_id": null
+  },
+  {
+    "id": 6,
+    "name": "2 lugares",
+    "slug": "2-lugares",
+    "parent_slug": "sofas",
+    "level": 2,
+    "url": "https://www.sofalar.example/2-lugares",
+    "catalog_url": "https://www.sofalar.example/catalogo/2-lugares",
+    "parent_id": 1
+  },
+  {
+    "id": 5,
+    "name": "3 lugares",
+    "slug": "3-lugares",
+    "parent_slug": "sofas",
+    "level": 2,
+    "url": "https://www.sofalar.example/3-lugares",
+    "catalog_url": "https://www.sofalar.example/catalogo/3-lugares",
+    "parent_id": 1
+  },
+  {
+    "id": 42,
+    "name": "Almofadas",
+    "slug": "almofadas",
+    "parent_slug": "descanso",
+    "level": 2,
+    "url": "https://www.sofalar.example/almofadas",
+    "catalog_url": "https://www.sofalar.example/catalogo/almofadas",
+    "parent_id": 41
+  },
+  {
+    "id": 18,
+    "name": "Aparadores",
+    "slug": "aparadores",
+    "parent_slug": "salas-de-jantar",
+    "level": 2,
+    "url": "https://www.sofalar.example/aparadores",
+    "catalog_url": "https://www.sofalar.example/catalogo/aparadores",
+    "parent_id": null
+  },
+  {
+    "id": 290,
+    "name": "Armários",
+    "slug": "armarios",
+    "parent_slug": "moveis-auxiliares",
+    "level": 2,
+    "url": "https://www.sofalar.example/armarios",
+    "catalog_url": "https://www.sofalar.example/catalogo/armarios",
+    "parent_id": null
+  },
+  {
+    "id": 196,
+    "name": "Baloiços",
+    "slug": "baloicos",
+    "parent_slug": "mobiliario-de-exterior",
+    "level": 2,
+    "url": "https://www.sofalar.example/baloicos",
+    "catalog_url": "https://www.sofalar.example/catalogo/baloicos",
+    "parent_id": null
+  },
+  {
+    "id": 130,
+    "name": "Bancos",
+    "slug": "bancos",
+    "parent_slug": "mobiliario-1",
+    "level": 2,
+    "url": "https://www.sofalar.example/bancos",
+    "catalog_url": "https://www.sofalar.example/catalogo/bancos",
+    "parent_id": null
+  },
+  {
+    "id": 287,
+    "name": "Bancos",
+    "slug": "bancos-2",
+    "parent_slug": "salas-de-jantar",
+    "level": 2,
+    "url": "https://www.sofalar.example/bancos-2",
+    "catalog_url": "https://www.sofalar.example/catalogo/bancos-2",
+    "parent_id": null
+  },
+  {
+    "id": 21,
+    "name": "Base tv",
+    "slug": "base-tv",
+    "parent_slug": "salas-de-estar",
+    "level": 2,
+    "url": "https://www.sofalar.example/base-tv",
+    "catalog_url": "https://www.sofalar.example/catalogo/base-tv",
+    "parent_id": null
+  },
+  {
+    "id": 54,
+    "name": "Bases",
+    "slug": "bases",
+    "parent_slug": "camas",
+    "level": 2,
+    "url": "https://www.sofalar.example/bases",
+    "catalog_url": "https://www.sofalar.example/catalogo/bases",
+    "parent_id": null
+  },
+  {
+    "id": 55,
+    "name": "Cabeceiras",
+    "slug": "cabeceiras",
+    "parent_slug": "camas",
+    "level": 2,
+    "url": "https://www.sofalar.example/cabeceiras",
+    "catalog_url": "https://www.sofalar.example/catalogo/cabeceiras",
+    "parent_id": null
+  },
+  {
+    "id": 16,
+    "name": "Cadeiras",
+    "slug": "cadeiras",
+    "parent_slug": "salas-de-jantar",
+    "level": 2,
+    "url": "https://www.sofalar.example/cadeiras",
+    "catalog_url": "https://www.sofalar.example/catalogo/cadeiras",
+    "parent_id": null
+  },
+  {
+    "id": 192,
+    "name": "Cadeiras",
+    "slug": "cadeiras-exterior",
+    "parent_slug": "mobiliario-de-exterior",
+    "level": 2,
+    "url": "https://www.sofalar.example/cadeiras-exterior",
+    "catalog_url": "https://www.sofalar.example/catalogo/cadeiras-exterior",
+    "parent_id": null
+  },
+  {
+    "id": 10,
+    "name": "Cadeirões",
+    "slug": "cadeiroes",
+    "parent_slug": "sofas",
+    "level": 2,
+    "url": "https://www.sofalar.example/cadeiroes",
+    "catalog_url": "https://www.sofalar.example/catalogo/cadeiroes",
+    "parent_id": 1
+  },
+  {
+    "id": null,
+    "name": "Camas",
+    "slug": "camas",
+    "parent_slug": "descanso",
+    "level": 2,
+    "url": "https://www.sofalar.example/camas",
+    "catalog_url": "https://www.sofalar.example/catalogo/camas",
+    "parent_id": 41
+  },
+  {
+    "id": 30,
+    "name": "Camas mobiliario",
+    "slug": "camas-mobiliario",
+    "parent_slug": "quartos",
+    "level": 2,
+    "url": "https://www.sofalar.example/camas-mobiliario",
+    "catalog_url": "https://www.sofalar.example/catalogo/camas-mobiliario",
+    "parent_id": null
+  },
+  {
+    "id": 34,
+    "name": "Camiseiros",
+    "slug": "camiseiros",
+    "parent_slug": "quartos",
+    "level": 2,
+    "url": "https://www.sofalar.example/camiseiros",
+    "catalog_url": "https://www.sofalar.example/catalogo/camiseiros",
+    "parent_id": null
+  },
+  {
+    "id": 158,
+    "name": "Carpetes",
+    "slug": "carpetes",
+    "parent_slug": "texteis-1",
+    "level": 2,
+    "url": "https://www.sofalar.example/carpetes",
+    "catalog_url": "https://www.sofalar.example/catalogo/carpetes",
+    "parent_id": null
+  },
+  {
+    "id": 4,
+    "name": "Chaise longue",
+    "slug": "chaise-longue",
+    "parent_slug": "sofas",
+    "level": 2,
+    "url": "https://www.sofalar.example/chaise-longue",
+    "catalog_url": "https://www.sofalar.example/catalogo/chaise-longue",
+    "parent_id": 1
+  },
+  {
+    "id": 43,
+    "name": "Colchões",
+    "slug": "colchoes",
+    "parent_slug": "descanso",
+    "level": 2,
+    "url": "https://www.sofalar.example/colchoes",
+    "catalog_url": "https://www.sofalar.example/catalogo/colchoes",
+    "parent_id": 41
+  },
+  {
+    "id": 33,
+    "name": "Comodas",
+    "slug": "comodas",
+    "parent_slug": "quartos",
+    "level": 2,
+    "url": "https://www.sofalar.example/comodas",
+    "catalog_url": "https://www.sofalar.example/catalogo/comodas",
+    "parent_id": null
+  },
+  {
+    "id": 19,
+    "name": "Conjunto mesa + cadeiras",
+    "slug": "conjunto-mesa-cadeiras",
+    "parent_slug": "salas-de-jantar",
+    "level": 2,
+    "url": "https://www.sofalar.example/conjunto-mesa-cadeiras",
+    "catalog_url": "https://www.sofalar.example/catalogo/conjunto-mesa-cadeiras",
+    "parent_id": null
+  },
+  {
+    "id": 193,
+    "name": "Conjuntos",
+    "slug": "conjuntos",
+    "parent_slug": "mobiliario-de-exterior",
+    "level": 2,
+    "url": "https://www.sofalar.example/conjuntos",
+    "catalog_url": "https://www.sofalar.example/catalogo/conjuntos",
+    "parent_id": null
+  },
+  {
+    "id": 135,
+    "name": "Consolas",
+    "slug": "consolas",
+    "parent_slug": "mobiliario-1",
+    "level": 2,
+    "url": "https://www.sofalar.example/consolas",
+    "catalog_url": "https://www.sofalar.example/catalogo/consolas",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Cozinha",
+    "slug": "cozinha",
+    "parent_slug": "decoracao",
+    "level": 2,
+    "url": "https://www.sofalar.example/cozinha",
+    "catalog_url": "https://www.sofalar.example/catalogo/cozinha",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Decoração de parede",
+    "slug": "decoracao-de-parede",
+    "parent_slug": "decoracao",
+    "level": 2,
+    "url": "https://www.sofalar.example/decoracao-de-parede",
+    "catalog_url": "https://www.sofalar.example/catalogo/decoracao-de-parede",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "DECORAÇÃO DIVERSA",
+    "slug": "decoracao-diversa",
+    "parent_slug": "decoracao",
+    "level": 2,
+    "url": "https://www.sofalar.example/decoracao-diversa",
+    "catalog_url": "https://www.sofalar.example/catalogo/decoracao-diversa",
+    "parent_id": null
+  },
+  {
+    "id": 59,
+    "name": "Edredons",
+    "slug": "edredons",
+    "parent_slug": "texteis",
+    "level": 2,
+    "url": "https://www.sofalar.example/edredons",
+    "catalog_url": "https://www.sofalar.example/catalogo/edredons",
+    "parent_id": null
+  },
+  {
+    "id": 195,
+    "name": "Espreguiçadeiras",
+    "slug": "espreguicadeiras",
+    "parent_slug": "mobiliario-de-exterior",
+    "level": 2,
+    "url": "https://www.sofalar.example/espreguicadeiras",
+    "catalog_url": "https://www.sofalar.example/catalogo/espreguicadeiras",
+    "parent_id": null
+  },
+  {
+    "id": 26,
+    "name": "Estantes",
+    "slug": "estantes",
+    "parent_slug": "salas-de-estar",
+    "level": 2,
+    "url": "https://www.sofalar.example/estantes",
+    "catalog_url": "https://www.sofalar.example/catalogo/estantes",
+    "parent_id": null
+  },
+  {
+    "id": 47,
+    "name": "Estrados",
+    "slug": "estrados",
+    "parent_slug": "descanso",
+    "level": 2,
+    "url": "https://www.sofalar.example/estrados",
+    "catalog_url": "https://www.sofalar.example/catalogo/estrados",
+    "parent_id": 41
+  },
+  {
+    "id": 122,
+    "name": "JARDIM",
+    "slug": "jardim",
+    "parent_slug": "decoracao",
+    "level": 2,
+    "url": "https://www.sofalar.example/jardim",
+    "catalog_url": "https://www.sofalar.example/catalogo/jardim",
+    "parent_id": null
+  },
+  {
+    "id": 32,
+    "name": "Mesas de cabeceira",
+    "slug": "mesas-de-cabeceira",
+    "parent_slug": "quartos",
+    "level": 2,
+    "url": "https://www.sofalar.example/mesas-de-cabeceira",
+    "catalog_url": "https://www.sofalar.example/catalogo/mesas-de-cabeceira",
+    "parent_id": null
+  },
+  {
+    "id": 22,
+    "name": "Mesas de centro",
+    "slug": "mesas-de-centro",
+    "parent_slug": "salas-de-estar",
+    "level": 2,
+    "url": "https://www.sofalar.example/mesas-de-centro",
+    "catalog_url": "https://www.sofalar.example/catalogo/mesas-de-centro",
+    "parent_id": null
+  },
+  {
+    "id": 17,
+    "name": "Mesas de jantar",
+    "slug": "mesas-de-jantar",
+    "parent_slug": "salas-de-jantar",
+    "level": 2,
+    "url": "https://www.sofalar.example/mesas-de-jantar",
+    "catalog_url": "https://www.sofalar.example/catalogo/mesas-de-jantar",
+    "parent_id": null
+  },
+  {
+    "id": 143,
+    "name": "Mesas decorativas",
+    "slug": "mesas-decorativas",
+    "parent_slug": "mobiliario-1",
+    "level": 2,
+    "url": "https://www.sofalar.example/mesas-decorativas",
+    "catalog_url": "https://www.sofalar.example/catalogo/mesas-decorativas",
+    "parent_id": null
+  },
+  {
+    "id": 194,
+    "name": "Mesas",
+    "slug": "mesas-exterior",
+    "parent_slug": "mobiliario-de-exterior",
+    "level": 2,
+    "url": "https://www.sofalar.example/mesas-exterior",
+    "catalog_url": "https://www.sofalar.example/catalogo/mesas-exterior",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Mobiliário",
+    "slug": "mobiliario-1",
+    "parent_slug": "decoracao",
+    "level": 2,
+    "url": "https://www.sofalar.example/mobiliario-1",
+    "catalog_url": "https://www.sofalar.example/catalogo/mobiliario-1",
+    "parent_id": null
+  },
+  {
+    "id": 25,
+    "name": "Modulos suspensos",
+    "slug": "modulos-suspensos",
+    "parent_slug": "salas-de-estar",
+    "level": 2,
+    "url": "https://www.sofalar.example/modulos-suspensos",
+    "catalog_url": "https://www.sofalar.example/catalogo/modulos-suspensos",
+    "parent_id": null
+  },
+  {
+    "id": 44,
+    "name": "Molas",
+    "slug": "molas",
+    "parent_slug": "colchoes",
+    "level": 2,
+    "url": "https://www.sofalar.example/molas",
+    "catalog_url": "https://www.sofalar.example/catalogo/molas",
+    "parent_id": 43
+  },
+  {
+    "id": 35,
+    "name": "Molduras",
+    "slug": "molduras-2",
+    "parent_slug": "quartos",
+    "level": 2,
+    "url": "https://www.sofalar.example/molduras-2",
+    "catalog_url": "https://www.sofalar.example/catalogo/molduras-2",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Móveis auxiliares",
+    "slug": "moveis-auxiliares",
+    "parent_slug": "mobiliario",
+    "level": 2,
+    "url": "https://www.sofalar.example/moveis-auxiliares",
+    "catalog_url": "https://www.sofalar.example/catalogo/moveis-auxiliares",
+    "parent_id": null
+  },
+  {
+    "id": 289,
+    "name": "Móveis de bar",
+    "slug": "moveis-de-bar",
+    "parent_slug": "moveis-auxiliares",
+    "level": 2,
+    "url": "https://www.sofalar.example/moveis-de-bar",
+    "catalog_url": "https://www.sofalar.example/catalogo/moveis-de-bar",
+    "parent_id": null
+  },
+  {
+    "id": 38,
+    "name": "Móveis de entrada",
+    "slug": "moveis-de-entrada",
+    "parent_slug": "moveis-auxiliares",
+    "level": 2,
+    "url": "https://www.sofalar.example/moveis-de-entrada",
+    "catalog_url": "https://www.sofalar.example/catalogo/moveis-de-entrada",
+    "parent_id": null
+  },
+  {
+    "id": 45,
+    "name": "Nucleo",
+    "slug": "nucleo",
+    "parent_slug": "colchoes",
+    "level": 2,
+    "url": "https://www.sofalar.example/nucleo",
+    "catalog_url": "https://www.sofalar.example/catalogo/nucleo",
+    "parent_id": 43
+  },
+  {
+    "id": 268,
+    "name": "OUTROS",
+    "slug": "outros",
+    "parent_slug": "electrodomesticos",
+    "level": 2,
+    "url": "https://www.sofalar.example/outros",
+    "catalog_url": "https://www.sofalar.example/catalogo/outros",
+    "parent_id": null
+  },
+  {
+    "id": 56,
+    "name": "Packs",
+    "slug": "packs",
+    "parent_slug": "camas",
+    "level": 2,
+    "url": "https://www.sofalar.example/packs",
+    "catalog_url": "https://www.sofalar.example/catalogo/packs",
+    "parent_id": null
+  },
+  {
+    "id": 58,
+    "name": "Protectores de colchões",
+    "slug": "protectores-de-colchoes",
+    "parent_slug": "texteis",
+    "level": 2,
+    "url": "https://www.sofalar.example/protectores-de-colchoes",
+    "catalog_url": "https://www.sofalar.example/catalogo/protectores-de-colchoes",
+    "parent_id": null
+  },
+  {
+    "id": 145,
+    "name": "Puffs",
+    "slug": "puffs-mobiliario",
+    "parent_slug": "mobiliario-1",
+    "level": 2,
+    "url": "https://www.sofalar.example/puffs-mobiliario",
+    "catalog_url": "https://www.sofalar.example/catalogo/puffs-mobiliario",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Quartos",
+    "slug": "quartos",
+    "parent_slug": "mobiliario",
+    "level": 2,
+    "url": "https://www.sofalar.example/quartos",
+    "catalog_url": "https://www.sofalar.example/catalogo/quartos",
+    "parent_id": null
+  },
+  {
+    "id": 36,
+    "name": "Quartos",
+    "slug": "quartos-completos",
+    "parent_slug": "quartos",
+    "level": 2,
+    "url": "https://www.sofalar.example/quartos-completos",
+    "catalog_url": "https://www.sofalar.example/catalogo/quartos-completos",
+    "parent_id": null
+  },
+  {
+    "id": 9,
+    "name": "Relax",
+    "slug": "relax",
+    "parent_slug": "sofas",
+    "level": 2,
+    "url": "https://www.sofalar.example/relax",
+    "catalog_url": "https://www.sofalar.example/catalogo/relax",
+    "parent_id": 1
+  },
+  {
+    "id": 104,
+    "name": "Relógios",
+    "slug": "relogios",
+    "parent_slug": "decoracao-de-parede",
+    "level": 2,
+    "url": "https://www.sofalar.example/relogios",
+    "catalog_url": "https://www.sofalar.example/catalogo/relogios",
+    "parent_id": null
+  },
+  {
+    "id": 31,
+    "name": "Roupeiros",
+    "slug": "roupeiros",
+    "parent_slug": "quartos",
+    "level": 2,
+    "url": "https://www.sofalar.example/roupeiros",
+    "catalog_url": "https://www.sofalar.example/catalogo/roupeiros",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Salas de estar",
+    "slug": "salas-de-estar",
+    "parent_slug": "mobiliario",
+    "level": 2,
+    "url": "https://www.sofalar.example/salas-de-estar",
+    "catalog_url": "https://www.sofalar.example/catalogo/salas-de-estar",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Salas de jantar",
+    "slug": "salas-de-jantar",
+    "parent_slug": "mobiliario",
+    "level": 2,
+    "url": "https://www.sofalar.example/salas-de-jantar",
+    "catalog_url": "https://www.sofalar.example/catalogo/salas-de-jantar",
+    "parent_id": null
+  },
+  {
+    "id": 39,
+    "name": "Sapateiras",
+    "slug": "sapateiras",
+    "parent_slug": "moveis-auxiliares",
+    "level": 2,
+    "url": "https://www.sofalar.example/sapateiras",
+    "catalog_url": "https://www.sofalar.example/catalogo/sapateiras",
+    "parent_id": null
+  },
+  {
+    "id": 27,
+    "name": "Secretárias",
+    "slug": "secretarias",
+    "parent_slug": "salas-de-estar",
+    "level": 2,
+    "url": "https://www.sofalar.example/secretarias",
+    "catalog_url": "https://www.sofalar.example/catalogo/secretarias",
+    "parent_id": null
+  },
+  {
+    "id": 11,
+    "name": "Sofás cama",
+    "slug": "sofas-cama",
+    "parent_slug": "sofas",
+    "level": 2,
+    "url": "https://www.sofalar.example/sofas-cama",
+    "catalog_url": "https://www.sofalar.example/catalogo/sofas-cama",
+    "parent_id": 1
+  },
+  {
+    "id": 3,
+    "name": "Sofás de canto",
+    "slug": "sofas-de-canto",
+    "parent_slug": "sofas",
+    "level": 2,
+    "url": "https://www.sofalar.example/sofas-de-canto",
+    "catalog_url": "https://www.sofalar.example/catalogo/sofas-de-canto",
+    "parent_id": 1
+  },
+  {
+    "id": 53,
+    "name": "Sommiers",
+    "slug": "sommiers",
+    "parent_slug": "camas",
+    "level": 2,
+    "url": "https://www.sofalar.example/sommiers",
+    "catalog_url": "https://www.sofalar.example/catalogo/sommiers",
+    "parent_id": null
+  },
+  {
+    "id": 105,
+    "name": "Telas",
+    "slug": "telas",
+    "parent_slug": "decoracao-de-parede",
+    "level": 2,
+    "url": "https://www.sofalar.example/telas",
+    "catalog_url": "https://www.sofalar.example/catalogo/telas",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Texteis",
+    "slug": "texteis",
+    "parent_slug": "descanso",
+    "level": 2,
+    "url": "https://www.sofalar.example/texteis",
+    "catalog_url": "https://www.sofalar.example/catalogo/texteis",
+    "parent_id": 41
+  },
+  {
+    "id": null,
+    "name": "Texteis",
+    "slug": "texteis-1",
+    "parent_slug": "decoracao",
+    "level": 2,
+    "url": "https://www.sofalar.example/texteis-1",
+    "catalog_url": "https://www.sofalar.example/catalogo/texteis-1",
+    "parent_id": null
+  },
+  {
+    "id": null,
+    "name": "Toppers",
+    "slug": "toppers",
+    "parent_slug": "colchoes",
+    "level": 2,
+    "url": "https://www.sofalar.example/toppers",
+    "catalog_url": "https://www.sofalar.example/catalogo/toppers",
+    "parent_id": 43
+  },
+  {
+    "id": 24,
+    "name": "Vitrines",
+    "slug": "vitrines",
+    "parent_slug": "salas-de-estar",
+    "level": 2,
+    "url": "https://www.sofalar.example/vitrines",
+    "catalog_url": "https://www.sofalar.example/catalogo/vitrines",
+    "parent_id": null
+  },
+  {
+    "id": 156,
+    "name": "ALMOFADAS DECORATIVAS",
+    "slug": "almofadas-decorativas",
+    "parent_slug": "texteis-1",
+    "level": 3,
+    "url": "https://www.sofalar.example/almofadas-decorativas",
+    "catalog_url": "https://www.sofalar.example/catalogo/almofadas-decorativas",
+    "parent_id": null
+  },
+  {
+    "id": 129,
+    "name": "APARADORES",
+    "slug": "aparadores-1",
+    "parent_slug": "mobiliario-1",
+    "level": 3,
+    "url": "https://www.sofalar.example/aparadores-1",
+    "catalog_url": "https://www.sofalar.example/catalogo/aparadores-1",
+    "parent_id": null
+  },
+  {
+    "id": 96,
+    "name": "BANDEJAS",
+    "slug": "bandejas",
+    "parent_slug": "cozinha",
+    "level": 3,
+    "url": "https://www.sofalar.example/bandejas",
+    "catalog_url": "https://www.sofalar.example/catalogo/bandejas",
+    "parent_id": null
+  },
+  {
+    "id": 131,
+    "name": "BANQUETAS",
+    "slug": "banquetas",
+    "parent_slug": "mobiliario-1",
+    "level": 3,
+    "url": "https://www.sofalar.example/banquetas",
+    "catalog_url": "https://www.sofalar.example/catalogo/banquetas",
+    "parent_id": null
+  },
+  {
+    "id": 132,
+    "name": "BASE TV",
+    "slug": "base-tv-1",
+    "parent_slug": "mobiliario-1",
+    "level": 3,
+    "url": "https://www.sofalar.example/base-tv-1",
+    "catalog_url": "https://www.sofalar.example/catalogo/base-tv-1",
+    "parent_id": null
+  },
+  {
+    "id": 110,
+    "name": "CABIDES",
+    "slug": "cabides",
+    "parent_slug": "decoracao-diversa",
+    "level": 3,
+    "url": "https://www.sofalar.example/cabides",
+    "catalog_url": "https://www.sofalar.example/catalogo/cabides",
+    "parent_id": null
+  },
+  {
+    "id": 133,
+    "name": "CADEIRAS",
+    "slug": "cadeiras-2",
+    "parent_slug": "mobiliario-1",
+    "level": 3,
+    "url": "https://www.sofalar.example/cadeiras-2",
+    "catalog_url": "https://www.sofalar.example/catalogo/cadeiras-2",
+    "parent_id": null
+  },
+  {
+    "id": 134,
+    "name": "COMODAS",
+    "slug": "comodas-1",
+    "parent_slug": "mobiliario-1",
+    "level": 3,
+    "url": "https://www.sofalar.example/comodas-1",
+    "catalog_url": "https://www.sofalar.example/catalogo/comodas-1",
+    "parent_id": null
+  },
+  {
+    "id": 102,
+    "name": "ESPELHOS",
+    "slug": "espelhos",
+    "parent_slug": "decoracao-de-parede",
+    "level": 3,
+    "url": "https://www.sofalar.example/espelhos",
+    "catalog_url": "https://www.sofalar.example/catalogo/espelhos",
+    "parent_id": null
+  },
+  {
+    "id": 49,
+    "name": "ESTRADOS ARTICULADOS",
+    "slug": "estrados-articulados",
+    "parent_slug": "estrados",
+    "level": 3,
+    "url": "https://www.sofalar.example/estrados-articulados",
+    "catalog_url": "https://www.sofalar.example/catalogo/estrados-articulados",
+    "parent_id": 47
+  },
+  {
+    "id": 48,
+    "name": "ESTRADOS DE RIPAS",
+    "slug": "estrados-de-ripas",
+    "parent_slug": "estrados",
+    "level": 3,
+    "url": "https://www.sofalar.example/estrados-de-ripas",
+    "catalog_url": "https://www.sofalar.example/catalogo/estrados-de-ripas",
+    "parent_id": 47
+  },
+  {
+    "id": 141,
+    "name": "MESAS",
+    "slug": "mesas",
+    "parent_slug": "mobiliario-1",
+    "level": 3,
+    "url": "https://www.sofalar.example/mesas",
+    "catalog_url": "https://www.sofalar.example/catalogo/mesas",
+    "parent_id": null
+  },
+  {
+    "id": 139,
+    "name": "MESAS JANTAR",
+    "slug": "mesas-jantar",
+    "parent_slug": "mobiliario-1",
+    "level": 3,
+    "url": "https://www.sofalar.example/mesas-jantar",
+    "catalog_url": "https://www.sofalar.example/catalogo/mesas-jantar",
+    "parent_id": null
+  },
+  {
+    "id": 51,
+    "name": "PÉS DE ESTRADOS",
+    "slug": "pes-de-estrados",
+    "parent_slug": "estrados",
+    "level": 3,
+    "url": "https://www.sofalar.example/pes-de-estrados",
+    "catalog_url": "https://www.sofalar.example/catalogo/pes-de-estrados",
+    "parent_id": 47
+  }
+]

@@ -1,0 +1,295 @@
+/* DFP Interiores — panier (tiroir + page) & checkout. Styles propres, chargés après les CSS scrapés. */
+
+:root { --sl-pink: #e5007d; --sl-ink: #1a1a1a; --sl-line: #e6e6e6; }
+
+/* ================= Tiroir mini-panier ================= */
+/* Panneau .Carrinho (position:fixed, CSS scrapé) transformé en colonne flex à 2 zones :
+   .mc-body (articles) défile, .mc-foot (total + boutons) reste toujours visible. */
+.offside .Carrinho,
+.offside .Carrinho * { box-sizing: border-box; }
+
+.offside .Carrinho.open,
+.offside div.Carrinho {
+    display: flex !important;
+    flex-direction: column !important;
+    top: 0 !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-height: 100vh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;      /* annule .offside>div{overflow-y:auto} */
+    padding: 0 !important;            /* padding géré à l'intérieur */
+}
+
+/* zone défilante : contient close + titre + liste d'articles */
+.offside .Carrinho .mc-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 60px 18px 14px;
+}
+.offside .Carrinho .close { position: absolute; z-index: 3; top: 18px; left: 18px; }
+.offside .Carrinho .mc-body > .title {
+    position: static !important; margin: 0 0 6px !important; padding-bottom: 10px;
+    border-bottom: 1px solid var(--sl-line);
+}
+.offside .Carrinho .MiniCarrinho {
+    display: block !important; height: auto !important;
+    padding: 0 !important; margin: 0 !important; overflow: visible !important;
+}
+.offside .Carrinho .MiniCarrinho .mc-empty { color: #666; padding: 28px 0; text-align: center; }
+
+/* pied toujours visible */
+.offside .Carrinho .mc-foot {
+    flex: 0 0 auto;
+    padding: 14px 18px calc(14px + env(safe-area-inset-bottom));
+    border-top: 1px solid var(--sl-line);
+    background: #fff;
+    box-shadow: 0 -6px 18px rgba(0, 0, 0, .06);
+}
+.offside .Carrinho .mc-foot .totais {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 17px; font-weight: 700; margin-bottom: 12px;
+}
+.offside .Carrinho .mc-foot .RegistarCliente { display: grid; gap: 8px; margin: 0; }
+.offside .Carrinho .mc-foot .btn {
+    width: 100%; text-align: center; padding: 11px 16px; border-radius: 8px;
+    font-size: 14px; text-decoration: none; margin: 0;
+}
+.offside .Carrinho .mc-foot .btn-primary { background: var(--sl-pink); border: 1px solid var(--sl-pink); color: #fff; }
+.offside .Carrinho .mc-foot .btn-primary:first-of-type { background: #fff; color: var(--sl-pink); }
+.offside .Carrinho .mc-foot .btn-default { background: #f2f2f2; color: #333; }
+
+.offside .Carrinho button { width: auto; margin-top: 0; }   /* annule .offside .Carrinho button{width:100%} */
+
+.offside .MiniCarrinho .item {
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: start;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--sl-line);
+}
+.offside .MiniCarrinho .item .img img {
+    width: 56px; height: 56px; object-fit: cover; border-radius: 8px; border: 1px solid var(--sl-line);
+}
+.offside .MiniCarrinho .item .content { min-width: 0; }
+.offside .MiniCarrinho .item .content .nome a {
+    font-size: 13px; font-weight: 600; color: var(--sl-ink); line-height: 1.3; text-decoration: none;
+    display: block; word-break: break-word;
+}
+/* la 3e colonne : prix + sélecteur quantité, jamais tronquée */
+.offside .MiniCarrinho .item .preco {
+    position: static !important;
+    inset: auto !important;
+    float: none !important;
+    text-align: right;
+    white-space: nowrap;
+    display: flex; flex-direction: column; align-items: flex-end; gap: 8px;
+    width: auto !important;
+}
+.offside .MiniCarrinho .item .preco b { font-size: 14px; display: block; }
+
+.offside .MiniCarrinho .qtd_update {
+    display: inline-flex !important;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: max-content;
+    max-width: none !important;
+    border: 1px solid var(--sl-line);
+    border-radius: 999px;
+    overflow: visible;              /* ne plus rogner le bouton "+" */
+    background: #fff;
+}
+.offside .MiniCarrinho .qtd_update button {
+    background: #fff !important; border: 0 !important; box-shadow: none !important;
+    width: 30px !important; min-width: 30px !important; height: 28px !important;
+    padding: 0 !important; margin: 0 !important; cursor: pointer; flex: 0 0 30px;
+    display: inline-flex !important; align-items: center; justify-content: center;
+}
+.offside .MiniCarrinho .qtd_update button:first-child { border-radius: 999px 0 0 999px; }
+.offside .MiniCarrinho .qtd_update button:last-child  { border-radius: 0 999px 999px 0; }
+.offside .MiniCarrinho .qtd_update button:hover { background: #faf0f6 !important; }
+.offside .MiniCarrinho .qtd_update button svg {
+    width: 15px !important; height: 15px !important; stroke: #333 !important; fill: none !important; display: block;
+}
+.offside .MiniCarrinho .qtd_update .qtd {
+    min-width: 26px; text-align: center; font-size: 13px; font-weight: 700;
+    border-left: 1px solid var(--sl-line); border-right: 1px solid var(--sl-line); align-self: stretch;
+    display: flex; align-items: center; justify-content: center;
+}
+
+
+/* ================= Page /carrinho ================= */
+.CartPage { max-width: 1080px; margin: 0 auto; padding: 30px 16px 80px; }
+.CartPage h1 { font-size: 26px; margin: 0 0 22px; }
+.CartPage .cart-grid { display: grid; grid-template-columns: 1fr 340px; gap: 30px; align-items: start; }
+@media (max-width: 860px) { .CartPage .cart-grid { grid-template-columns: 1fr; } }
+
+.CartPage .cart-empty {
+    border: 1px dashed var(--sl-line); border-radius: 12px; padding: 48px 20px; text-align: center; color: #666;
+}
+.CartPage .cart-empty a { display: inline-block; margin-top: 16px; }
+
+.CartPage .cart-line {
+    display: grid; grid-template-columns: 92px 1fr auto; gap: 16px;
+    padding: 18px 0; border-bottom: 1px solid var(--sl-line); align-items: center;
+}
+.CartPage .cart-line .thumb img {
+    width: 92px; height: 92px; object-fit: cover; border-radius: 10px; border: 1px solid var(--sl-line);
+}
+.CartPage .cart-line .info .name { font-weight: 600; color: var(--sl-ink); text-decoration: none; }
+.CartPage .cart-line .info .opts { font-size: 12px; color: #777; margin-top: 4px; }
+.CartPage .cart-line .info .unit { font-size: 12px; color: #999; margin-top: 4px; }
+.CartPage .cart-line .right { text-align: right; display: grid; gap: 10px; justify-items: end; }
+.CartPage .cart-line .right .lt { font-weight: 700; font-size: 16px; }
+
+.CartPage .qty {
+    display: inline-flex; align-items: center; border: 1px solid var(--sl-line); border-radius: 999px; overflow: hidden;
+}
+.CartPage .qty button { background: #fff; border: 0; width: 32px; height: 32px; cursor: pointer; color: #444; display: flex; align-items: center; justify-content: center; }
+.CartPage .qty button:hover { background: #faf0f6; }
+.CartPage .qty button svg { width: 16px !important; height: 16px !important; stroke: #333 !important; fill: none !important; display: block; }
+.CartPage .qty .n { min-width: 30px; text-align: center; font-weight: 700; font-size: 14px; }
+
+.CartPage .summary {
+    border: 1px solid var(--sl-line); border-radius: 12px; padding: 20px; background: #fff;
+    position: -webkit-sticky; position: sticky; top: 90px; align-self: start;
+}
+@media (max-width: 860px) { .CartPage .summary { position: static; } }
+.CartPage .summary h2 { font-size: 14px; text-transform: uppercase; letter-spacing: .06em; margin: 0 0 16px; color: #666; }
+.CartPage .summary .row { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 14px; }
+.CartPage .summary .row.total { border-top: 1px solid var(--sl-line); padding-top: 12px; margin-top: 12px; font-size: 18px; font-weight: 700; }
+.CartPage .summary .cta {
+    display: block; width: 100%; text-align: center; background: var(--sl-pink); color: #fff;
+    padding: 14px 16px; border-radius: 8px; font-weight: 700; margin-top: 16px; text-decoration: none;
+}
+.CartPage .summary .cta:hover { opacity: .92; }
+.CartPage .summary .keep { display: block; text-align: center; margin-top: 12px; font-size: 13px; color: #666; }
+.CartPage .instal { margin-top: 16px; font-size: 12px; color: #777; border: 1px solid var(--sl-line); border-radius: 10px; padding: 10px 12px; }
+.CartPage .instal img { height: 16px; vertical-align: middle; margin-right: 6px; }
+
+/* ================= Checkout ================= */
+.CheckoutPage { max-width: 1080px; margin: 0 auto; padding: 30px 16px 90px; }
+.CheckoutPage h1 { font-size: 26px; margin: 0 0 22px; }
+.CheckoutPage .co-grid { display: grid; grid-template-columns: 1fr 360px; gap: 30px; align-items: start; }
+@media (max-width: 860px) { .CheckoutPage .co-grid { grid-template-columns: 1fr; } }
+
+.CheckoutPage .co-card { border: 1px solid var(--sl-line); border-radius: 12px; padding: 22px; margin-bottom: 20px; background: #fff; }
+.CheckoutPage .co-card h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .05em; color: var(--sl-pink); margin: 0 0 16px; }
+.CheckoutPage .field { margin-bottom: 14px; }
+.CheckoutPage .field label { display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; color: #777; margin-bottom: 5px; }
+.CheckoutPage .field input, .CheckoutPage .field textarea {
+    width: 100%; border: 1px solid var(--sl-line); border-radius: 8px; padding: 11px 12px; font-size: 14px; background: #fafafa;
+}
+.CheckoutPage .field input:focus, .CheckoutPage .field textarea:focus { outline: 2px solid #f6c9e2; background: #fff; }
+.CheckoutPage .field .err { color: #d21313; font-size: 12px; margin-top: 4px; display: block; font-weight: 600; }
+.CheckoutPage .field input.is-invalid,
+.CheckoutPage .field textarea.is-invalid { border-color: #d21313 !important; background: #fff5f5; }
+.CheckoutPage .co-summary .err { color: #d21313; font-size: 12px; margin: 4px 0 0; display: block; font-weight: 600; }
+.CheckoutPage .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 560px) { .CheckoutPage .grid2 { grid-template-columns: 1fr; } }
+
+.CheckoutPage .opt {
+    display: flex; gap: 12px; align-items: flex-start; border: 1px solid var(--sl-line); border-radius: 10px;
+    padding: 14px; margin-bottom: 10px; cursor: pointer;
+}
+.CheckoutPage .opt input { margin-top: 3px; }
+.CheckoutPage .opt.sel { border-color: var(--sl-pink); background: #fff5fa; }
+.CheckoutPage .opt .t { font-weight: 700; font-size: 14px; }
+.CheckoutPage .opt .d { font-size: 12px; color: #777; }
+.CheckoutPage .opt .p { margin-left: auto; font-weight: 700; white-space: nowrap; }
+
+.CheckoutPage .co-summary { border: 1px solid var(--sl-line); border-radius: 12px; padding: 20px; background: #fff; position: -webkit-sticky; position: sticky; top: 90px; align-self: start; }
+@media (max-width: 860px) { .CheckoutPage .co-summary { position: static; } }
+.CheckoutPage .co-summary h2 { font-size: 14px; text-transform: uppercase; letter-spacing: .06em; color: #666; margin: 0 0 14px; }
+.CheckoutPage .co-summary .li { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--sl-line); }
+.CheckoutPage .co-summary .li img { width: 48px; height: 48px; object-fit: cover; border-radius: 6px; border: 1px solid var(--sl-line); }
+.CheckoutPage .co-summary .li .nm { font-size: 13px; font-weight: 600; }
+.CheckoutPage .co-summary .li .q { font-size: 12px; color: #888; }
+.CheckoutPage .co-summary .li .pr { margin-left: auto; font-size: 13px; font-weight: 700; white-space: nowrap; }
+.CheckoutPage .co-summary .row { display: flex; justify-content: space-between; margin: 8px 0; font-size: 14px; }
+.CheckoutPage .co-summary .row.total { border-top: 1px solid var(--sl-line); padding-top: 12px; margin-top: 12px; font-size: 19px; font-weight: 700; }
+.CheckoutPage .co-submit {
+    display: block; width: 100%; text-align: center; border: 0; cursor: pointer; background: var(--sl-pink); color: #fff;
+    padding: 15px 16px; border-radius: 8px; font-weight: 700; font-size: 15px; margin-top: 16px;
+}
+.CheckoutPage .co-submit:hover { opacity: .92; }
+.CheckoutPage .co-errors { background: #ffe9e9; border: 1px solid #f3b4b4; color: #b71c1c; border-radius: 8px; padding: 12px 14px; margin-bottom: 18px; font-size: 13px; }
+.CheckoutPage .check-row { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; margin-top: 6px; }
+
+/* ================= Confirmation ================= */
+.OrderDone { max-width: 640px; margin: 0 auto; padding: 60px 16px 90px; text-align: center; }
+.OrderDone .tick {
+    width: 66px; height: 66px; border-radius: 50%; background: #2e7d32; color: #fff; font-size: 34px;
+    display: flex; align-items: center; justify-content: center; margin: 0 auto 22px;
+}
+.OrderDone h1 { font-size: 24px; margin: 0 0 10px; }
+.OrderDone p { color: #666; }
+.OrderDone .ref-box { border: 1px solid var(--sl-line); border-radius: 12px; padding: 20px; margin: 26px 0; text-align: left; }
+.OrderDone .ref-box .row { display: flex; justify-content: space-between; margin: 8px 0; font-size: 14px; }
+.OrderDone .ref-box .row.big { font-size: 18px; font-weight: 700; border-top: 1px solid var(--sl-line); padding-top: 12px; margin-top: 12px; }
+.OrderDone .btn { display: inline-block; margin-top: 8px; background: var(--sl-pink); color: #fff; padding: 12px 22px; border-radius: 8px; text-decoration: none; }
+
+/* ===== Fiche produit : pastilles couleur "Personalização / COR" =====
+   Le proxy /images/70-70/ renvoie l'image pleine taille -> le cercle de 70px
+   n'en montrait qu'un coin. On force la photo entière à tenir dans le cercle. */
+.VariacoesArtigo label.thumbnail,
+.color-options label.thumbnail {
+    width: 70px; height: 70px; border-radius: 50%;
+    overflow: hidden; padding: 0; background: #fff;
+    display: inline-flex; align-items: center; justify-content: center;
+}
+.VariacoesArtigo label.thumbnail img,
+.color-options label.thumbnail img {
+    width: 100%; height: 100%;
+    object-fit: contain;      /* toute la photo visible, sans rognage */
+    display: block; background: #fff;
+}
+.VariacoesArtigo > div input[type="checkbox"]:checked + label.thumbnail {
+    outline: 2px solid #e5007d; outline-offset: 1px; border-color: #e5007d;
+}
+
+/* Fiche produit sans photo : le placeholder occupe proprement le carré */
+.slider-container .main-image img.no-photo,
+.Produto .Imagem img.no-photo {
+    width: 100%; height: 100%; object-fit: contain; background: #f4f4f4;
+    aspect-ratio: 1; display: block;
+}
+
+/* ===== Logo DFP Interiores : sur pastille claire (header & footer sombres) ===== */
+/* Rangée du header alignée verticalement (logo <-> recherche <-> icônes). */
+.menu-desktop .d-flex.justify-content-between { align-items: center; }
+
+.Header .menu-desktop .logo,
+.menu-desktop .logo,
+.MenuMobile .logo,
+.footer .logo {
+    background: #fff;
+    border-radius: 8px;
+    padding: 5px 8px !important;
+    display: inline-flex !important;
+    align-items: center;
+    line-height: 0;
+    width: auto !important;
+    max-width: none !important;
+    flex: 0 0 auto;
+    align-self: center;
+}
+.menu-desktop .logo a,
+.MenuMobile .logo a,
+.footer .logo a { display: block; line-height: 0; }
+.Header .menu-desktop .logo img,
+.menu-desktop .logo img,
+.MenuMobile .logo img,
+.footer .logo img {
+    width: auto !important;
+    height: 34px !important;
+    max-width: 140px !important;
+    object-fit: contain;
+    display: block;
+}
+.MenuMobile .logo img { height: 30px !important; }
+.footer .logo { margin-bottom: 14px; }
+.footer .logo img { height: 42px !important; max-width: 160px !important; }
