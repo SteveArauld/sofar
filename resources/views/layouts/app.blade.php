@@ -161,7 +161,7 @@
 
 
     <link href="/assets/css/pt/feira.css?id=2" rel="stylesheet">
-    <link href="/assets/css/shop.css?v=13" rel="stylesheet">
+    <link href="/assets/css/shop.css?v=16" rel="stylesheet">
 
 
     <style>
@@ -823,7 +823,7 @@
 
                             <div class="d-flex justify-content-between">
                                 <div class="logo">
-                                    <a href="/"><img alt="DFP Interiores" src="/assets/logos/logo.png"
+                                    <a href="/"><img alt="DFP Interiores" src="/assets/logos/logo-nav.png"
                                             style="width: 100%;"></a>
                                 </div>
 
@@ -1375,7 +1375,7 @@
                                 </svg>
                             </a>
                             <a href="/" class='logo'>
-                                <img src="/assets/logos/logo.png" alt="DFP Interiores">
+                                <img src="/assets/logos/logo-nav.png" alt="DFP Interiores">
                             </a>
                             <a @click="offside.toggle('procurar')" class='Buttons OpenProcura'>
                                 <svg width="28px" height="28px" viewBox="0 0 24 24" fill="none"

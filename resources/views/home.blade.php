@@ -7,274 +7,37 @@
 @endpush
 
 @section('content')
-{{-- Bloc hero (carrousel promo + vidéo) : design officiel, statique --}}
-@verbatim
-
-                    
+{{-- Hero : image (parmi 5) et vidéo (parmi 10) tirées au hasard à chaque chargement --}}
 <div class="Home clearfix">
   <div class="FundoBanner">
-    <div class="Banner" >
-      
-        <div id="MainBanner" class="owl-carousel">
-                    <div class="item  active ">
-            <a href="/lojas" >
-              <picture>
-                
-                <source
-                  media="(min-width: 769px)"
-                  srcset="/media/banners/matosinhos_desktop.avif"
-                  type="image/avif"
-                />
-                
-                <source
-                  media="(min-width: 769px)"
-                  srcset="/media/banners/matosinhos_desktop.webp"
-                  type="image/webp"
-                />
-                
-                
-                <source
-                  media="(max-width: 768px)"
-                  srcset="/media/banners/matosinhos_mobile.avif"
-                  type="image/avif"
-                />
-                
-                <source
-                  media="(max-width: 768px)"
-                  srcset="/media/banners/matosinhos_mobile.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(max-width: 768px)"
-                  srcset="/media/banners/matosinhos_mobile.jpg"
-                />
-
-                <img
-                  style="width: 100%;"
-                  src="/media/banners/matosinhos_desktop.jpg"
-                  alt="Banner Feira em Festa"
-                   fetchpriority="high" loading="eager"                 />
-              </picture>
+    <div class="Banner">
+      <div id="MainBanner" class="owl-carousel">
+        @foreach ($hero as $i => $s)
+          <div class="item {{ $i === 0 ? 'active' : '' }}">
+            <a href="{{ $s['href'] }}" class="hero-slide">
+              <img src="{{ $s['img'] }}" alt="{{ $s['h2'] }}" style="width:100%;display:block;"
+                   @if ($i === 0) fetchpriority="high" loading="eager" @else loading="lazy" @endif />
+              <div class="hero-caption">
+                <h2>{{ $s['h2'] }}</h2>
+                <p>{{ $s['p'] }}</p>
+                <span class="hero-btn">{{ $s['cta'] }}</span>
+              </div>
             </a>
           </div>
-                    <div class="item ">
-            <a href="/descontos70" >
-              <picture>
-                
-                <source
-                  media="(min-width: 769px)"
-                  srcset="/media/banners/novos_saldos_desktop_.avif"
-                  type="image/avif"
-                />
-                
-                <source
-                  media="(min-width: 769px)"
-                  srcset="/media/banners/novos_saldos_desktop_.webp"
-                  type="image/webp"
-                />
-                
-                
-                <source
-                  media="(max-width: 768px)"
-                  srcset="/media/banners/novos_saldos_mobile.avif"
-                  type="image/avif"
-                />
-                
-                <source
-                  media="(max-width: 768px)"
-                  srcset="/media/banners/novos_saldos_mobile.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(max-width: 768px)"
-                  srcset="/media/banners/novos_saldos_mobile.jpg"
-                />
-
-                <img
-                  style="width: 100%;"
-                  src="/media/banners/novos_saldos_desktop_.jpg"
-                  alt="Banner Saldos_"
-                   loading="lazy"                 />
-              </picture>
-            </a>
-          </div>
-                    <div class="item ">
-            <a href="/procura/pikolin" >
-              <picture>
-                
-                <source
-                  media="(min-width: 769px)"
-                  srcset="/media/banners/pack_100_desconto.avif"
-                  type="image/avif"
-                />
-                
-                <source
-                  media="(min-width: 769px)"
-                  srcset="/media/banners/pack_100_desconto.webp"
-                  type="image/webp"
-                />
-                
-                
-                <source
-                  media="(max-width: 768px)"
-                  srcset="/media/banners/pack_100_desconto_mobile.avif"
-                  type="image/avif"
-                />
-                
-                <source
-                  media="(max-width: 768px)"
-                  srcset="/media/banners/pack_100_desconto_mobile.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(max-width: 768px)"
-                  srcset="/media/banners/pack_100_desconto_mobile.jpg"
-                />
-
-                <img
-                  style="width: 100%;"
-                  src="/media/banners/pack_100_desconto.jpg"
-                  alt="Banner 100€"
-                   loading="lazy"                 />
-              </picture>
-            </a>
-          </div>
-                    <div class="item ">
-            <a href="/descontos70" >
-              <picture>
-                
-                <source
-                  media="(min-width: 769px)"
-                  srcset="/media/banners/desktop_scalapay.avif"
-                  type="image/avif"
-                />
-                
-                <source
-                  media="(min-width: 769px)"
-                  srcset="/media/banners/desktop_scalapay.webp"
-                  type="image/webp"
-                />
-                
-                
-                <source
-                  media="(max-width: 768px)"
-                  srcset="/media/banners/mobile_scalapay.avif"
-                  type="image/avif"
-                />
-                
-                <source
-                  media="(max-width: 768px)"
-                  srcset="/media/banners/mobile_scalapay.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(max-width: 768px)"
-                  srcset="/media/banners/mobile_scalapay.jpg"
-                />
-
-                <img
-                  style="width: 100%;"
-                  src="/media/banners/desktop_scalapay.jpg"
-                  alt="Banner Scalapay"
-                   loading="lazy"                 />
-              </picture>
-            </a>
-          </div>
-                    <div class="item ">
-            <a href="/lojas" >
-              <picture>
-                
-                <source
-                  media="(min-width: 769px)"
-                  srcset="/media/banners/cozinhas_desktop.avif"
-                  type="image/avif"
-                />
-                
-                <source
-                  media="(min-width: 769px)"
-                  srcset="/media/banners/cozinhas_desktop.webp"
-                  type="image/webp"
-                />
-                
-                
-                <source
-                  media="(max-width: 768px)"
-                  srcset="/media/banners/cozinhas_mobiel.avif"
-                  type="image/avif"
-                />
-                
-                <source
-                  media="(max-width: 768px)"
-                  srcset="/media/banners/cozinhas_mobiel.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(max-width: 768px)"
-                  srcset="/media/banners/cozinhas_mobiel.jpg"
-                />
-
-                <img
-                  style="width: 100%;"
-                  src="/media/banners/cozinhas_desktop.jpg"
-                  alt="Banner Cozinas"
-                   loading="lazy"                 />
-              </picture>
-            </a>
-          </div>
-                    <div class="item ">
-            <a href="/" >
-              <picture>
-                
-                <source
-                  media="(min-width: 769px)"
-                  srcset="/media/banners/cofidis_desktop.avif"
-                  type="image/avif"
-                />
-                
-                <source
-                  media="(min-width: 769px)"
-                  srcset="/media/banners/cofidis_desktop.webp"
-                  type="image/webp"
-                />
-                
-                
-                <source
-                  media="(max-width: 768px)"
-                  srcset="/media/banners/cofidis_mobile.avif"
-                  type="image/avif"
-                />
-                
-                <source
-                  media="(max-width: 768px)"
-                  srcset="/media/banners/cofidis_mobile.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(max-width: 768px)"
-                  srcset="/media/banners/cofidis_mobile.jpg"
-                />
-
-                <img
-                  style="width: 100%;"
-                  src="/media/banners/cofidis_desktop.jpg"
-                  alt="Banner Cofidis"
-                   loading="lazy"                 />
-              </picture>
-            </a>
-          </div>
-                    </div>
-      
+        @endforeach
+      </div>
     </div>
   </div>
 
-  	<div class="container" style="text-align:center">
-	<video width="80%" style="margin-top:40px" preload="auto" loop playsinline autoplay muted>
-		<source src="/videos/promo.mp4" type="video/mp4" />
-	Your browser does not support the video tag.
-	</video>
-		
-		</div>
-@endverbatim
+  <div class="container" style="text-align:center">
+    <video width="80%" style="margin-top:40px" preload="auto" loop playsinline autoplay muted>
+      <source src="{{ $heroVideo }}" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+{{-- NB : <div class="Home clearfix"> reste ouvert et englobe la suite (rails,
+     catégories…) — le CSS scrapé cible « .Home .Categorias », etc. Il est fermé
+     tout en bas de la section. --}}
 
 {{-- Rail dynamique : remplace les 72 cartes figées du miroir --}}
 <x-product-rail title="Descontos até 70%" :tabs="$descTabs" />

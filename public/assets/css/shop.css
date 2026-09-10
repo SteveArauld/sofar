@@ -258,17 +258,28 @@
     aspect-ratio: 1; display: block;
 }
 
-/* ===== Logo DFP Interiores : sur pastille claire (header & footer sombres) ===== */
-/* Rangée du header alignée verticalement (logo <-> recherche <-> icônes). */
-.menu-desktop .d-flex.justify-content-between { align-items: center; }
+/* ===== En-tête : hauteur maîtrisée + tout centré verticalement ===== */
+.Header .Desktop > .container,
+.Desktop > .container { height: auto !important; }
+.menu-desktop .d-flex.justify-content-between {
+    align-items: center;
+    min-height: 78px;
+    padding: 8px 0;
+}
+.menu-desktop .search { align-self: center; }
+.NavBar { margin-top: 0 !important; }
+/* les margin-top des enfants créaient le décalage vers le haut */
+.menu-desktop .Procurar input { margin-top: 0 !important; }
+.Header .descubraLojas { margin-top: 0 !important; align-self: center; }
 
+/* ===== Logo DFP Interiores : version claire, posée directement sur la nav sombre ===== */
 .Header .menu-desktop .logo,
 .menu-desktop .logo,
 .MenuMobile .logo,
 .footer .logo {
-    background: #fff;
-    border-radius: 8px;
-    padding: 5px 8px !important;
+    background: transparent !important;
+    border-radius: 0;
+    padding: 0 !important;
     display: inline-flex !important;
     align-items: center;
     line-height: 0;
@@ -285,11 +296,41 @@
 .MenuMobile .logo img,
 .footer .logo img {
     width: auto !important;
-    height: 34px !important;
-    max-width: 140px !important;
+    height: 52px !important;
+    max-width: 200px !important;
     object-fit: contain;
     display: block;
 }
-.MenuMobile .logo img { height: 30px !important; }
+.MenuMobile .logo img { height: 40px !important; }
 .footer .logo { margin-bottom: 14px; }
-.footer .logo img { height: 42px !important; max-width: 160px !important; }
+.footer .logo img { height: 50px !important; max-width: 190px !important; }
+
+/* ===== Hero home : photos Pexels + accroche promo par slide ===== */
+#MainBanner .item { position: relative; }
+#MainBanner .hero-slide { display: block; position: relative; color: #fff; text-decoration: none; }
+#MainBanner .hero-slide > img { display: block; width: 100%; }
+#MainBanner .hero-caption {
+    position: absolute; inset: 0 auto 0 0; right: 0;
+    display: flex; flex-direction: column; justify-content: center; gap: 12px;
+    padding: 0 6vw; max-width: 640px;
+    background: linear-gradient(90deg, rgba(18,22,28,.66) 0%, rgba(18,22,28,.34) 52%, rgba(18,22,28,0) 100%);
+}
+#MainBanner .hero-caption h2 {
+    margin: 0; font-weight: 800; line-height: 1.05; letter-spacing: -.5px; color: #fff;
+    font-size: clamp(24px, 3.4vw, 46px); text-shadow: 0 2px 14px rgba(0,0,0,.45);
+}
+#MainBanner .hero-caption p {
+    margin: 0; color: #f1f1f1; font-size: clamp(13px, 1.5vw, 19px); text-shadow: 0 1px 8px rgba(0,0,0,.5);
+}
+#MainBanner .hero-btn {
+    align-self: flex-start; margin-top: 6px; background: var(--sl-pink); color: #fff; font-weight: 700;
+    padding: 11px 26px; border-radius: 999px; font-size: 14px; box-shadow: 0 6px 20px rgba(0,0,0,.28);
+    transition: filter .15s ease;
+}
+#MainBanner .hero-slide:hover .hero-btn { filter: brightness(1.08); }
+@media (max-width: 768px) {
+    #MainBanner .hero-caption {
+        max-width: none; justify-content: flex-end; padding: 0 22px 26px;
+        background: linear-gradient(180deg, rgba(18,22,28,0) 0%, rgba(18,22,28,.5) 55%, rgba(18,22,28,.82) 100%);
+    }
+}

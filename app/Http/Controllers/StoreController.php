@@ -48,7 +48,28 @@ class StoreController extends Controller
             return $t;
         })->filter(fn ($t) => $t['products']->isNotEmpty())->values();
 
-        return view('home', ['descTabs' => $descTabs]);
+        // Hero : 6 slides, chacune tire une image au hasard dans son lot
+        // (public/media/banners/hero-<slide>-*.jpg) -> visuel différent à chaque chargement.
+        $slides = [
+            ['n' => 1, 'href' => '/descontos70',            'h2' => 'Descontos até 70%',      'p' => 'Em sofás, mobiliário e descanso',                'cta' => 'Ver ofertas'],
+            ['n' => 2, 'href' => '/descanso',               'h2' => 'Quarto completo',        'p' => 'Camas, colchões e roupeiros para o seu descanso', 'cta' => 'Descobrir'],
+            ['n' => 3, 'href' => '/salas-de-jantar',        'h2' => 'Salas de jantar',        'p' => 'Mesas, cadeiras e aparadores com estilo',        'cta' => 'Ver coleção'],
+            ['n' => 4, 'href' => '/decoracao',              'h2' => 'Decoração',              'p' => 'Os detalhes que fazem a sua casa',               'cta' => 'Explorar'],
+            ['n' => 5, 'href' => '/roupeiros',              'h2' => 'Arrumação inteligente',  'p' => 'Roupeiros e closets à sua medida',               'cta' => 'Ver roupeiros'],
+            ['n' => 6, 'href' => '/mobiliario-de-exterior', 'h2' => 'Mobiliário de exterior', 'p' => 'Aproveite o jardim e a varanda',                 'cta' => 'Ver exterior'],
+        ];
+        $hero = array_map(function ($s) {
+            $pool = glob(public_path("media/banners/hero-{$s['n']}-*.jpg"))
+                ?: glob(public_path("media/banners/hero-{$s['n']}.jpg"));
+            $s['img'] = $pool ? '/media/banners/'.basename($pool[array_rand($pool)]) : '/media/banners/hero-1.jpg';
+            return $s;
+        }, $slides);
+
+        // Vidéo : une au hasard parmi public/videos/promo-*.mp4 (repli sur promo.mp4).
+        $vids = glob(public_path('videos/promo-*.mp4'));
+        $heroVideo = $vids ? '/videos/'.basename($vids[array_rand($vids)]) : '/videos/promo.mp4';
+
+        return view('home', compact('descTabs', 'hero', 'heroVideo'));
     }
 
     /** Pages institutionnelles -> vue Blade dans resources/views/pages/. */
