@@ -26,7 +26,7 @@
                 
             <p>Em caso de litígio, informamos que o cliente pode recorrer às entidades de resolução alternativa de litígios de consumo abaixo indicadas.</p>
 
-            <p>Direção-Geral do Consumidor<br>
+            <p>Direção-contacto do Consumidor<br>
                 <a href='https://www.consumidor.gov.pt/'>https://www.consumidor.gov.pt/</a></p>
 
             <p>Resolução de Litígios Online<br>

@@ -86,9 +86,9 @@
 
 
     <!-- Place this data between the <head> tags of your website -->
-    <title>@yield('title', 'SofáLar')</title>
+    <title>@yield('title', 'DFP Interiores')</title>
     <meta name="description"
-        content="SofáLar: Especialistas em Sofás e Mobiliário para a sua casa. Qualidade, design moderno e os melhores preços do mercado. Entrega rápida e garantida. Renove o seu lar hoje!" />
+        content="DFP Interiores: Especialistas em Sofás e Mobiliário para a sua casa. Qualidade, design moderno e os melhores preços do mercado. Entrega rápida e garantida. Renove o seu lar hoje!" />
 
 
     <meta itemprop="image" content="/social.jpg">
@@ -96,27 +96,27 @@
     <meta property="og:image" content="/social.jpg" />
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="SofáLar">
+    <meta itemprop="name" content="DFP Interiores">
     <meta itemprop="description"
-        content="SofáLar: Especialistas em Sofás e Mobiliário para a sua casa. Qualidade, design moderno e os melhores preços do mercado. Entrega rápida e garantida. Renove o seu lar hoje!">
+        content="DFP Interiores: Especialistas em Sofás e Mobiliário para a sua casa. Qualidade, design moderno e os melhores preços do mercado. Entrega rápida e garantida. Renove o seu lar hoje!">
 
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@publisher_handle">
-    <meta name="twitter:title" content="SofáLar">
+    <meta name="twitter:title" content="DFP Interiores">
     <meta name="twitter:description"
-        content="SofáLar: Especialistas em Sofás e Mobiliário para a sua casa. Qualidade, design moderno e os melhores preços do mercado. Entrega rápida e garantida. Renove o seu lar hoje!">
+        content="DFP Interiores: Especialistas em Sofás e Mobiliário para a sua casa. Qualidade, design moderno e os melhores preços do mercado. Entrega rápida e garantida. Renove o seu lar hoje!">
     <meta name="twitter:creator" content="  @author_handle">
 
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="SofáLar" />
+    <meta property="og:title" content="DFP Interiores" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="" />
 
     <meta property="og:description" content="" />
-    <meta property="og:site_name" content="SofáLar" />
+    <meta property="og:site_name" content="DFP Interiores" />
 
 
 
@@ -817,7 +817,7 @@
 
                             <div class="d-flex justify-content-between">
                                 <div class="logo">
-                                    <a href="/"><img alt="SofáLar" src="/assets/images/novo_logo_fds.png"
+                                    <a href="/"><img alt="DFP Interiores" src="/assets/images/novo_logo_fds.png"
                                             style="width: 100%;"></a>
                                 </div>
 
@@ -1367,7 +1367,7 @@
                                 </svg>
                             </a>
                             <a href="/" class='logo'>
-                                <img src="/assets/images/novo_logo_fds.png" alt="SofáLar">
+                                <img src="/assets/images/novo_logo_fds.png" alt="DFP Interiores">
                             </a>
                             <a @click="offside.toggle('procurar')" class='Buttons OpenProcura'>
                                 <svg width="28px" height="28px" viewBox="0 0 24 24" fill="none"
@@ -1532,7 +1532,7 @@
                                         Os preços riscados são os Preços de Venda recomendados pelos fabricantes. Válido
                                         apenas na loja Online.
                                         <br>
-                                        Copyright 2026 - SofáLar todos os direitos reservados.
+                                        Copyright 2026 - DFP Interiores todos os direitos reservados.
                                     </p>
                                 </div>
                                 <div>

@@ -49,7 +49,7 @@
     <div class="card">
         <h2>Contactos</h2>
         <div class="contact-row"><b>Empresa</b><span>DFP Interiores, Unipessoal Lda · NIF 504074571</span></div>
-        <div class="contact-row"><b>Email</b><span><a href="mailto:geral@dfpinteriores.pt">geral@dfpinteriores.pt</a></span></div>
+        <div class="contact-row"><b>Email</b><span><a href="mailto:contacto@dfpinteriores.com">contacto@dfpinteriores.com</a></span></div>
         <div class="contact-row"><b>Horário</b><span>Segunda a Sexta 9h-22h · Sábado 9h-18h</span></div>
         <div class="contact-row"><b>Morada</b><span>Rua José Francisco Fragoso, n.º 45, 7080-035 Vendas Novas</span></div>
     </div>

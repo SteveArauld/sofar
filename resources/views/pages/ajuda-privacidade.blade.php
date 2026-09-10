@@ -74,7 +74,7 @@
 				<li>Retirada do consentimento</li>
 			</ul>
 			<p>Pode exercer os seus direitos através de:
-				<strong><a href="mailto:geral@dfpinteriores.pt">geral@dfpinteriores.pt</a></strong>
+				<strong><a href="mailto:contacto@dfpinteriores.com">contacto@dfpinteriores.com</a></strong>
 			</p>
 			<p>Tem também o direito de apresentar reclamação junto da Comissão Nacional de Proteção de Dados (CNPD).</p>
 
@@ -105,7 +105,7 @@
 			<p>O envio de comunicações comerciais depende do consentimento do utilizador, podendo este ser retirado a qualquer momento.</p>
 
 			<h3>14. Contactos</h3>
-			<p>Email: <a href="mailto:geral@dfpinteriores.pt">geral@dfpinteriores.pt</a></p>
+			<p>Email: <a href="mailto:contacto@dfpinteriores.com">contacto@dfpinteriores.com</a></p>
 			<p>Morada: Rua José Francisco Fragoso, n.º 45, 7080-035 Vendas Novas – Portugal</p>
 
 			<h3>15. Atualizações</h3>

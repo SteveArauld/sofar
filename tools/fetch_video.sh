@@ -1,7 +1,7 @@
 #!/bin/bash
 cd "$(dirname "$0")/.."
 UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36"
-URL="https://www.dfpinteriores.pt/videos/promo.mp4"
+URL="https://www.dfpinteriores.com/videos/promo.mp4"
 for try in $(seq 1 12); do
   curl -sS --fail --compressed --http1.1 -A "$UA" -m 600 -o /tmp/promo_dl.mp4 "$URL" && {
     sz=$(wc -c < /tmp/promo_dl.mp4)

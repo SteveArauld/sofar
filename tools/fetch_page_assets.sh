@@ -3,7 +3,7 @@
 # (CSS lojas, JS modules, photos des magasins).
 cd "$(dirname "$0")/.."
 UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
-B="https://www.dfpinteriores.pt"
+B="https://www.dfpinteriores.com"
 get() { # relpath
   local rel="$1" dst="public/$1"
   [ -s "$dst" ] && { echo "skip $rel"; return; }

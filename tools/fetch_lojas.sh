@@ -7,7 +7,7 @@ while IFS= read -r f; do
   [ -s "$dst" ] && { echo "skip $f"; continue; }
   for t in 1 2 3 4; do
     code=$(curl -s -G --data-urlencode "x=" --compressed --http1.1 -A "$UA" -m 90 \
-      -o "$dst" -w "%{http_code}" "https://www.dfpinteriores.pt/assets/images/lojas/$f")
+      -o "$dst" -w "%{http_code}" "https://www.dfpinteriores.com/assets/images/lojas/$f")
     sz=$(wc -c < "$dst" 2>/dev/null || echo 0)
     [ "$code" = 200 ] && [ "$sz" -gt 200 ] && { echo "ok   $f (${sz}o)"; break; }
     sleep 3

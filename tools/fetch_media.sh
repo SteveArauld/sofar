@@ -9,7 +9,7 @@ get() {
   if [ -s "$dst" ]; then echo "skip $rel"; return; fi
   mkdir -p "$(dirname "$dst")"
   for try in 1 2 3 4 5; do
-    code=$(curl -s --compressed --http1.1 -A "$UA" -m 120 -o "$dst" -w "%{http_code}" "https://www.dfpinteriores.pt/$rel")
+    code=$(curl -s --compressed --http1.1 -A "$UA" -m 120 -o "$dst" -w "%{http_code}" "https://www.dfpinteriores.com/$rel")
     sz=$(wc -c < "$dst" 2>/dev/null || echo 0)
     if [ "$code" = "200" ] && [ "$sz" -gt 100 ]; then echo "ok   $rel (${sz}b)"; return; fi
     sleep $((try*3))
@@ -20,7 +20,7 @@ get() {
 # vidéo : hors public/ pour passer par la route Laravel (support Range/206)
 mkdir -p storage/app/media/videos
 if [ ! -s storage/app/media/videos/promo.mp4 ]; then
-  curl -s --compressed --http1.1 -A "$UA" -m 180 -o storage/app/media/videos/promo.mp4 "https://www.dfpinteriores.pt/videos/promo.mp4" && echo "ok   promo.mp4" || echo "FAIL promo.mp4"
+  curl -s --compressed --http1.1 -A "$UA" -m 180 -o storage/app/media/videos/promo.mp4 "https://www.dfpinteriores.com/videos/promo.mp4" && echo "ok   promo.mp4" || echo "FAIL promo.mp4"
 fi
 get "social.jpg"
 get "images/70-70/Desconto.jpg"

@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * Schéma du catalogue importé depuis dfpinteriores.pt (scraper Python -> output/*.json).
+ * Schéma du catalogue importé depuis dfpinteriores.com (scraper Python -> output/*.json).
  * Les clés primaires `id` reprennent les identifiants du site source.
  */
 return new class extends Migration

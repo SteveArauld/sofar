@@ -35,7 +35,7 @@
         <p class="contato">
           <span class="email">
             <i class="fa fa-envelope" aria-hidden="true" style="font-size:13px;margin-right:4px;margin-left:3px"></i>
-            <a href="mailto:geral@dfpinteriores.pt">geral@dfpinteriores.pt</a>
+            <a href="mailto:contacto@dfpinteriores.com">contacto@dfpinteriores.com</a>
           </span>
         </p>
 

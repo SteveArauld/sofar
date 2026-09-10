@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Scraper complet pour https://www.dfpinteriores.pt/
+Scraper complet pour https://www.dfpinteriores.com/
 
 Récupère :
   - Toutes les catégories (arborescence parent/enfant) -> output/categories.json
@@ -529,7 +529,7 @@ def scrape_product(prod, categories, img_size, want_images):
 #  Programme principal
 # --------------------------------------------------------------------------- #
 def main():
-    ap = argparse.ArgumentParser(description="Scraper dfpinteriores.pt")
+    ap = argparse.ArgumentParser(description="Scraper dfpinteriores.com")
     ap.add_argument("--limit", type=int, default=0, help="limiter le nombre de produits (test)")
     ap.add_argument("--workers", type=int, default=5, help="threads (défaut 5)")
     ap.add_argument("--img-size", default="800-800",
