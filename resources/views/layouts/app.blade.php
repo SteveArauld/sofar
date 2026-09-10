@@ -188,7 +188,7 @@
         <div class="whatsapp">
 
             <a target="_blank" id="BottomWhatsapp"
-                onclick="window.open('https://api.whatsapp.com/send?phone=351227669043', 'newwindow', 'width=632,height=750');"><img
+                onclick="window.open('https://api.whatsapp.com/send?phone=351912026453', 'newwindow', 'width=632,height=750');"><img
                     src="/assets/whatsapp.png" alt='Whatsapp Logo'></a>
         </div>
         <style>
