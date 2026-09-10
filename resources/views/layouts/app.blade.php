@@ -1494,6 +1494,7 @@
                                     <p>DFP Interiores, Unipessoal Lda</p>
                                     <p>Rua José Francisco Fragoso, n.º 45<br>7080-035 Vendas Novas</p>
                                     <p><a href="mailto:contacto@dfpinteriores.com">contacto@dfpinteriores.com</a></p>
+                                    <p><a href="tel:+351912026453">+351 912 026 453</a></p>
                                     <p><small>NIF 504074571</small></p>
                                 </div>
 

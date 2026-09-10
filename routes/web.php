@@ -15,6 +15,16 @@ Route::get('/', [StoreController::class, 'home'])->name('home');
 Route::get('/feed/produtos.xml', [FeedController::class, 'xml'])->name('feed.xml');
 Route::get('/feed/produtos.xml/download', [FeedController::class, 'download'])->name('feed.download');
 
+// Flux GMC conforme (fichier statique dans public/) affiché dans le navigateur
+Route::get('/dfpinteriores-gmc-conforme.xml', function () {
+    $path = public_path('dfpinteriores-gmc-conforme.xml');
+    abort_unless(is_file($path), 404);
+
+    return response()->file($path, ['Content-Type' => 'application/xml; charset=UTF-8']);
+})->name('gmc.conforme');
+
+
+
 // --- Panier (session) ---
 Route::post('/carrinho/add', [CartController::class, 'add'])->name('cart.add');
 Route::post('/carrinho/update', [CartController::class, 'update'])->name('cart.update');

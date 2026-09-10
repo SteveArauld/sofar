@@ -37,6 +37,10 @@
             <i class="fa fa-envelope" aria-hidden="true" style="font-size:13px;margin-right:4px;margin-left:3px"></i>
             <a href="mailto:contacto@dfpinteriores.com">contacto@dfpinteriores.com</a>
           </span>
+          <span class="telefone">
+            <i class="fa fa-phone" aria-hidden="true" style="font-size:13px;margin-right:4px;margin-left:3px"></i>
+            <a href="tel:+351912026453">+351 912 026 453</a>
+          </span>
         </p>
 
         <p style="font-size:13px;color:#666;">
