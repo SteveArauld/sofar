@@ -40,7 +40,7 @@ return [
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
             // WAL + attente sur verrou : lectures concurrentes (serveur web) sans
             // « database is locked » pendant les gros imports.
-            'busy_timeout' => 15000,
+            'busy_timeout' => (int) env('DB_BUSY_TIMEOUT', 30000),
             'journal_mode' => 'WAL',
             'synchronous' => 'NORMAL',
             'transaction_mode' => 'DEFERRED',

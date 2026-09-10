@@ -25,6 +25,14 @@ class ImportCatalog extends Command
 
     public function handle(): int
     {
+        // SQLite : WAL + longue attente sur verrou, appliqué même si la config
+        // est en cache sur le serveur de prod (le site tourne pendant l'import).
+        if (DB::connection()->getDriverName() === 'sqlite') {
+            DB::statement('PRAGMA journal_mode = WAL');
+            DB::statement('PRAGMA synchronous = NORMAL');
+            DB::statement('PRAGMA busy_timeout = 60000');
+        }
+
         $base = rtrim($this->option('path') ?: database_path('data'), '/');
         $prodFile = "$base/products.json";
         $catFile  = "$base/categories.json";
@@ -103,6 +111,8 @@ class ImportCatalog extends Command
         $copyImages = ! $this->option('no-images');
 
         foreach ($products as $p) {
+            // 5 tentatives : sur hébergement mutualisé le site en prod écrit dans
+            // la même base SQLite (sessions, etc.) -> « database is locked » possible.
             DB::transaction(function () use ($p, $slugToId, $imgSrcDir, $copyImages) {
                 $catSlug = $p['category_slug'] ?? null;
 
@@ -240,7 +250,7 @@ class ImportCatalog extends Command
                         'raw'         => $r,
                     ]);
                 }
-            });
+            }, 5);
             $bar->advance();
         }
         $bar->finish();
