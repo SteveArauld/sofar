@@ -120,8 +120,13 @@
                 @endforeach
 
                 <div class="row"><span>Subtotal</span><span>{{ number_format((float) $cart['subtotal'], 2, ',', ' ') }}€</span></div>
-                <div class="row"><span>Portes</span><span>Grátis</span></div>
+                <div class="row"><span>Portes de envio</span><span>Grátis</span></div>
                 <div class="row total"><span>Total</span><span>{{ number_format((float) $cart['subtotal'], 2, ',', ' ') }}€</span></div>
+                <p style="font-size:13px;color:#555;margin:8px 0 0;">
+                    Envio gratuito para todo o Portugal.<br>
+                    Entrega em 2 a 4 dias úteis (preparação 1-2 dias + transporte 1-2 dias).<br>
+                    Pagamento: Referência Multibanco.
+                </p>
 
                 <label class="check-row">
                     <input type="checkbox" name="terms" value="1" {{ old('terms') ? 'checked' : '' }}>

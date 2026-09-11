@@ -1474,12 +1474,17 @@
                                     <h3>Links Úteis</h3>
                                     <ul>
                                         <li><a href="/lojas">As nossas lojas</a></li>
+                                        <li><a href="/contactos">Contactos</a></li>
                                         <li><a href="/ajuda/termos-e-condicoes">Termos e Condições</a></li>
                                         <li><a href="/ajuda/politica-privacidade">Política de Privacidade</a></li>
+                                        <li><a href="/ajuda/politica-de-cookies">Política de Cookies</a></li>
+                                        <li><a href="/ajuda/politica-de-envios">Política de Envios e Entregas</a></li>
+                                        <li><a href="/ajuda/politica-de-devolucoes">Política de Devoluções e Reembolsos</a></li>
                                         <li><a href="/ajuda/recrutamento">Recrutamento</a></li>
                                         <li><a href="/ajuda/resolucao-alternativa-litigios">Resolução Alternativa de
-                                                Litigios</a></li>
-
+                                                Litígios</a></li>
+                                        <li><a href="https://www.livroreclamacoes.pt/inicio/" target="_blank" rel="noopener">Livro de Reclamações</a></li>
+                                        <li><a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">Resolução de Litígios em Linha (UE)</a></li>
                                     </ul>
                                 </div>
 
@@ -1534,8 +1539,7 @@
                             <div class="container">
                                 <div>
                                     <p>
-                                        Preços válidos de <b>01/08/2026</b> a <b>31/08/2026</b> salvo erro de publicação e
-                                        limitados ao stock existente.
+                                        Preços válidos salvo erro de publicação e limitados ao stock existente.
                                         <br>
                                         Os preços riscados são os Preços de Venda recomendados pelos fabricantes. Válido
                                         apenas na loja Online.

@@ -103,6 +103,9 @@
 									<img src="/assets/images/fast.png" style="width: 20px; margin-right: 5px;">
 									<small style="vertical-align: sub;"><b>Entrega entre ${ artigo?.prazo_entrega.replace('-', ' a ') } dias úteis</b></small>
 								</div>
+								<div class="PrazoEntrega" style="margin-top:4px;">
+									<small style="vertical-align: sub;">Entrega em 2 a 4 dias úteis (preparação 1-2 dias + transporte 1-2 dias). <b>Envio grátis para todo o Portugal.</b></small>
+								</div>
 
 								<div v-if="selectedOption " class="ConsultaStockLoja">
 									<a @click="consultaStockLojas" :class="{'loading': StockLojas.loading }">

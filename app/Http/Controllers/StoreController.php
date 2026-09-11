@@ -64,6 +64,10 @@ class StoreController extends Controller
             'ajuda__politica-privacidade'           => 'pages.ajuda-privacidade',
             'ajuda__recrutamento'                   => 'pages.ajuda-recrutamento',
             'ajuda__resolucao-alternativa-litigios' => 'pages.ajuda-ral',
+            'ajuda__politica-de-cookies'            => 'pages.ajuda-cookies',
+            'ajuda__politica-de-envios'             => 'pages.ajuda-envios',
+            'ajuda__politica-de-devolucoes'         => 'pages.ajuda-devolucoes',
+            'contactos'                             => 'pages.contactos',
         ][$key] ?? null;
 
         abort_unless($view && view()->exists($view), 404);

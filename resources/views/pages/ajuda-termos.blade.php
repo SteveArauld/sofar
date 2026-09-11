@@ -23,7 +23,7 @@
     <div class="container">
 <p><strong>1. Âmbito e Objeto</strong></p>
 <p>&nbsp;</p>
-<p>1.1.&nbsp;Os presentes Termos e Condições Gerais de Venda têm por objeto descrever as condições de acesso e de utilização do sítio da Internet&nbsp;www.dfpinteriores.com&nbsp;(doravante: “Site”) pelas pessoas singulares que acedem ao Site para fins não profissionais (“Utilizadores”), bem como explanar as condições contratuais aplicáveis à compra de produtos à distância através do Site, desde o ato da encomenda aos diversos serviços prestados pela&nbsp;DFP Interiores, incluindo os modos de pagamento e as condições de serviços de entrega dos produtos encomendados. Ao navegar no Site ou ao realizar uma compra&nbsp;online&nbsp;através do mesmo, os Utilizadores declaram ser maiores de 18 anos e ter capacidade legal para celebrar contratos e efetuar pagamentos.<br><br>1.2. O sítio da Internet&nbsp;www.dfpinteriores.com&nbsp;pertence à&nbsp;DFP Interiores, marca detida por&nbsp;DFP Interiores, Unipessoal Lda, com sede social na&nbsp;Rua José Francisco Fragoso, n.º 45, 7080-035 Vendas Novas, e o endereço de correio eletrónico&nbsp;<a href="mailto:contacto@dfpinteriores.com">contacto@dfpinteriores.com</a>, como pessoa coletiva n.ºpessoa coletiva n.ºn°&nbsp;504074571nbsp;504074571nbsp;504074571, matriculada na conservatória do registo comercial de Vendas Novas sob o mesmo número, com o capital social de 500.000,00 €.</p>
+<p>1.1.&nbsp;Os presentes Termos e Condições Gerais de Venda têm por objeto descrever as condições de acesso e de utilização do sítio da Internet&nbsp;www.dfpinteriores.com&nbsp;(doravante: “Site”) pelas pessoas singulares que acedem ao Site para fins não profissionais (“Utilizadores”), bem como explanar as condições contratuais aplicáveis à compra de produtos à distância através do Site, desde o ato da encomenda aos diversos serviços prestados pela&nbsp;DFP Interiores, incluindo os modos de pagamento e as condições de serviços de entrega dos produtos encomendados. Ao navegar no Site ou ao realizar uma compra&nbsp;online&nbsp;através do mesmo, os Utilizadores declaram ser maiores de 18 anos e ter capacidade legal para celebrar contratos e efetuar pagamentos.<br><br>1.2. O sítio da Internet&nbsp;www.dfpinteriores.com&nbsp;pertence à&nbsp;DFP Interiores, marca detida por&nbsp;DFP Interiores, Unipessoal Lda, com sede social na&nbsp;Rua José Francisco Fragoso, n.º 45, 7080-035 Vendas Novas, e o endereço de correio eletrónico&nbsp;<a href="mailto:contacto@dfpinteriores.com">contacto@dfpinteriores.com</a>, como pessoa coletiva n.º&nbsp;504074571, matriculada na conservatória do registo comercial de Vendas Novas sob o mesmo número, com o capital social de 500.000,00 €.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p><strong>2. Lei Aplicável</strong></p>
@@ -296,7 +296,7 @@
 <p>&nbsp;</p>
 <p>Rua José Francisco Fragoso, n.º 45, 7080-035 Vendas Novas</p>
 <p>&nbsp;</p>
-<p>NIFNIF&nbsp;504074571nbsp;504074571</p>
+<p>NIF&nbsp;504074571</p>
 </div>
 @endverbatim
 @endsection

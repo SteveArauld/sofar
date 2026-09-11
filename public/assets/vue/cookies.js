@@ -39,16 +39,16 @@ window.cookiesLogic = function(){
 
     const cookie_rejeitarTodos = () => {
         Object.keys(consent.value.cookies).forEach(key => consent.value.cookies[key] = false);
-        saveAndClose(2);
+        saveAndClose(180);
     };
 
     const cookie_aceitarTodos = () => {
         Object.keys(consent.value.cookies).forEach(key => consent.value.cookies[key] = true);
-        saveAndClose(30);
+        saveAndClose(180);
     };
 
     const cookie_aceitarSelecionados = () => {
-        saveAndClose(2);
+        saveAndClose(180);
     };
     const saveAndClose = (days) => {
         setCookie("consentCookies", consent.value.cookies, days);
