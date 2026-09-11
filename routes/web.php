@@ -15,15 +15,41 @@ Route::get('/', [StoreController::class, 'home'])->name('home');
 Route::get('/feed/produtos.xml', [FeedController::class, 'xml'])->name('feed.xml');
 Route::get('/feed/produtos.xml/download', [FeedController::class, 'download'])->name('feed.download');
 
-// Flux GMC conforme (fichier statique dans public/) affiché dans le navigateur
-Route::get('/dfpinteriores-gmc-conforme.xml', function () {
-    $path = public_path('dfpinteriores-gmc-conforme.xml');
+// Flux GMC conforme (généré par `php artisan feed:build`) — URL publique stable
+$serveFeed = function (string $file) {
+    $path = public_path($file);
     abort_unless(is_file($path), 404);
 
     return response()->file($path, ['Content-Type' => 'application/xml; charset=UTF-8']);
-})->name('gmc.conforme');
+};
+Route::get('/feeds/google-merchant.xml', fn () => $serveFeed('feeds/google-merchant.xml'))->name('feed.gmc');
+Route::get('/dfpinteriores-gmc-conforme.xml', fn () => $serveFeed('dfpinteriores-gmc-conforme.xml'))->name('gmc.conforme');
 
+// Sitemap XML : pages institutionnelles + fiches produit publiées (avec image).
+Route::get('/sitemap.xml', function () {
+    $base = rtrim(config('feed.base_url'), '/');
+    $static = ['', '/lojas', '/contactos', '/apoioaocliente', '/ajuda/termos-e-condicoes',
+        '/ajuda/politica-privacidade', '/ajuda/politica-de-cookies', '/ajuda/politica-de-envios',
+        '/ajuda/politica-de-devolucoes', '/ajuda/resolucao-alternativa-litigios', '/ajuda/recrutamento'];
 
+    return response()->stream(function () use ($base, $static) {
+        $out = fopen('php://output', 'w');
+        fwrite($out, '<?xml version="1.0" encoding="UTF-8"?>'."\n".'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'."\n");
+        foreach ($static as $p) {
+            fwrite($out, '  <url><loc>'.htmlspecialchars($base.$p, ENT_XML1).'</loc></url>'."\n");
+        }
+        \App\Models\Product::query()->whereHas('images')->where('price', '>', 0)
+            ->orderBy('id')->chunk(500, function ($chunk) use ($out, $base) {
+                foreach ($chunk as $p) {
+                    $seg = implode('/', array_map('rawurlencode', explode('/', ltrim((string) $p->slug, '/'))));
+                    fwrite($out, '  <url><loc>'.htmlspecialchars($base.'/'.$seg, ENT_XML1).'</loc></url>'."\n");
+                }
+                flush();
+            });
+        fwrite($out, '</urlset>'."\n");
+        fclose($out);
+    }, 200, ['Content-Type' => 'application/xml; charset=UTF-8']);
+})->name('sitemap');
 
 // --- Panier (session) ---
 Route::post('/carrinho/add', [CartController::class, 'add'])->name('cart.add');
@@ -76,6 +102,10 @@ Route::get('/ajuda/termos-e-condicoes', [StoreController::class, 'page'])->defau
 Route::get('/ajuda/politica-privacidade', [StoreController::class, 'page'])->defaults('key', 'ajuda__politica-privacidade')->name('ajuda.privacidade');
 Route::get('/ajuda/recrutamento', [StoreController::class, 'page'])->defaults('key', 'ajuda__recrutamento')->name('ajuda.recrutamento');
 Route::get('/ajuda/resolucao-alternativa-litigios', [StoreController::class, 'page'])->defaults('key', 'ajuda__resolucao-alternativa-litigios')->name('ajuda.ral');
+Route::get('/ajuda/politica-de-cookies', [StoreController::class, 'page'])->defaults('key', 'ajuda__politica-de-cookies')->name('ajuda.cookies');
+Route::get('/ajuda/politica-de-envios', [StoreController::class, 'page'])->defaults('key', 'ajuda__politica-de-envios')->name('ajuda.envios');
+Route::get('/ajuda/politica-de-devolucoes', [StoreController::class, 'page'])->defaults('key', 'ajuda__politica-de-devolucoes')->name('ajuda.devolucoes');
+Route::get('/contactos', [StoreController::class, 'page'])->defaults('key', 'contactos')->name('contactos');
 
 // Pages de mise en avant : listes de produits (GET = page, POST = JSON filtres du JS officiel)
 Route::match(['get', 'post'], '/descontos70', [StoreController::class, 'listing'])->defaults('key', 'descontos70')->name('descontos70');

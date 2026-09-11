@@ -1,2 +1,15 @@
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /carrinho
+Disallow: /carrinho/
+Disallow: /cliente
+Disallow: /wishlist
+Disallow: /procura
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+Sitemap: https://dfpinteriores.com/sitemap.xml
