@@ -62,7 +62,7 @@
             <div class="row" v-if="Cart.desconto"><span>Desconto</span><span>- ${ Number(Cart.desconto).toFixed(2) }€</span></div>
             <div class="row"><span>Portes de envio</span><span>Grátis</span></div>
             <div class="row total"><span>Total</span><span>${ (Number(Cart.total) - Number(Cart.desconto || 0)).toFixed(2) }€</span></div>
-            <p style="font-size:13px;color:#555;margin:8px 0 0;">Envio grátis para todo o Portugal. Entrega em 2 a 4 dias úteis (preparação 1-2 dias + transporte 1-2 dias).</p>
+            <p style="font-size:13px;color:#555;margin:8px 0 0;">Envio grátis para todo o Portugal. Entrega em 1 a 3 dias úteis (preparação: 1 dia útil).</p>
             <a href="/carrinho/checkout" class="cta">Finalizar encomenda</a>
             <a href="/" class="keep">Continuar a comprar</a>
         </aside>

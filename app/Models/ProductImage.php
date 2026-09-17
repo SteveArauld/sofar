@@ -2,16 +2,22 @@
 
 namespace App\Models;
 
+use Database\Factories\ProductImageFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class ProductImage extends Model
 {
+    /** @use HasFactory<ProductImageFactory> */
+    use HasFactory;
+
     protected $guarded = [];
+
     public $timestamps = true;
 
     protected $casts = [
-        'raw'   => 'array',
+        'raw' => 'array',
         'price' => 'decimal:2',
     ];
 

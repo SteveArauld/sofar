@@ -30,15 +30,14 @@
             <h2>2. Prazos de entrega</h2>
             <p>Para os artigos disponíveis em stock:</p>
             <ul>
-                <li><b>Preparação da encomenda:</b> 1 a 2 dias úteis.</li>
-                <li><b>Transporte:</b> 1 a 2 dias úteis, para todo o Portugal.</li>
+                <li><b>Preparação da encomenda:</b> 1 dia útil.</li>
+                <li><b>Transporte:</b> até 2 dias úteis, para todo o Portugal.</li>
             </ul>
             <p style="font-size:16px;">
-                <b>Entrega em 2 a 4 dias úteis (preparação 1-2 dias + transporte 1-2 dias).</b>
+                <b>Entrega em 1 a 3 dias úteis (preparação: 1 dia útil).</b>
             </p>
-            <p>Os artigos por encomenda ou de fabrico à medida têm um prazo indicado na
-            respetiva ficha de produto, que acresce ao prazo de transporte acima.
-            Os prazos são contados em dias úteis, a partir da confirmação do pagamento.</p>
+            <p>Os prazos são contados em dias úteis, a partir da confirmação do pagamento.
+            Envio disponível em Portugal Continental e nas Regiões Autónomas dos Açores e da Madeira.</p>
 
             <h2>3. Custos de envio</h2>
             <p><b>Envio gratuito para todo o Portugal</b>, sem valor mínimo de encomenda.

@@ -4,7 +4,6 @@
 
 @push('head')
 <meta name="description" content="{{ $metaDescription }}">
-<link rel="canonical" href="{{ $canonical }}">
 <script type="application/ld+json">@json($schema, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE)</script>
 @endpush
 
@@ -64,10 +63,10 @@
 
 					</div>
 					<div class="col-sm-5 Conteudo">
-						<div class="ProdutoNome"> {{ $productName }} <div class="ref">Ref:
+						<h1 class="ProdutoNome"> {{ $productName }} <div class="ref">Ref:
 									<span >{{ $productRef }}</span>
 								</div>
-						</div>
+						</h1>
 
 						<div class="Bloco1">
 								
@@ -80,10 +79,8 @@
 										<div v-if="selectedPrice" class="Desde">
 											${ Number(precos.atual) }€
 										</div>
-
 										<div v-else class="Desde">
-											<small>DESDE</small>
-											${ Number(minPrice).toFixed(0) }€
+											{{ number_format($offer->offerPriceValue(), 2, ',', '') }}€
 										</div>
 										<span v-if="precos.desconto" class='percentDesconto'>${ precos.desconto }</span>
 									</span>
@@ -99,12 +96,8 @@
 									<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
 									INDISPONÍVEL
 								</div>
-								<div v-if="artigo.prazo_entrega" class="PrazoEntrega">
-									<img src="/assets/images/fast.png" style="width: 20px; margin-right: 5px;">
-									<small style="vertical-align: sub;"><b>Entrega entre ${ artigo?.prazo_entrega.replace('-', ' a ') } dias úteis</b></small>
-								</div>
 								<div class="PrazoEntrega" style="margin-top:4px;">
-									<small style="vertical-align: sub;">Entrega em 2 a 4 dias úteis (preparação 1-2 dias + transporte 1-2 dias). <b>Envio grátis para todo o Portugal.</b></small>
+									<small style="vertical-align: sub;">{{ $merchantDelivery }}</small>
 								</div>
 
 								<div v-if="selectedOption " class="ConsultaStockLoja">
@@ -311,7 +304,7 @@
 		</form>
 		
 		<div class="container descricaoCompleta">
-			<h1>	 </h1>
+			<h2 class="visually-hidden">Detalhes do produto</h2>
 @if($hasSpecs || $hasDesc)
 <div class="Tabs">
 

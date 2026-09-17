@@ -16,17 +16,15 @@ class CheckoutController extends Controller
 {
     public const SHIPPING = [
         'LEVANTAMENTO' => ['label' => 'Levantamento em loja', 'desc' => 'Grátis — pronto em 24-72h', 'cost' => 0.0],
-        'ENTREGA'      => ['label' => 'Entrega ao domicílio', 'desc' => 'Portugal Continental', 'cost' => 45.0],
+        'ENTREGA' => ['label' => 'Entrega ao domicílio', 'desc' => 'Grátis — 1 a 3 dias úteis em todo o Portugal', 'cost' => 0.0],
     ];
 
     public const PAYMENT = [
         'MULTIBANCO' => ['label' => 'Referência Multibanco', 'desc' => 'Pague na caixa MB ou homebanking'],
-        'MBWAY'      => ['label' => 'MB WAY', 'desc' => 'Pagamento pelo telemóvel'],
+        'MBWAY' => ['label' => 'MB WAY', 'desc' => 'Pagamento pelo telemóvel'],
     ];
 
-    public function __construct(private CartService $cart)
-    {
-    }
+    public function __construct(private CartService $cart) {}
 
     public function show()
     {
@@ -38,9 +36,9 @@ class CheckoutController extends Controller
         $user = auth()->user();
 
         return view('pages.checkout', [
-            'cart'      => $cart,
-            'prefill'   => [
-                'name'  => old('name', $user->name ?? ''),
+            'cart' => $cart,
+            'prefill' => [
+                'name' => old('name', $user->name ?? ''),
                 'email' => old('email', $user->email ?? ''),
                 'phone' => old('phone', $user->phone ?? ''),
             ],
@@ -57,20 +55,20 @@ class CheckoutController extends Controller
         $billingSame = ! $request->boolean('billing_different');
 
         $rules = [
-            'name'        => ['required', 'string', 'min:2', 'max:255'],
-            'email'       => ['required', 'email', 'max:255'],
-            'phone'       => ['required', 'string', 'max:32'],
-            'nif'         => ['nullable', 'string', 'max:32'],
-            'address'     => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'min:2', 'max:255'],
+            'email' => ['required', 'email', 'max:255'],
+            'phone' => ['required', 'string', 'max:32'],
+            'nif' => ['nullable', 'string', 'max:32'],
+            'address' => ['required', 'string', 'max:255'],
             'postal_code' => ['nullable', 'string', 'max:16'],
-            'city'        => ['required', 'string', 'max:255'],
-            'notes'       => ['nullable', 'string', 'max:2000'],
-            'terms'       => ['accepted'],
+            'city' => ['required', 'string', 'max:255'],
+            'notes' => ['nullable', 'string', 'max:2000'],
+            'terms' => ['accepted'],
         ] + ($billingSame ? [] : [
-            'billing_name'        => ['required', 'string', 'min:2', 'max:255'],
-            'billing_address'     => ['required', 'string', 'max:255'],
+            'billing_name' => ['required', 'string', 'min:2', 'max:255'],
+            'billing_address' => ['required', 'string', 'max:255'],
             'billing_postal_code' => ['nullable', 'string', 'max:16'],
-            'billing_city'        => ['required', 'string', 'max:255'],
+            'billing_city' => ['required', 'string', 'max:255'],
         ]);
 
         $validator = Validator::make($request->all(), $rules);
@@ -85,44 +83,44 @@ class CheckoutController extends Controller
         $data = $validator->validated();
 
         // Livraison et paiement fixes (plus de choix sur le checkout)
-        $shipMethod = 'LEVANTAMENTO';
+        $shipMethod = 'ENTREGA';
         $payMethod = 'MULTIBANCO';
         $shipCost = self::SHIPPING[$shipMethod]['cost'];
         $subtotal = (float) $cart['subtotal'];
         $total = $subtotal + $shipCost;
 
         $order = Order::create([
-            'ref'             => $this->makeRef(),
-            'user_id'         => auth()->id(),
-            'name'            => $data['name'],
-            'email'           => $data['email'],
-            'phone'           => $data['phone'],
-            'nif'             => $data['nif'] ?? null,
-            'address'         => $data['address'],
-            'postal_code'     => $data['postal_code'] ?? '',
-            'city'            => $data['city'],
-            'billing_same'    => $billingSame,
-            'billing_name'    => $billingSame ? null : $data['billing_name'],
+            'ref' => $this->makeRef(),
+            'user_id' => auth()->id(),
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'phone' => $data['phone'],
+            'nif' => $data['nif'] ?? null,
+            'address' => $data['address'],
+            'postal_code' => $data['postal_code'] ?? '',
+            'city' => $data['city'],
+            'billing_same' => $billingSame,
+            'billing_name' => $billingSame ? null : $data['billing_name'],
             'billing_address' => $billingSame ? null : $data['billing_address'],
             'billing_postal_code' => $billingSame ? null : ($data['billing_postal_code'] ?? null),
-            'billing_city'    => $billingSame ? null : $data['billing_city'],
-            'notes'           => $data['notes'] ?? null,
+            'billing_city' => $billingSame ? null : $data['billing_city'],
+            'notes' => $data['notes'] ?? null,
             'shipping_method' => $shipMethod,
-            'shipping_cost'   => $shipCost,
-            'payment_method'  => $payMethod,
-            'subtotal'        => $subtotal,
-            'total'           => $total,
-            'status'          => 'AGUARDAR',
-            'items_snapshot'  => $cart['items'],
+            'shipping_cost' => $shipCost,
+            'payment_method' => $payMethod,
+            'subtotal' => $subtotal,
+            'total' => $total,
+            'status' => 'AGUARDAR',
+            'items_snapshot' => $cart['items'],
         ]);
 
         foreach ($cart['items'] as $it) {
             $order->items()->create([
                 'product_id' => null,
-                'name'       => $it['nome'],
-                'variation'  => $it['variation'] ? collect($it['variation'])->map(fn ($v) => implode(': ', [array_key_first($v), reset($v)]))->implode(', ') : null,
+                'name' => $it['nome'],
+                'variation' => $it['variation'] ? collect($it['variation'])->map(fn ($v) => implode(': ', [array_key_first($v), reset($v)]))->implode(', ') : null,
                 'unit_price' => $it['preco'],
-                'qty'        => $it['qtd'],
+                'qty' => $it['qtd'],
                 'line_total' => $it['total'],
             ]);
         }
@@ -149,18 +147,18 @@ class CheckoutController extends Controller
         abort_unless(session('last_order_ref') === $ref || auth()->id() === $order->user_id, 403);
 
         return view('pages.checkout-sucesso', [
-            'order'    => $order,
+            'order' => $order,
             'shipping' => self::SHIPPING,
-            'payment'  => self::PAYMENT,
-            'mbRef'    => str_pad((string) random_int(0, 999999999), 9, '0', STR_PAD_LEFT),
-            'mbEntity' => '21' . random_int(100, 999),
+            'payment' => self::PAYMENT,
+            'mbRef' => str_pad((string) random_int(0, 999999999), 9, '0', STR_PAD_LEFT),
+            'mbEntity' => '21'.random_int(100, 999),
         ]);
     }
 
     private function makeRef(): string
     {
         do {
-            $ref = 'DFP-' . now()->format('ymd') . '-' . strtoupper(Str::random(4));
+            $ref = 'DFP-'.now()->format('ymd').'-'.strtoupper(Str::random(4));
         } while (Order::where('ref', $ref)->exists());
 
         return $ref;

@@ -29,6 +29,11 @@
         <env name="MAIL_MAILER" value="array"/>
         <env name="QUEUE_CONNECTION" value="sync"/>
         <env name="SESSION_DRIVER" value="array"/>
+        <env name="APP_URL" value="https://dfpinteriores.com"/>
+        <env name="FEED_BASE_URL" value="https://dfpinteriores.com"/>
+        <env name="MERCHANT_CURRENCY" value="EUR"/>
+        <env name="MERCHANT_TARGET_COUNTRY" value="PT"/>
+        <env name="MERCHANT_DEFAULT_BRAND" value="DFP Interiores"/>
         <env name="PULSE_ENABLED" value="false"/>
         <env name="TELESCOPE_ENABLED" value="false"/>
         <env name="NIGHTWATCH_ENABLED" value="false"/>

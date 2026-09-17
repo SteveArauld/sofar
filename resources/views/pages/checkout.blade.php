@@ -124,7 +124,7 @@
                 <div class="row total"><span>Total</span><span>{{ number_format((float) $cart['subtotal'], 2, ',', ' ') }}€</span></div>
                 <p style="font-size:13px;color:#555;margin:8px 0 0;">
                     Envio gratuito para todo o Portugal.<br>
-                    Entrega em 2 a 4 dias úteis (preparação 1-2 dias + transporte 1-2 dias).<br>
+                    Entrega em 1 a 3 dias úteis (preparação: 1 dia útil).<br>
                     Pagamento: Referência Multibanco.
                 </p>
 

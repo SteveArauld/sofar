@@ -6,30 +6,37 @@ return [
     |--------------------------------------------------------------------------
     | URL publique du site (liens absolus du flux Google Merchant Center)
     |--------------------------------------------------------------------------
-    | Sert à construire les <link> et <image_link> du flux. Doit être le
-    | domaine de production en https, indépendamment de APP_URL (qui peut
-    | rester http://localhost en développement).
     */
     'base_url' => rtrim(env('FEED_BASE_URL', env('APP_URL', 'https://dfpinteriores.com')), '/'),
+
+    'feed_token' => env('MERCHANT_FEED_TOKEN', ''),
+
+    'currency' => env('MERCHANT_CURRENCY', 'EUR'),
+    'target_country' => env('MERCHANT_TARGET_COUNTRY', 'PT'),
+    'store_brand' => env('MERCHANT_DEFAULT_BRAND', 'DFP Interiores'),
+    'shipping_price' => (float) env('MERCHANT_SHIPPING_PRICE', 0),
+    'return_days' => (int) env('MERCHANT_RETURN_DAYS', 14),
 
     /*
     |--------------------------------------------------------------------------
     | Règles de sélection (Google Merchant Center — marché Portugal)
     |--------------------------------------------------------------------------
+    | Livraison : gratuite dans tout le Portugal.
+    | Préparation : 1 jour. Transit : 0–2 jours. Total client : 1–3 jours.
     */
-    'min_price' => 80.00,   // prix TTC minimum pour entrer dans le flux
-    'free_shipping' => true,    // livraison gratuite pour tout le Portugal
-    'target_items' => 980,     // nombre visé (jamais dépassé, jamais compensé)
+    'min_price' => 80.00,
+    'free_shipping' => true,
+    'target_items' => 980,
 
-    'handling_time' => ['min' => 1, 'max' => 2], // jours ouvrés de préparation
-    'transit_time' => ['min' => 1, 'max' => 2], // jours ouvrés de transport
+    'handling_time' => [
+        'min' => (int) env('MERCHANT_HANDLING_MIN_DAYS', 1),
+        'max' => (int) env('MERCHANT_HANDLING_MAX_DAYS', 1),
+    ],
+    'transit_time' => [
+        'min' => (int) env('MERCHANT_SHIPPING_MIN_DAYS', 0),
+        'max' => (int) env('MERCHANT_SHIPPING_MAX_DAYS', 2),
+    ],
 
-    /*
-    | Marques fabricant réelles à conserver telles quelles. Toute autre valeur
-    | (ancien nom scrappé « Feira dos Sofás », vide, générique) est remplacée
-    | par le nom de la boutique.
-    */
-    'store_brand' => 'DFP Interiores',
     'real_brands' => [
         'COLMED', 'MD', 'FUNDOS MD', 'SANTI D`ITALIA', 'MOLAFLEX', 'EMMA',
         'TEMPUR', 'ECOSLEEP', 'SEALY', 'SLEEP PRO', 'PIKOLIN',

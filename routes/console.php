@@ -8,9 +8,7 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
 
-// Flux Google Merchant Center : régénéré chaque nuit + relançable à la main
-// (`php artisan feed:build`). À déclencher aussi après un import catalogue.
 Schedule::command('feed:build')
-    ->dailyAt('04:00')
-    ->withoutOverlapping()
+    ->hourly()
+    ->withoutOverlapping(55)
     ->runInBackground();

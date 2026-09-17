@@ -57,7 +57,7 @@
     <link rel="dns-prefetch" href="http://connect.facebook.net/">
     <link rel="dns-prefetch" href="http://www.googletagmanager.com/">
     <link rel="dns-prefetch" href="http://cdn.jsdelivr.net/">
-    <link rel="canonical" href="/">
+    <link rel="canonical" href="{{ $canonical ?? url()->current() }}">
 
 
 
@@ -173,6 +173,9 @@
 
 
 @stack('head')
+@if(!empty($organizationSchema))
+<script type="application/ld+json">@json($organizationSchema, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE)</script>
+@endif
 </head>
 
 <body>

@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
+Allow: /storage
+Allow: /assets
+Allow: /images
+Allow: /feeds
+Allow: /feed
 Disallow: /carrinho
 Disallow: /carrinho/
 Disallow: /cliente
@@ -8,8 +13,16 @@ Disallow: /procura
 
 User-agent: Googlebot
 Allow: /
+Allow: /storage
+Allow: /assets
+Allow: /images
+Allow: /feeds
+Allow: /feed
 
 User-agent: Googlebot-Image
 Allow: /
+Allow: /storage
+Allow: /assets
+Allow: /images
 
 Sitemap: https://dfpinteriores.com/sitemap.xml

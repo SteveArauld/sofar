@@ -4,26 +4,21 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\FeedController;
+use App\Http\Controllers\Merchant\GoogleFeedController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\SupportController;
 use App\Http\Controllers\WishlistController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [StoreController::class, 'home'])->name('home');
 
-// --- Flux produits Google Merchant Center (XML) ---
+// --- Flux produits Google Merchant Center (XML) — une seule source (GoogleProductMapper) ---
 Route::get('/feed/produtos.xml', [FeedController::class, 'xml'])->name('feed.xml');
 Route::get('/feed/produtos.xml/download', [FeedController::class, 'download'])->name('feed.download');
-
-// Flux GMC conforme (généré par `php artisan feed:build`) — URL publique stable
-$serveFeed = function (string $file) {
-    $path = public_path($file);
-    abort_unless(is_file($path), 404);
-
-    return response()->file($path, ['Content-Type' => 'application/xml; charset=UTF-8']);
-};
-Route::get('/feeds/google-merchant.xml', fn () => $serveFeed('feeds/google-merchant.xml'))->name('feed.gmc');
-Route::get('/dfpinteriores-gmc-conforme.xml', fn () => $serveFeed('dfpinteriores-gmc-conforme.xml'))->name('gmc.conforme');
+Route::get('/feeds/google-shopping.xml', [GoogleFeedController::class, 'xml'])->name('feed.shopping');
+Route::get('/feeds/google-merchant.xml', [GoogleFeedController::class, 'xml'])->name('feed.gmc');
+Route::get('/dfpinteriores-gmc-conforme.xml', [GoogleFeedController::class, 'xml'])->name('gmc.conforme');
 
 // Sitemap XML : pages institutionnelles + fiches produit publiées (avec image).
 Route::get('/sitemap.xml', function () {
@@ -38,7 +33,7 @@ Route::get('/sitemap.xml', function () {
         foreach ($static as $p) {
             fwrite($out, '  <url><loc>'.htmlspecialchars($base.$p, ENT_XML1).'</loc></url>'."\n");
         }
-        \App\Models\Product::query()->whereHas('images')->where('price', '>', 0)
+        Product::query()->whereHas('images')->where('price', '>', 0)
             ->orderBy('id')->chunk(500, function ($chunk) use ($out, $base) {
                 foreach ($chunk as $p) {
                     $seg = implode('/', array_map('rawurlencode', explode('/', ltrim((string) $p->slug, '/'))));

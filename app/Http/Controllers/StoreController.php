@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\Merchant\GoogleProductMapper;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductImage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 
 /**
@@ -23,8 +25,6 @@ class StoreController extends Controller
         'dourado' => '#D4AF37', 'prateado' => '#C0C0C0', 'terracota' => '#E2725B', 'creme' => '#FFFDD0',
         'taupe' => '#B38B6D', 'antracite' => '#293133', 'mostarda' => '#E1AD01',
     ];
-
-
 
     // ------------------------------------------------------------------ pages
 
@@ -56,18 +56,18 @@ class StoreController extends Controller
     {
         // clé de route -> vue Blade dans resources/views/pages/
         $view = [
-            'lojas'                                 => 'pages.lojas',
-            'carrinho'                              => 'pages.carrinho',
-            'wishlist'                              => 'pages.wishlist',
-            'cliente'                               => 'pages.cliente',
-            'ajuda__termos-e-condicoes'             => 'pages.ajuda-termos',
-            'ajuda__politica-privacidade'           => 'pages.ajuda-privacidade',
-            'ajuda__recrutamento'                   => 'pages.ajuda-recrutamento',
+            'lojas' => 'pages.lojas',
+            'carrinho' => 'pages.carrinho',
+            'wishlist' => 'pages.wishlist',
+            'cliente' => 'pages.cliente',
+            'ajuda__termos-e-condicoes' => 'pages.ajuda-termos',
+            'ajuda__politica-privacidade' => 'pages.ajuda-privacidade',
+            'ajuda__recrutamento' => 'pages.ajuda-recrutamento',
             'ajuda__resolucao-alternativa-litigios' => 'pages.ajuda-ral',
-            'ajuda__politica-de-cookies'            => 'pages.ajuda-cookies',
-            'ajuda__politica-de-envios'             => 'pages.ajuda-envios',
-            'ajuda__politica-de-devolucoes'         => 'pages.ajuda-devolucoes',
-            'contactos'                             => 'pages.contactos',
+            'ajuda__politica-de-cookies' => 'pages.ajuda-cookies',
+            'ajuda__politica-de-envios' => 'pages.ajuda-envios',
+            'ajuda__politica-de-devolucoes' => 'pages.ajuda-devolucoes',
+            'contactos' => 'pages.contactos',
         ][$key] ?? null;
 
         abort_unless($view && view()->exists($view), 404);
@@ -79,9 +79,9 @@ class StoreController extends Controller
     public function listing(string $key)
     {
         [$title, $h1] = match ($key) {
-            'descontos70'             => ['Descontos até 70% | DFP Interiores', 'Descontos até 70%'],
+            'descontos70' => ['Descontos até 70% | DFP Interiores', 'Descontos até 70%'],
             'artigosExclusivosOnline' => ['Artigos Exclusivos Online | DFP Interiores', 'Artigos Exclusivos Online'],
-            default                   => abort(404),
+            default => abort(404),
         };
 
         if ($json = $this->listingJson($key)) {
@@ -109,11 +109,11 @@ class StoreController extends Controller
         $products = $this->listingQuery($key)->paginate(24, ['*'], 'page', $page);
 
         return response()->json([
-            'html'      => $this->grid($products) ?: '',
-            'page'      => $products->currentPage(),
-            'pages'     => $products->lastPage(),
-            'total'     => $products->total(),
-            'artigos'   => $products->count(),
+            'html' => $this->grid($products) ?: '',
+            'page' => $products->currentPage(),
+            'pages' => $products->lastPage(),
+            'total' => $products->total(),
+            'artigos' => $products->count(),
             'dataLayer' => '{"event":"view_item_list"}',
         ]);
     }
@@ -125,8 +125,8 @@ class StoreController extends Controller
         $products = $this->listingQuery($key)->paginate(24, ['*'], 'page', max(1, (int) $request->get('page', 2)));
 
         return response()->json([
-            'html'  => $this->grid($products),
-            'page'  => $products->currentPage(),
+            'html' => $this->grid($products),
+            'page' => $products->currentPage(),
             'pages' => $products->lastPage(),
             'total' => $products->total(),
         ]);
@@ -175,6 +175,7 @@ class StoreController extends Controller
                     ->orWhere('ean', 'like', "%{$term}%")
                     ->orWhere('brand', 'like', "%{$term}%"));
             }
+
             return $q;
         }
 
@@ -198,6 +199,7 @@ class StoreController extends Controller
             if (is_array($v)) {
                 return array_values(array_filter($v, fn ($x) => $x !== '' && $x !== null));
             }
+
             return is_string($v) && $v !== '' ? array_filter(explode(',', $v), 'strlen') : [];
         };
 
@@ -235,11 +237,11 @@ class StoreController extends Controller
             ->orderByDesc('id');
 
         return match ($r->input('sort')) {
-            'precoasc'  => $q->orderBy('price'),
+            'precoasc' => $q->orderBy('price'),
             'precodesc' => $q->orderByDesc('price'),
-            'recentes'  => $q->orderByDesc('id'),
+            'recentes' => $q->orderByDesc('id'),
             'populares' => $popular($q),
-            default     => $popular($q),
+            default => $popular($q),
         };
     }
 
@@ -268,7 +270,7 @@ class StoreController extends Controller
         $dim = [];
         foreach (['largura', 'altura', 'comprimento'] as $d) {
             $vals = (clone $base)->selectRaw("CAST(json_extract(dimensions, '$.{$d}') AS REAL) as v")
-                ->whereRaw("v is not null")->pluck('v');
+                ->whereRaw('v is not null')->pluck('v');
             $dim[$d] = [(int) floor((float) $vals->min()), (int) ceil((float) $vals->max())];
         }
 
@@ -305,7 +307,7 @@ class StoreController extends Controller
         $i = 0;
         foreach ($f['brands'] as $brand => $count) {
             $id = 'marca'.$i++;
-            $html .= "<input class='Filtro' data-group='marcas' id='{$id}' type='checkbox' value='".e($brand)."' name='m'".$checked('marcas', $brand).">"
+            $html .= "<input class='Filtro' data-group='marcas' id='{$id}' type='checkbox' value='".e($brand)."' name='m'".$checked('marcas', $brand).'>'
                 ." <label for=\"{$id}\">".e($brand)." ({$count})</label>\n";
         }
         $html .= "</div>\n";
@@ -313,6 +315,7 @@ class StoreController extends Controller
         // --- Sliders prix/dimensions : markup EXACT du site (input text + data-slider-*) ---
         $slider = function ($cls, $name, $group, $title, $min, $max, $unit) {
             $max = max($max, $min + 1);
+
             return "<div class='BlocoFiltro'>\n<h2>".e($title)."</h2>\n"
                 ."<div class='SliderHolder Slider{$cls}Holder'>\n"
                 ."<input class=\"Slider{$cls} Slider Filtro\" name=\"{$name}\" data-group='{$group}' type=\"text\""
@@ -337,7 +340,7 @@ class StoreController extends Controller
         $i = 0;
         foreach ($colors as $name => $code) {
             $id = 'cor'.$i++;
-            $html .= "<input class='Filtro' data-group='cores' id='{$id}' type='checkbox' name='cores' data-field='cores' value='".e($name)."'".$checked('cores', $name).">"
+            $html .= "<input class='Filtro' data-group='cores' id='{$id}' type='checkbox' name='cores' data-field='cores' value='".e($name)."'".$checked('cores', $name).'>'
                 ." <label for='{$id}' data-id='{$i}' style='background-color: ".e($code).";' title='".e($name)."'></label>\n";
         }
         $html .= "</div>\n";
@@ -349,19 +352,17 @@ class StoreController extends Controller
     public function show(string $slug)
     {
 
-    
         if ($category = Category::where('slug', $slug)->first()) {
             if ($json = $this->listingJson($slug)) {
                 return $json;
             }
- 
+
             return $this->renderCategory($category);
         }
         if ($product = Product::where('slug', $slug)->first()) {
-        
-        return $this->renderProduct($product);
+
+            return $this->renderProduct($product);
         }
-      
 
         // Lien vers un produit non importé (ex. « produits vus récemment » figés
         // dans le miroir) : on tente un rapprochement, sinon on bascule vers la
@@ -414,13 +415,13 @@ class StoreController extends Controller
             ->where('name', 'like', "%{$q}%")->orWhere('sku', 'like', "%{$q}%")->orWhere('brand', 'like', "%{$q}%")
             ->orderByRaw('COALESCE(views_20d, 0) DESC')->limit(8)->get()
             ->map(fn (Product $p) => [
-                'name'       => $p->name,
-                'title'      => $p->name,
-                'link'       => $p->slug,
-                'in_stock'   => (bool) $p->in_stock,
+                'name' => $p->name,
+                'title' => $p->name,
+                'link' => $p->slug,
+                'in_stock' => (bool) $p->in_stock,
                 'availability' => $p->in_stock ? 'INSTOCK' : 'OUTOFSTOCK',
                 'image_link' => optional($p->images->first())->filename ? 'products/'.$p->images->first()->filename : '',
-                'images'     => $p->images->map(fn ($i) => 'products/'.$i->filename)->values()->all(),
+                'images' => $p->images->map(fn ($i) => 'products/'.$i->filename)->values()->all(),
             ])->all();
 
         return response()->json(['results' => [['hits' => $cats], ['hits' => $prods]]]);
@@ -459,24 +460,23 @@ class StoreController extends Controller
     }
 
     /** Pastilles de couleur d'une carte produit (comme le site : <span> par variante COR). */
-
     private function fillCategory(string $title, string $h1, $products, ?string $key, array $breadcrumb = [])
     {
         $filtro = [
-            'total'      => $products->total(),
-            'page'       => $products->currentPage(),
-            'perPage'    => $products->perPage(),
+            'total' => $products->total(),
+            'page' => $products->currentPage(),
+            'perPage' => $products->perPage(),
             'totalPages' => $products->lastPage(),
         ];
 
         return view('category', [
-            'metaTitle'  => $title,
-            'h1'         => $h1,
+            'metaTitle' => $title,
+            'h1' => $h1,
             'breadcrumb' => $breadcrumb,
-            'products'   => $products,
-            'filtro'     => $filtro,
-            'filters'    => $key === null ? '' : $this->filtersHtml($key),
-            'moreKey'    => $key,
+            'products' => $products,
+            'filtro' => $filtro,
+            'filters' => $key === null ? '' : $this->filtersHtml($key),
+            'moreKey' => $key,
             'moreScript' => $key === null ? '' : $this->moreScript($key, $filtro),
         ]);
     }
@@ -574,19 +574,19 @@ HTML;
             // officiel (catalogo.js -> variacaoMaisBarata) plante si variations est vide.
             $imgs = $product->images->map(fn (ProductImage $i) => 'products/'.$i->filename)->values()->all();
             $variations = [
-                'options'    => [],
+                'options' => [],
                 'variations' => [[
-                    'image'        => ['name' => $imgs[0] ?? null],
-                    'images'       => ['name' => $imgs],
-                    'precoantes'   => (float) ($product->price_before ?? 0),
-                    'preco'        => (float) $product->price,
-                    'precopromo'   => 0,
-                    'pid'          => (int) $product->id,
-                    'stock'        => (int) $product->stock,
-                    'stocklojas'   => 0,
+                    'image' => ['name' => $imgs[0] ?? null],
+                    'images' => ['name' => $imgs],
+                    'precoantes' => (float) ($product->price_before ?? 0),
+                    'preco' => (float) $product->price,
+                    'precopromo' => 0,
+                    'pid' => (int) $product->id,
+                    'stock' => (int) $product->stock,
+                    'stocklojas' => 0,
                     'lojascomstock' => 0,
                     'prazo_entrega' => null,
-                    'seguros'      => false,
+                    'seguros' => false,
                 ]],
             ];
         }
@@ -606,6 +606,7 @@ HTML;
                 foreach ($node as &$v) {
                     $stripImg($v);
                 }
+
                 return;
             }
             if (is_string($node) && preg_match('#(^|/)products/[^/]+\.(jpe?g|png|webp|avif)$#i', $node)) {
@@ -660,6 +661,7 @@ HTML;
                         $addVer($v);
                     }
                 }
+
                 return;
             }
             if (is_string($node) && preg_match('#^products/[^/?]+\.(jpe?g|png|webp|avif)$#i', $node)) {
@@ -679,49 +681,49 @@ HTML;
 
         // window.artigo doit avoir la forme attendue par le JS officiel (#_Product / compiled.1.js)
         $artigo = array_merge((array) ($product->source_payload ?: []), [
-            'id'              => (int) $product->id,
-            'ref'             => (string) $product->sku,
-            'ean'             => (string) $product->ean,
-            'marca'           => (string) $product->brand,
-            'nome'            => $product->name,
-            'url'             => $product->slug,
-            'textocurto'      => (string) $product->short_description_html,
-            'textolongo'      => (string) $product->long_description_html,
+            'id' => (int) $product->id,
+            'ref' => (string) $product->sku,
+            'ean' => (string) $product->ean,
+            'marca' => (string) $product->brand,
+            'nome' => $product->name,
+            'url' => $product->slug,
+            'textocurto' => (string) $product->short_description_html,
+            'textolongo' => (string) $product->long_description_html,
             'dadoslogisticos' => (string) $product->logistic_data_html,
             'entregamontagem' => (string) $product->delivery_assembly_html,
-            'categoria_nome'  => (string) $product->category_name,
-            'categoria_id'    => (int) $product->category_id,
-            'preco'           => (string) ($product->price ?? '0'),
-            'preco_antes'     => $product->price_before ? (string) $product->price_before : 0,
-            'preco_promo'     => 0,
-            'iva'             => $product->vat_percent,
-            'tax'             => $product->vat_percent,
-            'stock'           => (int) $product->stock,
-            'stock_global'    => (int) $product->stock_global,
-            'inStock'         => (bool) $product->in_stock,
-            'inStockLojas'    => false,
-            'stocklojas'      => 0,
+            'categoria_nome' => (string) $product->category_name,
+            'categoria_id' => (int) $product->category_id,
+            'preco' => (string) ($product->price ?? '0'),
+            'preco_antes' => $product->price_before ? (string) $product->price_before : 0,
+            'preco_promo' => 0,
+            'iva' => $product->vat_percent,
+            'tax' => $product->vat_percent,
+            'stock' => (int) $product->stock,
+            'stock_global' => (int) $product->stock_global,
+            'inStock' => (bool) $product->in_stock,
+            'inStockLojas' => false,
+            'stocklojas' => 0,
             // Le catalogue de la source se vend « por encomenda » : sauf indication
             // contraire (vende_apenas_stock = "Y"), l'article reste commandable même
             // à stock 0 — comme sur le site officiel.
-            'vende_apenas_stock'      => data_get($product->source_payload, 'vende_apenas_stock') ?: 'N',
-            'prazo_entrega_stock'     => data_get($product->source_payload, 'prazo_entrega_stock') ?: ($product->delivery_time_stock ?: '3-8'),
+            'vende_apenas_stock' => data_get($product->source_payload, 'vende_apenas_stock') ?: 'N',
+            'prazo_entrega_stock' => data_get($product->source_payload, 'prazo_entrega_stock') ?: ($product->delivery_time_stock ?: '3-8'),
             'prazo_entrega_encomenda' => data_get($product->source_payload, 'prazo_entrega_encomenda') ?: ($product->delivery_time_order ?: '15-30'),
-            'exclusivo_site'  => data_get($product->flags, 'exclusivo_site', 'N'),
-            'rating'          => (float) $product->rating,
-            'reviews'         => $product->reviews->map(fn ($r) => [
+            'exclusivo_site' => data_get($product->flags, 'exclusivo_site', 'N'),
+            'rating' => (float) $product->rating,
+            'reviews' => $product->reviews->map(fn ($r) => [
                 'nome' => $r->author, 'nota' => $r->rating, 'texto' => $r->body, 'data' => optional($r->reviewed_at)->toDateString(),
             ])->values()->all(),
-            'variations'      => $variations,
-            'variationsJson'  => json_encode($variations, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
-            'specs'           => $product->specs->pluck('value', 'attr'),
-            'servicosExtra'   => $product->extraServices->map(fn ($s) => [
+            'variations' => $variations,
+            'variationsJson' => json_encode($variations, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
+            'specs' => $product->specs->pluck('value', 'attr'),
+            'servicosExtra' => $product->extraServices->map(fn ($s) => [
                 'nome' => $s->name, 'preco' => $s->price, 'variation' => $s->variation,
                 'protec_id' => $s->protec_id, 'extra_erpid' => $s->extra_erpid, 'protec_erpid' => $s->protec_erpid,
             ])->values()->all(),
-            'relacionados'    => [],
-            'breadcrumb'      => $product->breadcrumb ?: [],
-            'images'          => $images,
+            'relacionados' => [],
+            'breadcrumb' => $product->breadcrumb ?: [],
+            'images' => $images,
         ]);
 
         $short = trim(strip_tags((string) $product->short_description_html));
@@ -732,41 +734,44 @@ HTML;
             ->implode('');
 
         $dataLayer = [
-            'event'     => 'view_item',
-            'event_id'  => Str::random(10),
+            'event' => 'view_item',
+            'event_id' => Str::random(10),
             'ecommerce' => ['items' => [[
-                'item_id'       => (int) $product->id,
-                'item_name'     => $product->name,
-                'price'         => (string) ($product->price ?? '0'),
+                'item_id' => (int) $product->id,
+                'item_name' => $product->name,
+                'price' => (string) ($product->price ?? '0'),
                 'item_category' => (string) ($product->category_name ?? ''),
             ]]],
         ];
 
+        $offer = app(GoogleProductMapper::class)->mapForLanding($product);
+
         return view('product', [
-            'metaTitle'       => $product->name.' | DFP Interiores',
+            'metaTitle' => $product->name.' | DFP Interiores',
             'metaDescription' => Str::limit($short !== '' ? $short : $product->name, 155),
-            'canonical'       => url('/'.$product->slug),
-            'schema'          => $this->productSchema($product),
-            'dataLayer'       => $dataLayer,
-            'artigo'          => $artigo,
-            'prodVariations'  => $variations,
-            'artigoMini'      => [
-                'id'          => base64_encode('id:'.$product->id),
-                'preco'       => (float) $product->price,
+            'canonical' => $offer->link,
+            'schema' => $offer->toJsonLd(),
+            'offer' => $offer,
+            'dataLayer' => $dataLayer,
+            'artigo' => $artigo,
+            'prodVariations' => $variations,
+            'artigoMini' => [
+                'id' => base64_encode('id:'.$product->id),
+                'preco' => (float) $product->price,
                 'preco_antes' => (float) ($product->price_before ?? 0),
             ],
-            'productToken'    => base64_encode('id:'.$product->id),
-            'productName'     => $product->name,
-            'productRef'      => (string) $product->sku,
-            'productId'       => (int) $product->id,
-            'productPrice'    => number_format((float) $product->price, 2, '.', ''),
+            'productToken' => base64_encode('id:'.$product->id),
+            'productName' => $product->name,
+            'productRef' => (string) $product->sku,
+            'productId' => (int) $product->id,
+            'productPrice' => number_format((float) $product->price, 2, '.', ''),
             'productCategory' => (string) $product->category_name,
-            'shareText'       => rawurlencode($product->name.' | '.url('/'.$product->slug)),
-            'shortDesc'       => (string) $product->short_description_html,
-            'longDesc'        => (string) $product->long_description_html,
-            'specsHtml'       => $specsHtml,
-            'hasSpecs'        => $specsHtml !== '',
-            'hasDesc'         => trim(strip_tags((string) $product->long_description_html)) !== '',
+            'shareText' => rawurlencode($product->name.' | '.url('/'.$product->slug)),
+            'shortDesc' => (string) $product->short_description_html,
+            'longDesc' => (string) $product->long_description_html,
+            'specsHtml' => $specsHtml,
+            'hasSpecs' => $specsHtml !== '',
+            'hasDesc' => trim(strip_tags((string) $product->long_description_html)) !== '',
         ]);
     }
 
@@ -801,7 +806,7 @@ HTML;
         // (self-heal après un scrape --no-images), sinon placeholder NON caché.
         if ($img && $img->source_url) {
             try {
-                $res = \Illuminate\Support\Facades\Http::withHeaders(['User-Agent' => 'Mozilla/5.0'])
+                $res = Http::withHeaders(['User-Agent' => 'Mozilla/5.0'])
                     ->timeout(15)->get($img->source_url);
                 if ($res->ok() && $res->body() !== '' && md5($res->body()) !== 'ea548401ff2db836f0caec2cde79ace2') {
                     $dest = public_path($img->path);
@@ -822,8 +827,8 @@ HTML;
             .'text-anchor="middle" dominant-baseline="middle">sem imagem</text></svg>';
 
         return response($svg, 200, [
-            'Content-Type'  => 'image/svg+xml',
-            'Cache-Control' => 'no-store, no-cache, must-revalidate',  // pas de cache d'une image absente
+            'Content-Type' => 'image/svg+xml',
+            'Cache-Control' => 'no-store, no-cache, must-revalidate',
         ]);
     }
 
@@ -838,28 +843,8 @@ HTML;
         abort_unless(is_file($abs), 404);
 
         return response()->file($abs, [
-            'Content-Type'  => 'video/mp4',
+            'Content-Type' => 'video/mp4',
             'Cache-Control' => 'public, max-age=604800',
         ]);
-    }
-
-    // ------------------------------------------------------------------ helpers
-
-
-
-    private function productSchema(Product $p): array
-    {
-        return [
-            '@context' => 'https://schema.org', '@type' => 'Product',
-            'name' => $p->name, 'sku' => $p->sku,
-            'brand' => ['@type' => 'Brand', 'name' => $p->brand ?: 'DFP Interiores'],
-            'image' => $p->images->map(fn ($i) => url($i->path))->values()->all(),
-            'offers' => [
-                '@type' => 'Offer', 'url' => url('/'.$p->slug),
-                'priceCurrency' => $p->currency ?: 'EUR',
-                'price' => (string) ($p->price ?? '0'),
-                'availability' => $p->in_stock ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
-            ],
-        ];
     }
 }

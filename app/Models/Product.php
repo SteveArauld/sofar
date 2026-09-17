@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Database\Factories\ProductFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -9,21 +11,26 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Product extends Model
 {
+    /** @use HasFactory<ProductFactory> */
+    use HasFactory;
+
     public $incrementing = false;
+
     protected $keyType = 'int';
+
     protected $guarded = [];
 
     protected $casts = [
-        'dimensions'        => 'array',
-        'variations'        => 'array',
-        'flags'             => 'array',
-        'breadcrumb'        => 'array',
-        'category_path'     => 'array',
-        'source_payload'    => 'array',
-        'price'             => 'decimal:2',
-        'price_before'      => 'decimal:2',
-        'in_stock'          => 'boolean',
-        'rating'            => 'float',
+        'dimensions' => 'array',
+        'variations' => 'array',
+        'flags' => 'array',
+        'breadcrumb' => 'array',
+        'category_path' => 'array',
+        'source_payload' => 'array',
+        'price' => 'decimal:2',
+        'price_before' => 'decimal:2',
+        'in_stock' => 'boolean',
+        'rating' => 'float',
         'source_created_at' => 'datetime',
         'source_updated_at' => 'datetime',
     ];
