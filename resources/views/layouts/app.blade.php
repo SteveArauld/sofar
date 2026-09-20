@@ -5,47 +5,8 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 
 <head>
-    <script>
-        (function(w, i, g) {
-            w[g] = w[g] || [];
-            if (typeof w[g].push == 'function') w[g].push(i)
-        })
-        (window, 'GTM-NB25HK7', 'google_tags_first_party');
-    </script>
-    <script>
-        (function(w, d, s, l) {
-            w[l] = w[l] || [];
-            (function() {
-                w[l].push(arguments);
-            })('set', 'developer_id.dY2E1Nz', true);
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s);
-            j.async = true;
-            j.src = 'securemetric/index.html';
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer');
-    </script>
     <meta name="theme-color" content="#000000">
     <script></script>
-
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm5445.html?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-NB25HK7');
-    </script>
-    <!-- End Google Tag Manager -->
 
     <link href="/assets/css/normalize.css" rel="stylesheet">
     <meta charset="UTF-8">
@@ -55,7 +16,7 @@
     <link rel="dns-prefetch" href="http://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link rel="dns-prefetch" href="http://connect.facebook.net/">
-    <link rel="dns-prefetch" href="http://www.googletagmanager.com/">
+    
     <link rel="dns-prefetch" href="http://cdn.jsdelivr.net/">
     <link rel="canonical" href="{{ $canonical ?? url()->current() }}">
 
@@ -180,12 +141,6 @@
 
 <body>
     @verbatim
-
-
-        <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NB25HK7" height="0" width="0"
-                style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
 
 
         <div class="whatsapp">
@@ -1483,7 +1438,6 @@
                                         <li><a href="/ajuda/politica-de-cookies">Política de Cookies</a></li>
                                         <li><a href="/ajuda/politica-de-envios">Política de Envios e Entregas</a></li>
                                         <li><a href="/ajuda/politica-de-devolucoes">Política de Devoluções e Reembolsos</a></li>
-                                        <li><a href="/ajuda/recrutamento">Recrutamento</a></li>
                                         <li><a href="/ajuda/resolucao-alternativa-litigios">Resolução Alternativa de
                                                 Litígios</a></li>
                                         <li><a href="https://www.livroreclamacoes.pt/inicio/" target="_blank" rel="noopener">Livro de Reclamações</a></li>
@@ -1505,35 +1459,10 @@
                                     <p><a href="tel:+351912026453">+351 912 026 453</a></p>
                                     <p><small>NIF 504074571</small></p>
                                 </div>
-
-                                <div class="link-group">
-                                    <h3>Siga-nos</h3>
-                                    <div class="social-icons">
-                                        <a href="#" aria-label="Facebook"><svg
-                                                class="sprite-icon">
-                                                <use href="/img/footer_icons.svg#facebook"></use>
-                                            </svg></a>
-                                        <a href="#" aria-label="Instagram"><svg
-                                                class="sprite-icon">
-                                                <use href="/img/footer_icons.svg#instagram"></use>
-                                            </svg></a>
-                                        <a href="#" aria-label="TikTok"><svg
-                                                class="sprite-icon">
-                                                <use href="/img/footer_icons.svg#tiktok"></use>
-                                            </svg></a>
-                                        <a href="#" aria-label="Pinterest"><svg
-                                                class="sprite-icon">
-                                                <use href="/img/footer_icons.svg#pinterest"></use>
-                                            </svg></a>
-                                    </div>
-
-                                    <h3 class="mt-20">Métodos de Pagamento</h3>
+<div class="link-group">
+                                    <h3>Métodos de Pagamento</h3>
                                     <div class="payment-methods">
                                         <img src="/img/mb.png" alt="Multibanco">
-                                        <img src="/img/mbway.png" alt="MBWay">
-                                        <img src="/img/visa.png" alt="Visa">
-                                        <img src="/img/cofidispay.png" alt="Cofidis Pay">
-                                        <img src="/img/scalapay.png" alt="Scalapay">
                                     </div>
                                 </div>
                             </div>

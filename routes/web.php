@@ -25,7 +25,7 @@ Route::get('/sitemap.xml', function () {
     $base = rtrim(config('feed.base_url'), '/');
     $static = ['', '/lojas', '/contactos', '/apoioaocliente', '/ajuda/termos-e-condicoes',
         '/ajuda/politica-privacidade', '/ajuda/politica-de-cookies', '/ajuda/politica-de-envios',
-        '/ajuda/politica-de-devolucoes', '/ajuda/resolucao-alternativa-litigios', '/ajuda/recrutamento'];
+        '/ajuda/politica-de-devolucoes', '/ajuda/resolucao-alternativa-litigios'];
 
     return response()->stream(function () use ($base, $static) {
         $out = fopen('php://output', 'w');
@@ -95,7 +95,7 @@ Route::get('/carrinho', [StoreController::class, 'page'])->defaults('key', 'carr
 Route::get('/cliente', [StoreController::class, 'page'])->defaults('key', 'cliente')->name('cliente');
 Route::get('/ajuda/termos-e-condicoes', [StoreController::class, 'page'])->defaults('key', 'ajuda__termos-e-condicoes')->name('ajuda.termos');
 Route::get('/ajuda/politica-privacidade', [StoreController::class, 'page'])->defaults('key', 'ajuda__politica-privacidade')->name('ajuda.privacidade');
-Route::get('/ajuda/recrutamento', [StoreController::class, 'page'])->defaults('key', 'ajuda__recrutamento')->name('ajuda.recrutamento');
+Route::get('/ajuda/recrutamento', fn () => redirect()->route('ajuda.termos', [], 301))->name('ajuda.recrutamento');
 Route::get('/ajuda/resolucao-alternativa-litigios', [StoreController::class, 'page'])->defaults('key', 'ajuda__resolucao-alternativa-litigios')->name('ajuda.ral');
 Route::get('/ajuda/politica-de-cookies', [StoreController::class, 'page'])->defaults('key', 'ajuda__politica-de-cookies')->name('ajuda.cookies');
 Route::get('/ajuda/politica-de-envios', [StoreController::class, 'page'])->defaults('key', 'ajuda__politica-de-envios')->name('ajuda.envios');

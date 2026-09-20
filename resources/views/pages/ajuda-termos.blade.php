@@ -199,7 +199,7 @@
 <p>&nbsp;</p>
 <p><strong>18. Prazos de Entrega</strong></p>
 <p>&nbsp;</p>
-<p>18.1.&nbsp;O período de tempo para os diferentes métodos de entrega são estimados e começam a contar a partir do momento em que o pagamento é rececionado. No caso de Portugal Continental, a entrega da encomenda é, normalmente, efetuada num prazo de&nbsp;45&nbsp;dias úteis (mediante a disponibilidade de todos artigos da encomenda).</p>
+<p>18.1.&nbsp;O período de tempo para os diferentes métodos de entrega são estimados e começam a contar a partir do momento em que o pagamento é rececionado. No caso de Portugal Continental, a entrega da encomenda é, normalmente, efetuada num prazo de&nbsp;1 a 3 dias úteis, com preparação de 1 dia útil (mediante a disponibilidade de todos os artigos da encomenda).</p>
 <p>18.2.&nbsp;O prazo de entrega dos artigos que não se encontrem disponíveis no armazém irá variar de acordo com a disponibilidade do fornecedor.</p>
 <p>18.3.&nbsp;Note que em promoções especiais como saldos e/ou envios gratuitos, podem ocorrer atrasos na saída dos pedidos desde os nossos armazéns.</p>
 <p>18.4.&nbsp;A&nbsp;DFP Interiores&nbsp;não será responsável pelo incumprimento, ou mora no cumprimento, de qualquer obrigação que seja devida a um evento de força maior, isto é, a um acontecimento, ato ou omissão, fora do seu controlo razoável (Evento de Força Maior - que compreende qualquer acontecimento, ato ou omissão, fora do controlo razoável do Vendedor ).</p>

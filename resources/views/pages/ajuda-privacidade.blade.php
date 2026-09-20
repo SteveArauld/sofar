@@ -28,7 +28,7 @@
 			<p>Recomenda-se a leitura desta Política de Privacidade, bem como dos Termos e Condições.</p>
 
 			<h3>2. Responsável pelo Tratamento</h3>
-			<p>A DFP Interiores é a entidade responsável pelo tratamento dos dados pessoais.</p>
+			<p>A entidade responsável pelo tratamento dos dados pessoais é a <b>DFP Interiores, Unipessoal Lda</b>, NIF 504074571, com sede na Rua José Francisco Fragoso, n.º 45, 7080-035 Vendas Novas, Portugal. Contacto para questões de privacidade: <a href="mailto:contacto@dfpinteriores.com">contacto@dfpinteriores.com</a> · <a href="tel:+351912026453">+351 912 026 453</a>. Pode apresentar reclamação à Comissão Nacional de Proteção de Dados (<a href="https://www.cnpd.pt" target="_blank" rel="noopener">www.cnpd.pt</a>).</p>
 
 			<h3>3. Dados Pessoais Recolhidos</h3>
 			<ul>
@@ -60,7 +60,7 @@
 			<p>Caso ocorram transferências para fora do Espaço Económico Europeu, garantimos a aplicação de mecanismos legais adequados.</p>
 
 			<h3>7. Conservação dos Dados</h3>
-			<p>Os dados são conservados apenas pelo tempo necessário para cumprir as finalidades legais e contratuais, sendo posteriormente eliminados ou anonimizados.</p>
+			<p>Os dados são conservados apenas pelo tempo necessário para cumprir as finalidades legais e contratuais, sendo posteriormente eliminados ou anonimizados. Os dados de faturação e de encomendas são conservados durante os prazos impostos pela legislação fiscal e comercial aplicável; os dados enviados através de formulários de contacto são conservados até à resolução do pedido.</p>
 
 			<h3>8. Direitos dos Utilizadores</h3>
 			<p>O utilizador tem direito a:</p>
