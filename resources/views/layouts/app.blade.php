@@ -1462,7 +1462,14 @@
 <div class="link-group">
                                     <h3>Métodos de Pagamento</h3>
                                     <div class="payment-methods">
+                                        <img src="/img/payments/visa.svg" alt="Visa">
+                                        <img src="/img/payments/paypal.svg" alt="PayPal">
+                                        <img src="/img/payments/mastercard.svg" alt="Mastercard">
+                                        <img src="/img/payments/amex.svg" alt="American Express">
+                                        <img src="/img/mbway.png" alt="MB Way">
                                         <img src="/img/mb.png" alt="Multibanco">
+                                        <img src="/img/payments/klarna.svg" alt="Klarna">
+                                        <img src="/img/payments/revolut.svg" alt="Revolut Pay">
                                     </div>
                                 </div>
                             </div>
