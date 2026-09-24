@@ -8,6 +8,8 @@ use App\Domain\Merchant\Support\PriceFormatter;
 use App\DTO\Merchant\GoogleProductData;
 use App\Models\Product;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
+use Throwable;
 
 /**
  * Builds the Google Merchant Center feed (Portugal).
@@ -23,8 +25,10 @@ class FeedBuild extends Command
 
     public function handle(GoogleProductMapper $mapper, GoogleFeedGenerator $generator): int
     {
+        $startedAt = microtime(true);
         $min = (float) config('feed.min_price', 80);
         $target = (int) ($this->option('limit') ?: config('feed.target_items', 980));
+        $safetyFloor = (int) config('feed.min_items_safety', 500);
 
         $this->info('Base URL : '.config('feed.base_url'));
         $this->info("Prix minimum : {$min} € · cible : {$target} items");
@@ -65,18 +69,54 @@ class FeedBuild extends Command
             $rows[$id]['reason'] = trim(($rows[$id]['reason'] ? $rows[$id]['reason'].' ; ' : '').'éligible non inclus (au-delà de la cible)');
         }
 
-        $storage = storage_path('app/feeds/google-shopping.xml');
-        $generator->write($selected, $storage);
+        // Safety floor: a run that qualifies far fewer products than usual is
+        // more likely a bug (broken eligibility check, partial DB outage) than
+        // a genuine catalog collapse. Never let it overwrite a working feed.
+        if (count($selected) < $safetyFloor) {
+            $message = sprintf(
+                'Génération refusée : seulement %d produits éligibles (seuil de sécurité %d, cible %d). Les fichiers publics existants ne sont pas modifiés.',
+                count($selected),
+                $safetyFloor,
+                $target
+            );
+            $this->error($message);
+            Log::error('Google Merchant Feed generation failed: safety floor not met', [
+                'eligible_count' => count($selected),
+                'safety_floor' => $safetyFloor,
+                'target' => $target,
+                'total_products_scanned' => count($rows),
+            ]);
 
-        $publicDir = public_path('feeds');
-        if (! is_dir($publicDir)) {
-            mkdir($publicDir, 0775, true);
+            return self::FAILURE;
         }
-        copy($storage, public_path('feeds/google-merchant.xml'));
-        copy($storage, public_path('dfpinteriores-gmc-conforme.xml'));
+
+        $storage = storage_path('app/feeds/google-shopping.xml');
+
+        try {
+            $generator->write($selected, $storage);
+
+            $publicDir = public_path('feeds');
+            if (! is_dir($publicDir) && ! mkdir($publicDir, 0775, true) && ! is_dir($publicDir)) {
+                throw new \RuntimeException("Impossible de créer le répertoire public : {$publicDir}");
+            }
+
+            $this->publishAtomic($storage, public_path('feeds/google-merchant.xml'));
+            $this->publishAtomic($storage, public_path('dfpinteriores-gmc-conforme.xml'));
+        } catch (Throwable $e) {
+            $this->error('Génération du flux échouée : '.$e->getMessage());
+            Log::error('Google Merchant Feed generation failed: '.$e->getMessage(), [
+                'eligible_count' => count($selected),
+                'exception' => $e->getMessage(),
+            ]);
+
+            return self::FAILURE;
+        }
 
         $this->writeCsv($selected);
         $this->writeSelectionCsv($rows);
+
+        $durationMs = (int) round((microtime(true) - $startedAt) * 1000);
+        $fileSize = is_file($storage) ? filesize($storage) : 0;
 
         $this->newLine();
         $this->info('Flux : public/feeds/google-merchant.xml ('.count($selected).' items)');
@@ -90,7 +130,41 @@ class FeedBuild extends Command
             $this->line(count($overflow).' produits éligibles non inclus (listés EXCLU dans FEED-SELECTION.csv).');
         }
 
+        Log::info("Google Merchant Feed generated successfully: {$fileSize} bytes, ".count($selected).' products', [
+            'products' => count($selected),
+            'total_scanned' => count($rows),
+            'excluded_overflow' => count($overflow),
+            'duration_ms' => $durationMs,
+            'file_size_bytes' => $fileSize,
+            'target' => $target,
+        ]);
+
         return self::SUCCESS;
+    }
+
+    /**
+     * Copies $source to a temp file next to $destination, validates it lands
+     * fully on disk, then rename()s it into place. rename() on the same
+     * filesystem is atomic, so a concurrent reader of $destination never sees
+     * a truncated or half-copied file.
+     */
+    private function publishAtomic(string $source, string $destination): void
+    {
+        $tmp = dirname($destination).'/.'.basename($destination).'.'.getmypid().'.'.uniqid('', true).'.tmp';
+
+        if (! copy($source, $tmp)) {
+            throw new \RuntimeException("Échec de la copie vers le fichier temporaire : {$tmp}");
+        }
+
+        if (filesize($tmp) === false || filesize($tmp) !== filesize($source)) {
+            @unlink($tmp);
+            throw new \RuntimeException("Copie incomplète détectée pour : {$destination}");
+        }
+
+        if (! rename($tmp, $destination)) {
+            @unlink($tmp);
+            throw new \RuntimeException("Échec du remplacement atomique de : {$destination}");
+        }
     }
 
     /**

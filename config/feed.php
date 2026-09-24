@@ -28,6 +28,17 @@ return [
     'free_shipping' => true,
     'target_items' => 980,
 
+    /*
+    |--------------------------------------------------------------------------
+    | Garde-fou anti-régression du flux
+    |--------------------------------------------------------------------------
+    | Si une génération produit moins d'articles éligibles que ce seuil, le
+    | build est considéré suspect (bug d'éligibilité, panne DB partielle,
+    | etc.) : les fichiers publics existants ne sont PAS remplacés, l'erreur
+    | est journalisée, et la commande retourne un échec.
+    */
+    'min_items_safety' => (int) env('MERCHANT_FEED_MIN_ITEMS', 500),
+
     'handling_time' => [
         'min' => (int) env('MERCHANT_HANDLING_MIN_DAYS', 1),
         'max' => (int) env('MERCHANT_HANDLING_MAX_DAYS', 1),

@@ -29,16 +29,69 @@ final class GoogleFeedGenerator
     }
 
     /**
+     * Builds the feed XML, validates it is well-formed, and writes it atomically.
+     *
+     * The write never leaves a partially-written or invalid file at $path: the
+     * XML is built and validated fully in memory first, then written to a
+     * temp file in the same directory and moved into place with rename(),
+     * which is atomic on the same filesystem. A reader (Google's crawler,
+     * the health check, etc.) will only ever see the old complete file or
+     * the new complete file, never a partial one.
+     *
      * @param  iterable<GoogleProductData>  $items
+     *
+     * @throws \RuntimeException if the XML is not well-formed or the file cannot be written
      */
     public function write(iterable $items, string $path): void
     {
         $dir = dirname($path);
-        if (! is_dir($dir)) {
-            mkdir($dir, 0775, true);
+        if (! is_dir($dir) && ! mkdir($dir, 0775, true) && ! is_dir($dir)) {
+            throw new \RuntimeException("Impossible de créer le répertoire du flux : {$dir}");
         }
 
-        file_put_contents($path, $this->xml($items));
+        $xml = $this->xml($items);
+
+        if (($error = $this->validationError($xml)) !== null) {
+            throw new \RuntimeException("XML généré invalide, écriture annulée : {$error}");
+        }
+
+        $tmp = $dir.'/.'.basename($path).'.'.getmypid().'.'.uniqid('', true).'.tmp';
+
+        if (file_put_contents($tmp, $xml) === false) {
+            throw new \RuntimeException("Impossible d'écrire le fichier temporaire : {$tmp}");
+        }
+
+        if (! rename($tmp, $path)) {
+            @unlink($tmp);
+            throw new \RuntimeException("Impossible de déplacer le fichier temporaire vers : {$path}");
+        }
+    }
+
+    /**
+     * Returns a human-readable error (with line/column when available) if the
+     * given XML string is not well-formed, or null if it is valid.
+     */
+    public function validationError(string $xml): ?string
+    {
+        $previousState = libxml_use_internal_errors(true);
+        libxml_clear_errors();
+
+        $doc = new \DOMDocument;
+        $ok = $xml !== '' && $doc->loadXML($xml, LIBXML_NONET);
+
+        $errors = libxml_get_errors();
+        libxml_clear_errors();
+        libxml_use_internal_errors($previousState);
+
+        if ($ok && $errors === []) {
+            return null;
+        }
+
+        $first = $errors[0] ?? null;
+
+        return $first
+            ? sprintf('%s (ligne %d, colonne %d)', trim($first->message), $first->line, $first->column)
+            : 'XML mal formé (raison inconnue)';
     }
 
     private function item(GoogleProductData $item): string

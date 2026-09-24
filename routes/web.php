@@ -19,6 +19,7 @@ Route::get('/feed/produtos.xml/download', [FeedController::class, 'download'])->
 Route::get('/feeds/google-shopping.xml', [GoogleFeedController::class, 'xml'])->name('feed.shopping');
 Route::get('/feeds/google-merchant.xml', [GoogleFeedController::class, 'xml'])->name('feed.gmc');
 Route::get('/dfpinteriores-gmc-conforme.xml', [GoogleFeedController::class, 'xml'])->name('gmc.conforme');
+Route::get('/admin/feed/health', [GoogleFeedController::class, 'health'])->name('feed.health');
 
 // Sitemap XML : pages institutionnelles + fiches produit publiées (avec image).
 Route::get('/sitemap.xml', function () {

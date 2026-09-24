@@ -13,6 +13,12 @@ class GoogleFeedTest extends TestCase
 
     public function test_generated_xml_and_pdp_json_ld_share_the_same_offer(): void
     {
+        // This test seeds a single product to check XML/JSON-LD parity, not
+        // catalog volume, so the safety-floor guard (which refuses a build
+        // producing far fewer items than the real ~980-product catalog) must
+        // be disabled here.
+        config(['feed.min_items_safety' => 0]);
+
         $product = Product::factory()->create([
             'id' => 910001,
             'name' => 'Sofá Auditável Merchant',
@@ -63,6 +69,8 @@ class GoogleFeedTest extends TestCase
 
     public function test_feed_route_serves_xml(): void
     {
+        config(['feed.min_items_safety' => 0]);
+
         $this->artisan('merchant:google-feed')->assertSuccessful();
 
         $this->get('/feeds/google-shopping.xml')
