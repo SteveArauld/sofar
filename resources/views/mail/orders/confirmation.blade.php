@@ -23,12 +23,27 @@ Vai receber uma nova mensagem assim que for expedida.
 
 ## Pagamento
 
+Para confirmar a sua encomenda **{{ $order->ref }}**, falta apenas concluir o pagamento no valor de **{{ $order->money($order->total) }}**.
+
 **Método:** {{ $order->paymentLabel() }}
 @if ($order->payment_method === 'MULTIBANCO')
 Vai receber os dados de pagamento (entidade e referência) para pagar numa caixa Multibanco ou por homebanking.
 @else
 Vai receber um pedido de pagamento na aplicação **MB WAY** no número {{ $order->phone }}.
 @endif
+
+Prefere finalizar o pagamento connosco diretamente? Toque no botão abaixo para falar com a nossa equipa pelo WhatsApp e concluir a sua encomenda.
+
+@php
+    $itemsSummary = $order->items->map(fn ($it) => $it->qty.'x '.$it->name.($it->variation ? ' ('.$it->variation.')' : ''))->implode(', ');
+    $whatsappMessage = "Olá! Quero finalizar o pagamento da minha encomenda {$order->ref}, no valor de {$order->money($order->total)}.\n"
+        ."Nome: {$order->name}\n"
+        ."Artigos: {$itemsSummary}";
+@endphp
+
+<x-mail::button :url="'https://api.whatsapp.com/send?phone=351912026453&text='.urlencode($whatsappMessage)" color="success">
+Finalizar a minha encomenda no WhatsApp
+</x-mail::button>
 
 ## Entrega
 
