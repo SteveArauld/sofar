@@ -3029,6 +3029,11 @@ body {
     top: 0
 }
 
+.MenuMobile .head .Buttons.OpenMenu {
+    top: 0;
+    left: 0
+}
+
 .MenuMobile .head .Buttons.OpenProcura {
     top: 0;
     left: 40px

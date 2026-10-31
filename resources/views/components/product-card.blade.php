@@ -26,9 +26,9 @@
 <div class="Artigo">
     <div>
         <div class="EnvioImediato">
-            <img src="/assets/stickers/EnvioImediato.png" alt="Envio Imediato">
+            <img src="/assets/stickers/EnvioImediato.png" alt="{{ __('Envio Imediato') }}">
         </div>
-        <a href="#" class="Wishlist" data-artigo="{{ $p->id }}" title="Adicionar aos favoritos">
+        <a href="#" class="Wishlist" data-artigo="{{ $p->id }}" title="{{ __('Adicionar aos favoritos') }}">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                  class="lucide lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
@@ -37,7 +37,7 @@
         <div class="preview">
             <div class="box-image square">
                 <div class="box-image-hover" style="aspect-ratio:1;">
-                    <a href="{{ url('/'.$p->slug) }}">
+                    <a href="{{ locale_url($p->slug) }}">
                         <img class="img-responsive" style="aspect-ratio:1;" loading="lazy"
                              src="{{ $img ? asset($img->path) : '/assets/images/no-photo.svg' }}"
                              onerror="this.onerror=null;this.src='/assets/images/no-photo.svg'"
@@ -62,10 +62,10 @@
                     @if ($temDesconto)
                         <span>{{ number_format($precoAntes, 0, ',', ' ') }}€</span>
                     @endif
-                    {{ $precoAtual > 0 ? number_format($precoAtual, 0, ',', ' ').'€' : 'Sob consulta' }}
+                    {{ $precoAtual > 0 ? number_format($precoAtual, 0, ',', ' ').'€' : __('Sob consulta') }}
                 </div>
                 <div style="display:none;">
-                    <a class="vermais" href="{{ url('/'.$p->slug) }}">VER MAIS</a>
+                    <a class="vermais" href="{{ url('/'.$p->slug) }}">{{ __('VER MAIS') }}</a>
                 </div>
             </div>
         </div>

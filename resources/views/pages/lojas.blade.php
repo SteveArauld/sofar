@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'As nossas lojas | DFP Interiores')
+@section('title', __('As nossas lojas').' | DFP Interiores')
 
 @push('mods-css')
 <link href="/assets/css/pt/mods/lojas.css" rel="stylesheet">
@@ -11,17 +11,16 @@
 @endpush
 
 @section('content')
-@verbatim
 <section class="container Lojas">
   <div class="container breadcrumb">
     <div>
-        <a href="/">Início</a>
-        <h1>Lojas</h1>
+        <a href="/">{{ __('Início') }}</a>
+        <h1>{{ __('Lojas') }}</h1>
     </div>
     <div class='actions'></div>
   </div>
 
-  <h2 style="margin-bottom:20px;">A nossa loja</h2>
+  <h2 style="margin-bottom:20px;">{{ __('A nossa loja') }}</h2>
   <div class="lista">
     <div style="margin-bottom: 30px;">
       <div style="padding:10px;">
@@ -30,7 +29,7 @@
           <i class="fa fa-map-marker" aria-hidden="true" style="font-size:13px;margin-right:7px;margin-left:6px"></i>
           Rua José Francisco Fragoso, n.º 45, 7080-035 Vendas Novas &ndash; Évora, Portugal
         </p>
-        <b><a href="https://www.google.com/maps/search/Rua+Jos%C3%A9+Francisco+Fragoso+45+Vendas+Novas" target="_blank" rel="noopener" style="color: rgb(73 150 249);">Obter direções no Google Maps</a></b>
+        <b><a href="https://www.google.com/maps/search/Rua+Jos%C3%A9+Francisco+Fragoso+45+Vendas+Novas" target="_blank" rel="noopener" style="color: rgb(73 150 249);">{{ __('Obter direções no Google Maps') }}</a></b>
 
         <p class="contato">
           <span class="email">
@@ -44,11 +43,10 @@
         </p>
 
         <p style="font-size:13px;color:#666;">
-          DFP Interiores, Unipessoal Lda &nbsp;&bull;&nbsp; NIF 504074571 &nbsp;&bull;&nbsp; Capital social 500.000,00 &euro;
+          {{ __('DFP Interiores, Unipessoal Lda · NIF 504074571 · Capital social 500.000,00 €') }}
         </p>
       </div>
     </div>
   </div>
 </section>
-@endverbatim
 @endsection

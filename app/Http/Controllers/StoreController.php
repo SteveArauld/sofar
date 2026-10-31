@@ -6,8 +6,10 @@ use App\Domain\Merchant\GoogleProductMapper;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductImage;
+use App\Support\CatalogTranslator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 
 /**
@@ -31,22 +33,25 @@ class StoreController extends Controller
     public function home()
     {
         // Bloc « Descontos até 70% » : 3 onglets (comme le site officiel).
-        $descTabs = collect([
-            ['id' => 'sofas', 'label' => 'Sofás', 'slug' => 'sofas'],
-            ['id' => 'mobiliario', 'label' => 'Mobiliário', 'slug' => 'mobiliario'],
-            ['id' => 'descanso', 'label' => 'Descanso', 'slug' => 'descanso'],
-        ])->map(function (array $t) {
-            $cat = Category::where('slug', $t['slug'])->first();
-            $ids = $cat ? $cat->children()->pluck('id')->push($cat->id) : collect();
+        $descTabs = collect();
+        if (Schema::hasTable('categories') && Schema::hasTable('products')) {
+            $descTabs = collect([
+                ['id' => 'sofas', 'label' => __('Sofás'), 'slug' => 'sofas'],
+                ['id' => 'mobiliario', 'label' => __('Mobiliário'), 'slug' => 'mobiliario'],
+                ['id' => 'descanso', 'label' => __('Descanso'), 'slug' => 'descanso'],
+            ])->map(function (array $t) {
+                $cat = Category::where('slug', $t['slug'])->first();
+                $ids = $cat ? $cat->children()->pluck('id')->push($cat->id) : collect();
 
-            $t['products'] = $this->baseListingQuery('descontos70')
-                ->when($ids->isNotEmpty(), fn ($q) => $q->where(fn ($w) => $w
-                    ->whereIn('category_id', $ids)
-                    ->orWhereHas('categories', fn ($c) => $c->whereIn('categories.id', $ids))))
-                ->orderByRaw('COALESCE(views_20d, 0) DESC')->orderByDesc('id')->limit(12)->get();
+                $t['products'] = $this->baseListingQuery('descontos70')
+                    ->when($ids->isNotEmpty(), fn ($q) => $q->where(fn ($w) => $w
+                        ->whereIn('category_id', $ids)
+                        ->orWhereHas('categories', fn ($c) => $c->whereIn('categories.id', $ids))))
+                    ->orderByRaw('COALESCE(views_20d, 0) DESC')->orderByDesc('id')->limit(12)->get();
 
-            return $t;
-        })->filter(fn ($t) => $t['products']->isNotEmpty())->values();
+                return $t;
+            })->filter(fn ($t) => $t['products']->isNotEmpty())->values();
+        }
 
         return view('home', ['descTabs' => $descTabs]);
     }
@@ -79,8 +84,8 @@ class StoreController extends Controller
     public function listing(string $key)
     {
         [$title, $h1] = match ($key) {
-            'descontos70' => ['Descontos até 70% | DFP Interiores', 'Descontos até 70%'],
-            'artigosExclusivosOnline' => ['Artigos Exclusivos Online | DFP Interiores', 'Artigos Exclusivos Online'],
+            'descontos70' => [__('Descontos até 70%').' | DFP Interiores', __('Descontos até 70%')],
+            'artigosExclusivosOnline' => [__('Exclusivo Online').' | DFP Interiores', __('Exclusivo Online')],
             default => abort(404),
         };
 
@@ -170,7 +175,8 @@ class StoreController extends Controller
             $q = Product::query()->with('images');
             if ($term !== '') {
                 $q->where(fn ($s) => $s
-                    ->where('name', 'like', "%{$term}%")
+                    ->where('name->pt', 'like', "%{$term}%")
+                    ->orWhere('name->it', 'like', "%{$term}%")
                     ->orWhere('sku', 'like', "%{$term}%")
                     ->orWhere('ean', 'like', "%{$term}%")
                     ->orWhere('brand', 'like', "%{$term}%"));
@@ -303,7 +309,7 @@ class StoreController extends Controller
         $checked = fn ($group, $val) => in_array($val, (array) $r->input($group, []), true) ? ' checked' : '';
 
         // --- Marca : markup identique au site (data-group='marcas', name='m') ---
-        $html = "<div class='BlocoFiltro categoires'>\n<h2>Marca</h2>\n";
+        $html = "<div class='BlocoFiltro categoires'>\n<h2>".e(__('Marca'))."</h2>\n";
         $i = 0;
         foreach ($f['brands'] as $brand => $count) {
             $id = 'marca'.$i++;
@@ -324,10 +330,10 @@ class StoreController extends Controller
                 ."<small style='display: block;' class='SliderFooter Slider{$cls}Valores'> {$min}{$unit} - {$max}{$unit} </small>\n"
                 ."</div>\n</div>\n";
         };
-        $html .= $slider('Preco', 'preco', 'preco', 'Preço', $f['priceMin'], $f['priceMax'], '€');
-        $html .= $slider('Largura', 'largura', 'largura', 'Largura (cm)', $f['dim']['largura'][0], $f['dim']['largura'][1], 'cm');
-        $html .= $slider('Altura', 'altura', 'altura', 'Altura (cm)', $f['dim']['altura'][0], $f['dim']['altura'][1], 'cm');
-        $html .= $slider('Comprimento', 'comprimento', 'comprimento', 'Comprimento (cm)', $f['dim']['comprimento'][0], $f['dim']['comprimento'][1], 'cm');
+        $html .= $slider('Preco', 'preco', 'preco', __('Preço'), $f['priceMin'], $f['priceMax'], '€');
+        $html .= $slider('Largura', 'largura', 'largura', __('Largura (cm)'), $f['dim']['largura'][0], $f['dim']['largura'][1], 'cm');
+        $html .= $slider('Altura', 'altura', 'altura', __('Altura (cm)'), $f['dim']['altura'][0], $f['dim']['altura'][1], 'cm');
+        $html .= $slider('Comprimento', 'comprimento', 'comprimento', __('Comprimento (cm)'), $f['dim']['comprimento'][0], $f['dim']['comprimento'][1], 'cm');
 
         // --- Cores : toujours affiché (comme le site). Couleurs de la catégorie,
         //     sinon palette par défaut du site. ---
@@ -336,12 +342,13 @@ class StoreController extends Controller
             'Castanho' => '#6c3b2a', 'Cinza' => '#808080', 'Preto' => '#000000',
             'Rosa' => '#FFC0CB', 'Verde' => '#008000',
         ];
-        $html .= "<div class='BlocoFiltro cores'>\n<h2>Cores</h2>\n";
+        $html .= "<div class='BlocoFiltro cores'>\n<h2>".e(__('Cores'))."</h2>\n";
         $i = 0;
         foreach ($colors as $name => $code) {
             $id = 'cor'.$i++;
+            $label = __($name);
             $html .= "<input class='Filtro' data-group='cores' id='{$id}' type='checkbox' name='cores' data-field='cores' value='".e($name)."'".$checked('cores', $name).'>'
-                ." <label for='{$id}' data-id='{$i}' style='background-color: ".e($code).";' title='".e($name)."'></label>\n";
+                ." <label for='{$id}' data-id='{$i}' style='background-color: ".e($code).";' title='".e($label)."'></label>\n";
         }
         $html .= "</div>\n";
 
@@ -406,13 +413,20 @@ class StoreController extends Controller
             return response()->json(['results' => [['hits' => []], ['hits' => []]]]);
         }
 
-        $cats = Category::where('name', 'like', "%{$q}%")->orderBy('name')->limit(8)
+        $cats = Category::query()
+            ->where(fn ($w) => $w->where('name->pt', 'like', "%{$q}%")->orWhere('name->it', 'like', "%{$q}%"))
+            ->orderBy(Product::translatedColumn('name'))
+            ->limit(8)
             ->get(['name', 'slug'])
             ->map(fn ($c) => ['name' => $c->name, 'title' => $c->name, 'link' => $c->slug, 'slug' => $c->slug])
             ->all();
 
         $prods = Product::query()->with('images')
-            ->where('name', 'like', "%{$q}%")->orWhere('sku', 'like', "%{$q}%")->orWhere('brand', 'like', "%{$q}%")
+            ->where(fn ($w) => $w
+                ->where('name->pt', 'like', "%{$q}%")
+                ->orWhere('name->it', 'like', "%{$q}%")
+                ->orWhere('sku', 'like', "%{$q}%")
+                ->orWhere('brand', 'like', "%{$q}%"))
             ->orderByRaw('COALESCE(views_20d, 0) DESC')->limit(8)->get()
             ->map(fn (Product $p) => [
                 'name' => $p->name,
@@ -483,7 +497,7 @@ class StoreController extends Controller
 
     private function moreScript(string $key, array $filtro): string
     {
-        $endpoint = url('/_more/'.rawurlencode($key));
+        $endpoint = locale_url('_more/'.rawurlencode($key));
         $state = json_encode(['page' => $filtro['page'], 'pages' => $filtro['totalPages']]);
 
         return <<<HTML
@@ -669,6 +683,9 @@ HTML;
             }
         };
         $addVer($variations);
+
+        // Libellés de variantes (ESQUERDA VISTA DE FRENTE, Cores…) selon la locale
+        $variations = CatalogTranslator::translateVariationsTree($variations);
 
         // Galerie : toutes les photos du produit (chemins "products/x.jpg" sans "/" ni "#"
         // de tête, sinon le "#" est pris pour une ancre d'URL par le navigateur et

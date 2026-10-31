@@ -460,6 +460,10 @@ const {
                             addNewsletter,
                             openApoioCliente,
 
+                            /* i18n (window n'est pas accessible dans le template Vue) */
+                            i18n: window.DFP_I18N || {},
+                            appLocale: window.APP_LOCALE || 'pt',
+
                             ...cookiesLogic,
                             ...extraLogic
                         };

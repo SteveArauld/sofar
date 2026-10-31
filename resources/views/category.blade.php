@@ -9,7 +9,7 @@
 @section('content')
 <div class="container breadcrumb">
     <div>
-        <a href="/">Início</a>
+        <a href="/">{{ __('Início') }}</a>
         @foreach ($breadcrumb as $node)
             <a href="/{{ $node['link'] ?? $node['seo'] ?? '' }}">{{ $node['nome'] ?? $node['name'] ?? '' }}</a>
         @endforeach
@@ -18,11 +18,11 @@
     <div class="actions">
         <div class="OrdenarDesktop">
             <select name="sort" class="Ordenar" data-field="sort">
-                <option value="relevante">Mais relevantes</option>
-                <option value="precoasc">Menor preço</option>
-                <option value="precodesc">Maior Preço</option>
-                <option value="recentes">Mais recentes</option>
-                <option value="populares">Mais populares</option>
+                <option value="relevante">{{ __('Mais relevantes') }}</option>
+                <option value="precoasc">{{ __('Menor preço') }}</option>
+                <option value="precodesc">{{ __('Maior Preço') }}</option>
+                <option value="recentes">{{ __('Mais recentes') }}</option>
+                <option value="populares">{{ __('Mais populares') }}</option>
             </select>
         </div>
         <svg @click='offside.toggle("filtro")' class="OpenFiltroMobile" width="26" height="26" viewBox="0 0 24 24"
@@ -48,13 +48,13 @@
                 <div>
                     {!! $filters !!}
                     <div class="BlocoFiltro OrdenarMobile">
-                        <h2>Ordenar</h2>
+                        <h2>{{ __('Ordenar') }}</h2>
                         <select name="sort" class="Ordenar" data-field="sort">
-                            <option value="relevante">Mais relevantes</option>
-                            <option value="precoasc">Menor preço</option>
-                            <option value="precodesc">Maior Preço</option>
-                            <option value="recentes">Mais recentes</option>
-                            <option value="populares">Mais populares</option>
+                            <option value="relevante">{{ __('Mais relevantes') }}</option>
+                            <option value="precoasc">{{ __('Menor preço') }}</option>
+                            <option value="precodesc">{{ __('Maior Preço') }}</option>
+                            <option value="recentes">{{ __('Mais recentes') }}</option>
+                            <option value="populares">{{ __('Mais populares') }}</option>
                         </select>
                     </div>
                 </div>
@@ -63,19 +63,19 @@
 
         <div class="col-10 CatalogoLista">
             <div class="SemArtigos" @style(['display:none' => $products->isNotEmpty()])>
-                <h3>Não foram encontrados artigos.</h3>
+                <h3>{{ __('Não foram encontrados artigos.') }}</h3>
             </div>
 
             <div id="ListaArtigos" class="CatalogoGrid">
                 @forelse ($products as $product)
                     <x-product-card :product="$product" />
                 @empty
-                    <p class="SemArtigos">Sem artigos (importação do catálogo em curso?).</p>
+                    <p class="SemArtigos">{{ __('Sem artigos (importação do catálogo em curso?).') }}</p>
                 @endforelse
             </div>
 
             <a href="#" class="CarregaMaisArtigos">
-                Clique aqui para Ver mais artigos
+                {{ __('Clique aqui para Ver mais artigos') }}
                 <div id="productsLoaderPreloader" class="Loader"></div>
             </a>
         </div>

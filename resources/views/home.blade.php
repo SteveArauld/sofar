@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'DFP Interiores — Sofás e Mobiliário para a sua casa')
+@section('title', __('DFP Interiores — Sofás e Mobiliário para a sua casa'))
 
 @push('mods-css')
 <link href="/assets/css/pt/mods/home.css" rel="stylesheet">
@@ -254,11 +254,7 @@
                   srcset="/media/banners/cofidis_mobile.jpg"
                 />
 
-                <img
-                  style="width: 100%;"
-                  src="/media/banners/cofidis_desktop.jpg"
-                  alt="Banner Cofidis"
-                   loading="lazy"                 />
+              
               </picture>
             </a>
           </div>
@@ -277,87 +273,33 @@
 @endverbatim
 
 {{-- Rail dynamique : remplace les 72 cartes figées du miroir --}}
-<x-product-rail title="Descontos até 70%" :tabs="$descTabs" />
+<x-product-rail :title="__('Descontos até 70%')" :tabs="$descTabs" />
 
 {{-- Tuiles catégories + bannières secondaires : design officiel, statique --}}
-@verbatim
+
 <div class="container Categorias">
-    <div class="title">Categorias</div>
+    <div class="title">{{ __('Categorias') }}</div>
     <div class="list">
-             <div>
-        <a href="/sofas">
-          <img
-            src="images/400-400/categorias/homepage/sofas.png"
-            alt="Sofás"
-          />
-          <div class="nome" style="background-color: ;">
-            Sofás
-          </div>
-        </a>
-      </div>
-              <div>
-        <a href="/sofas-de-canto">
-          <img
-            src="images/400-400/categorias/homepage/sofa_canto.png"
-            alt="Sofás de Canto"
-          />
-          <div class="nome" style="background-color: ;">
-            Sofás de Canto
-          </div>
-        </a>
-      </div>
-              <div>
-        <a href="/chaise-longue">
-          <img
-            src="images/400-400/categorias/homepage/chaise_long.png"
-            alt="Chaise Longue"
-          />
-          <div class="nome" style="background-color: ;">
-            Chaise Longue
-          </div>
-        </a>
-      </div>
-                <div>
-        <a href="/salas-de-jantar">
-          <img
-            src="images/400-400/categorias/homepage/mesas_jantar.png"
-            alt="Salas de Jantar"
-          />
-          <div class="nome" style="background-color: ;">
-            Salas de Jantar
-          </div>
-        </a>
-      </div>
-              <div>
-        <a href="/camas-mobiliario">
-          <img
-            src="images/400-400/categorias/homepage/camas.png"
-            alt="Camas"
-          />
-          <div class="nome" style="background-color: ;">
-            Camas
-          </div>
-        </a>
-      </div>
-              <div>
-        <a href="/moveis-auxiliares">
-          <img
-            src="images/400-400/categorias/homepage/aparadores.png"
-            alt="Móveis auxiliares"
-          />
-          <div class="nome" style="background-color: ;">
-            Móveis auxiliares
-          </div>
-        </a>
-      </div>
-           </div>
-  </div>
-   
+        @foreach ([
+            ['sofas', 'sofas.png', 'Sofás'],
+            ['sofas-de-canto', 'sofa_canto.png', 'Sofás de Canto'],
+            ['chaise-longue', 'chaise_long.png', 'Chaise Longue'],
+            ['salas-de-jantar', 'mesas_jantar.png', 'Salas de Jantar'],
+            ['camas-mobiliario', 'camas.png', 'Camas'],
+            ['moveis-auxiliares', 'aparadores.png', 'Móveis auxiliares'],
+        ] as [$slug, $img, $label])
+        <div>
+            <a href="{{ locale_url($slug) }}">
+                <img src="images/400-400/categorias/homepage/{{ $img }}" alt="{{ __($label) }}" />
+                <div class="nome">{{ __($label) }}</div>
+            </a>
+        </div>
+        @endforeach
+    </div>
+</div>
 
-
-
-  
-  <div class="container">
+@verbatim
+<div class="container">
 
         <a style="display: block; margin-bottom: 20px;" href="/mobiliario-de-exterior" >
       <picture>

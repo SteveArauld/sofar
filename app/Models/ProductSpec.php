@@ -4,15 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Spatie\Translatable\HasTranslations;
 
 class ProductSpec extends Model
 {
+    use HasTranslations;
+
     protected $guarded = [];
+
     public $timestamps = false;
 
-    protected $casts = [
-        'raw'   => 'array',
-        'price' => 'decimal:2',
+    /** @var list<string> */
+    public array $translatable = [
+        'attr',
+        'value',
     ];
 
     public function product(): BelongsTo

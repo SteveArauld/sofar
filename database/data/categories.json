@@ -1,892 +1,1159 @@
 [
-  {
-    "id": null,
-    "name": "Acessórios decorativos",
-    "slug": "acessorios-decorativos",
-    "parent_slug": null,
-    "level": 1,
-    "url": "/acessorios-decorativos",
-    "catalog_url": "/catalogo/acessorios-decorativos",
-    "parent_id": null
-  },
-  {
-    "id": null,
-    "name": "Ver tudo",
-    "slug": "decoracao",
-    "parent_slug": null,
-    "level": 1,
-    "url": "/decoracao",
-    "catalog_url": "/catalogo/decoracao",
-    "parent_id": null
-  },
-  {
-    "id": 294,
-    "name": "DECORAÇÃO",
-    "slug": "decoracao-1",
-    "parent_slug": null,
-    "level": 1,
-    "url": "/decoracao-1",
-    "catalog_url": "/catalogo/decoracao-1",
-    "parent_id": null
-  },
-  {
-    "id": 41,
-    "name": "Ver tudo",
-    "slug": "descanso",
-    "parent_slug": null,
-    "level": 1,
-    "url": "/descanso",
-    "catalog_url": "/catalogo/descanso",
-    "parent_id": null
-  },
-  {
-    "id": null,
-    "name": "ELECTRODOMÉSTICOS",
-    "slug": "electrodomesticos",
-    "parent_slug": null,
-    "level": 1,
-    "url": "/electrodomesticos",
-    "catalog_url": "/catalogo/electrodomesticos",
-    "parent_id": null
-  },
-  {
-    "id": null,
-    "name": "Ver tudo",
-    "slug": "mobiliario",
-    "parent_slug": null,
-    "level": 1,
-    "url": "/mobiliario",
-    "catalog_url": "/catalogo/mobiliario",
-    "parent_id": null
-  },
-  {
-    "id": 293,
-    "name": "MOBILIÁRIO",
-    "slug": "mobiliario-2",
-    "parent_slug": null,
-    "level": 1,
-    "url": "/mobiliario-2",
-    "catalog_url": "/catalogo/mobiliario-2",
-    "parent_id": null
-  },
-  {
-    "id": null,
-    "name": "Ver tudo",
-    "slug": "mobiliario-de-exterior",
-    "parent_slug": null,
-    "level": 1,
-    "url": "/mobiliario-de-exterior",
-    "catalog_url": "/catalogo/mobiliario-de-exterior",
-    "parent_id": null
-  },
-  {
-    "id": 1,
-    "name": "Ver tudo",
-    "slug": "sofas",
-    "parent_slug": null,
-    "level": 1,
-    "url": "/sofas",
-    "catalog_url": "/catalogo/sofas",
-    "parent_id": null
-  },
-  {
-    "id": 6,
-    "name": "2 lugares",
-    "slug": "2-lugares",
-    "parent_slug": "sofas",
-    "level": 2,
-    "url": "/2-lugares",
-    "catalog_url": "/catalogo/2-lugares",
-    "parent_id": 1
-  },
-  {
-    "id": 5,
-    "name": "3 lugares",
-    "slug": "3-lugares",
-    "parent_slug": "sofas",
-    "level": 2,
-    "url": "/3-lugares",
-    "catalog_url": "/catalogo/3-lugares",
-    "parent_id": 1
-  },
-  {
-    "id": 42,
-    "name": "Almofadas",
-    "slug": "almofadas",
-    "parent_slug": "descanso",
-    "level": 2,
-    "url": "/almofadas",
-    "catalog_url": "/catalogo/almofadas",
-    "parent_id": 41
-  },
-  {
-    "id": 18,
-    "name": "Aparadores",
-    "slug": "aparadores",
-    "parent_slug": "salas-de-jantar",
-    "level": 2,
-    "url": "/aparadores",
-    "catalog_url": "/catalogo/aparadores",
-    "parent_id": null
-  },
-  {
-    "id": 290,
-    "name": "Armários",
-    "slug": "armarios",
-    "parent_slug": "moveis-auxiliares",
-    "level": 2,
-    "url": "/armarios",
-    "catalog_url": "/catalogo/armarios",
-    "parent_id": null
-  },
-  {
-    "id": 196,
-    "name": "Baloiços",
-    "slug": "baloicos",
-    "parent_slug": "mobiliario-de-exterior",
-    "level": 2,
-    "url": "/baloicos",
-    "catalog_url": "/catalogo/baloicos",
-    "parent_id": null
-  },
-  {
-    "id": 130,
-    "name": "Bancos",
-    "slug": "bancos",
-    "parent_slug": "mobiliario-1",
-    "level": 2,
-    "url": "/bancos",
-    "catalog_url": "/catalogo/bancos",
-    "parent_id": null
-  },
-  {
-    "id": 287,
-    "name": "Bancos",
-    "slug": "bancos-2",
-    "parent_slug": "salas-de-jantar",
-    "level": 2,
-    "url": "/bancos-2",
-    "catalog_url": "/catalogo/bancos-2",
-    "parent_id": null
-  },
-  {
-    "id": 21,
-    "name": "Base tv",
-    "slug": "base-tv",
-    "parent_slug": "salas-de-estar",
-    "level": 2,
-    "url": "/base-tv",
-    "catalog_url": "/catalogo/base-tv",
-    "parent_id": null
-  },
-  {
-    "id": 54,
-    "name": "Bases",
-    "slug": "bases",
-    "parent_slug": "camas",
-    "level": 2,
-    "url": "/bases",
-    "catalog_url": "/catalogo/bases",
-    "parent_id": null
-  },
-  {
-    "id": 55,
-    "name": "Cabeceiras",
-    "slug": "cabeceiras",
-    "parent_slug": "camas",
-    "level": 2,
-    "url": "/cabeceiras",
-    "catalog_url": "/catalogo/cabeceiras",
-    "parent_id": null
-  },
-  {
-    "id": 16,
-    "name": "Cadeiras",
-    "slug": "cadeiras",
-    "parent_slug": "salas-de-jantar",
-    "level": 2,
-    "url": "/cadeiras",
-    "catalog_url": "/catalogo/cadeiras",
-    "parent_id": null
-  },
-  {
-    "id": 192,
-    "name": "Cadeiras",
-    "slug": "cadeiras-exterior",
-    "parent_slug": "mobiliario-de-exterior",
-    "level": 2,
-    "url": "/cadeiras-exterior",
-    "catalog_url": "/catalogo/cadeiras-exterior",
-    "parent_id": null
-  },
-  {
-    "id": 10,
-    "name": "Cadeirões",
-    "slug": "cadeiroes",
-    "parent_slug": "sofas",
-    "level": 2,
-    "url": "/cadeiroes",
-    "catalog_url": "/catalogo/cadeiroes",
-    "parent_id": 1
-  },
-  {
-    "id": null,
-    "name": "Camas",
-    "slug": "camas",
-    "parent_slug": "descanso",
-    "level": 2,
-    "url": "/camas",
-    "catalog_url": "/catalogo/camas",
-    "parent_id": 41
-  },
-  {
-    "id": 30,
-    "name": "Camas mobiliario",
-    "slug": "camas-mobiliario",
-    "parent_slug": "quartos",
-    "level": 2,
-    "url": "/camas-mobiliario",
-    "catalog_url": "/catalogo/camas-mobiliario",
-    "parent_id": null
-  },
-  {
-    "id": 34,
-    "name": "Camiseiros",
-    "slug": "camiseiros",
-    "parent_slug": "quartos",
-    "level": 2,
-    "url": "/camiseiros",
-    "catalog_url": "/catalogo/camiseiros",
-    "parent_id": null
-  },
-  {
-    "id": 158,
-    "name": "Carpetes",
-    "slug": "carpetes",
-    "parent_slug": "texteis-1",
-    "level": 2,
-    "url": "/carpetes",
-    "catalog_url": "/catalogo/carpetes",
-    "parent_id": null
-  },
-  {
-    "id": 4,
-    "name": "Chaise longue",
-    "slug": "chaise-longue",
-    "parent_slug": "sofas",
-    "level": 2,
-    "url": "/chaise-longue",
-    "catalog_url": "/catalogo/chaise-longue",
-    "parent_id": 1
-  },
-  {
-    "id": 43,
-    "name": "Colchões",
-    "slug": "colchoes",
-    "parent_slug": "descanso",
-    "level": 2,
-    "url": "/colchoes",
-    "catalog_url": "/catalogo/colchoes",
-    "parent_id": 41
-  },
-  {
-    "id": 33,
-    "name": "Comodas",
-    "slug": "comodas",
-    "parent_slug": "quartos",
-    "level": 2,
-    "url": "/comodas",
-    "catalog_url": "/catalogo/comodas",
-    "parent_id": null
-  },
-  {
-    "id": 19,
-    "name": "Conjunto mesa + cadeiras",
-    "slug": "conjunto-mesa-cadeiras",
-    "parent_slug": "salas-de-jantar",
-    "level": 2,
-    "url": "/conjunto-mesa-cadeiras",
-    "catalog_url": "/catalogo/conjunto-mesa-cadeiras",
-    "parent_id": null
-  },
-  {
-    "id": 193,
-    "name": "Conjuntos",
-    "slug": "conjuntos",
-    "parent_slug": "mobiliario-de-exterior",
-    "level": 2,
-    "url": "/conjuntos",
-    "catalog_url": "/catalogo/conjuntos",
-    "parent_id": null
-  },
-  {
-    "id": 135,
-    "name": "Consolas",
-    "slug": "consolas",
-    "parent_slug": "mobiliario-1",
-    "level": 2,
-    "url": "/consolas",
-    "catalog_url": "/catalogo/consolas",
-    "parent_id": null
-  },
-  {
-    "id": null,
-    "name": "Cozinha",
-    "slug": "cozinha",
-    "parent_slug": "decoracao",
-    "level": 2,
-    "url": "/cozinha",
-    "catalog_url": "/catalogo/cozinha",
-    "parent_id": null
-  },
-  {
-    "id": null,
-    "name": "Decoração de parede",
-    "slug": "decoracao-de-parede",
-    "parent_slug": "decoracao",
-    "level": 2,
-    "url": "/decoracao-de-parede",
-    "catalog_url": "/catalogo/decoracao-de-parede",
-    "parent_id": null
-  },
-  {
-    "id": null,
-    "name": "DECORAÇÃO DIVERSA",
-    "slug": "decoracao-diversa",
-    "parent_slug": "decoracao",
-    "level": 2,
-    "url": "/decoracao-diversa",
-    "catalog_url": "/catalogo/decoracao-diversa",
-    "parent_id": null
-  },
-  {
-    "id": 59,
-    "name": "Edredons",
-    "slug": "edredons",
-    "parent_slug": "texteis",
-    "level": 2,
-    "url": "/edredons",
-    "catalog_url": "/catalogo/edredons",
-    "parent_id": null
-  },
-  {
-    "id": 195,
-    "name": "Espreguiçadeiras",
-    "slug": "espreguicadeiras",
-    "parent_slug": "mobiliario-de-exterior",
-    "level": 2,
-    "url": "/espreguicadeiras",
-    "catalog_url": "/catalogo/espreguicadeiras",
-    "parent_id": null
-  },
-  {
-    "id": 26,
-    "name": "Estantes",
-    "slug": "estantes",
-    "parent_slug": "salas-de-estar",
-    "level": 2,
-    "url": "/estantes",
-    "catalog_url": "/catalogo/estantes",
-    "parent_id": null
-  },
-  {
-    "id": 47,
-    "name": "Estrados",
-    "slug": "estrados",
-    "parent_slug": "descanso",
-    "level": 2,
-    "url": "/estrados",
-    "catalog_url": "/catalogo/estrados",
-    "parent_id": 41
-  },
-  {
-    "id": 122,
-    "name": "JARDIM",
-    "slug": "jardim",
-    "parent_slug": "decoracao",
-    "level": 2,
-    "url": "/jardim",
-    "catalog_url": "/catalogo/jardim",
-    "parent_id": null
-  },
-  {
-    "id": 32,
-    "name": "Mesas de cabeceira",
-    "slug": "mesas-de-cabeceira",
-    "parent_slug": "quartos",
-    "level": 2,
-    "url": "/mesas-de-cabeceira",
-    "catalog_url": "/catalogo/mesas-de-cabeceira",
-    "parent_id": null
-  },
-  {
-    "id": 22,
-    "name": "Mesas de centro",
-    "slug": "mesas-de-centro",
-    "parent_slug": "salas-de-estar",
-    "level": 2,
-    "url": "/mesas-de-centro",
-    "catalog_url": "/catalogo/mesas-de-centro",
-    "parent_id": null
-  },
-  {
-    "id": 17,
-    "name": "Mesas de jantar",
-    "slug": "mesas-de-jantar",
-    "parent_slug": "salas-de-jantar",
-    "level": 2,
-    "url": "/mesas-de-jantar",
-    "catalog_url": "/catalogo/mesas-de-jantar",
-    "parent_id": null
-  },
-  {
-    "id": 143,
-    "name": "Mesas decorativas",
-    "slug": "mesas-decorativas",
-    "parent_slug": "mobiliario-1",
-    "level": 2,
-    "url": "/mesas-decorativas",
-    "catalog_url": "/catalogo/mesas-decorativas",
-    "parent_id": null
-  },
-  {
-    "id": 194,
-    "name": "Mesas",
-    "slug": "mesas-exterior",
-    "parent_slug": "mobiliario-de-exterior",
-    "level": 2,
-    "url": "/mesas-exterior",
-    "catalog_url": "/catalogo/mesas-exterior",
-    "parent_id": null
-  },
-  {
-    "id": null,
-    "name": "Mobiliário",
-    "slug": "mobiliario-1",
-    "parent_slug": "decoracao",
-    "level": 2,
-    "url": "/mobiliario-1",
-    "catalog_url": "/catalogo/mobiliario-1",
-    "parent_id": null
-  },
-  {
-    "id": 25,
-    "name": "Modulos suspensos",
-    "slug": "modulos-suspensos",
-    "parent_slug": "salas-de-estar",
-    "level": 2,
-    "url": "/modulos-suspensos",
-    "catalog_url": "/catalogo/modulos-suspensos",
-    "parent_id": null
-  },
-  {
-    "id": 44,
-    "name": "Molas",
-    "slug": "molas",
-    "parent_slug": "colchoes",
-    "level": 2,
-    "url": "/molas",
-    "catalog_url": "/catalogo/molas",
-    "parent_id": 43
-  },
-  {
-    "id": 35,
-    "name": "Molduras",
-    "slug": "molduras-2",
-    "parent_slug": "quartos",
-    "level": 2,
-    "url": "/molduras-2",
-    "catalog_url": "/catalogo/molduras-2",
-    "parent_id": null
-  },
-  {
-    "id": null,
-    "name": "Móveis auxiliares",
-    "slug": "moveis-auxiliares",
-    "parent_slug": "mobiliario",
-    "level": 2,
-    "url": "/moveis-auxiliares",
-    "catalog_url": "/catalogo/moveis-auxiliares",
-    "parent_id": null
-  },
-  {
-    "id": 289,
-    "name": "Móveis de bar",
-    "slug": "moveis-de-bar",
-    "parent_slug": "moveis-auxiliares",
-    "level": 2,
-    "url": "/moveis-de-bar",
-    "catalog_url": "/catalogo/moveis-de-bar",
-    "parent_id": null
-  },
-  {
-    "id": 38,
-    "name": "Móveis de entrada",
-    "slug": "moveis-de-entrada",
-    "parent_slug": "moveis-auxiliares",
-    "level": 2,
-    "url": "/moveis-de-entrada",
-    "catalog_url": "/catalogo/moveis-de-entrada",
-    "parent_id": null
-  },
-  {
-    "id": 45,
-    "name": "Nucleo",
-    "slug": "nucleo",
-    "parent_slug": "colchoes",
-    "level": 2,
-    "url": "/nucleo",
-    "catalog_url": "/catalogo/nucleo",
-    "parent_id": 43
-  },
-  {
-    "id": 268,
-    "name": "OUTROS",
-    "slug": "outros",
-    "parent_slug": "electrodomesticos",
-    "level": 2,
-    "url": "/outros",
-    "catalog_url": "/catalogo/outros",
-    "parent_id": null
-  },
-  {
-    "id": 56,
-    "name": "Packs",
-    "slug": "packs",
-    "parent_slug": "camas",
-    "level": 2,
-    "url": "/packs",
-    "catalog_url": "/catalogo/packs",
-    "parent_id": null
-  },
-  {
-    "id": 58,
-    "name": "Protectores de colchões",
-    "slug": "protectores-de-colchoes",
-    "parent_slug": "texteis",
-    "level": 2,
-    "url": "/protectores-de-colchoes",
-    "catalog_url": "/catalogo/protectores-de-colchoes",
-    "parent_id": null
-  },
-  {
-    "id": 145,
-    "name": "Puffs",
-    "slug": "puffs-mobiliario",
-    "parent_slug": "mobiliario-1",
-    "level": 2,
-    "url": "/puffs-mobiliario",
-    "catalog_url": "/catalogo/puffs-mobiliario",
-    "parent_id": null
-  },
-  {
-    "id": null,
-    "name": "Quartos",
-    "slug": "quartos",
-    "parent_slug": "mobiliario",
-    "level": 2,
-    "url": "/quartos",
-    "catalog_url": "/catalogo/quartos",
-    "parent_id": null
-  },
-  {
-    "id": 36,
-    "name": "Quartos",
-    "slug": "quartos-completos",
-    "parent_slug": "quartos",
-    "level": 2,
-    "url": "/quartos-completos",
-    "catalog_url": "/catalogo/quartos-completos",
-    "parent_id": null
-  },
-  {
-    "id": 9,
-    "name": "Relax",
-    "slug": "relax",
-    "parent_slug": "sofas",
-    "level": 2,
-    "url": "/relax",
-    "catalog_url": "/catalogo/relax",
-    "parent_id": 1
-  },
-  {
-    "id": 104,
-    "name": "Relógios",
-    "slug": "relogios",
-    "parent_slug": "decoracao-de-parede",
-    "level": 2,
-    "url": "/relogios",
-    "catalog_url": "/catalogo/relogios",
-    "parent_id": null
-  },
-  {
-    "id": 31,
-    "name": "Roupeiros",
-    "slug": "roupeiros",
-    "parent_slug": "quartos",
-    "level": 2,
-    "url": "/roupeiros",
-    "catalog_url": "/catalogo/roupeiros",
-    "parent_id": null
-  },
-  {
-    "id": null,
-    "name": "Salas de estar",
-    "slug": "salas-de-estar",
-    "parent_slug": "mobiliario",
-    "level": 2,
-    "url": "/salas-de-estar",
-    "catalog_url": "/catalogo/salas-de-estar",
-    "parent_id": null
-  },
-  {
-    "id": null,
-    "name": "Salas de jantar",
-    "slug": "salas-de-jantar",
-    "parent_slug": "mobiliario",
-    "level": 2,
-    "url": "/salas-de-jantar",
-    "catalog_url": "/catalogo/salas-de-jantar",
-    "parent_id": null
-  },
-  {
-    "id": 39,
-    "name": "Sapateiras",
-    "slug": "sapateiras",
-    "parent_slug": "moveis-auxiliares",
-    "level": 2,
-    "url": "/sapateiras",
-    "catalog_url": "/catalogo/sapateiras",
-    "parent_id": null
-  },
-  {
-    "id": 27,
-    "name": "Secretárias",
-    "slug": "secretarias",
-    "parent_slug": "salas-de-estar",
-    "level": 2,
-    "url": "/secretarias",
-    "catalog_url": "/catalogo/secretarias",
-    "parent_id": null
-  },
-  {
-    "id": 11,
-    "name": "Sofás cama",
-    "slug": "sofas-cama",
-    "parent_slug": "sofas",
-    "level": 2,
-    "url": "/sofas-cama",
-    "catalog_url": "/catalogo/sofas-cama",
-    "parent_id": 1
-  },
-  {
-    "id": 3,
-    "name": "Sofás de canto",
-    "slug": "sofas-de-canto",
-    "parent_slug": "sofas",
-    "level": 2,
-    "url": "/sofas-de-canto",
-    "catalog_url": "/catalogo/sofas-de-canto",
-    "parent_id": 1
-  },
-  {
-    "id": 53,
-    "name": "Sommiers",
-    "slug": "sommiers",
-    "parent_slug": "camas",
-    "level": 2,
-    "url": "/sommiers",
-    "catalog_url": "/catalogo/sommiers",
-    "parent_id": null
-  },
-  {
-    "id": 105,
-    "name": "Telas",
-    "slug": "telas",
-    "parent_slug": "decoracao-de-parede",
-    "level": 2,
-    "url": "/telas",
-    "catalog_url": "/catalogo/telas",
-    "parent_id": null
-  },
-  {
-    "id": null,
-    "name": "Texteis",
-    "slug": "texteis",
-    "parent_slug": "descanso",
-    "level": 2,
-    "url": "/texteis",
-    "catalog_url": "/catalogo/texteis",
-    "parent_id": 41
-  },
-  {
-    "id": null,
-    "name": "Texteis",
-    "slug": "texteis-1",
-    "parent_slug": "decoracao",
-    "level": 2,
-    "url": "/texteis-1",
-    "catalog_url": "/catalogo/texteis-1",
-    "parent_id": null
-  },
-  {
-    "id": 46,
-    "name": "Toppers",
-    "slug": "toppers",
-    "parent_slug": "colchoes",
-    "level": 2,
-    "url": "/toppers",
-    "catalog_url": "/catalogo/toppers",
-    "parent_id": 43
-  },
-  {
-    "id": 24,
-    "name": "Vitrines",
-    "slug": "vitrines",
-    "parent_slug": "salas-de-estar",
-    "level": 2,
-    "url": "/vitrines",
-    "catalog_url": "/catalogo/vitrines",
-    "parent_id": null
-  },
-  {
-    "id": 156,
-    "name": "ALMOFADAS DECORATIVAS",
-    "slug": "almofadas-decorativas",
-    "parent_slug": "texteis-1",
-    "level": 3,
-    "url": "/almofadas-decorativas",
-    "catalog_url": "/catalogo/almofadas-decorativas",
-    "parent_id": null
-  },
-  {
-    "id": 129,
-    "name": "APARADORES",
-    "slug": "aparadores-1",
-    "parent_slug": "mobiliario-1",
-    "level": 3,
-    "url": "/aparadores-1",
-    "catalog_url": "/catalogo/aparadores-1",
-    "parent_id": null
-  },
-  {
-    "id": 96,
-    "name": "BANDEJAS",
-    "slug": "bandejas",
-    "parent_slug": "cozinha",
-    "level": 3,
-    "url": "/bandejas",
-    "catalog_url": "/catalogo/bandejas",
-    "parent_id": null
-  },
-  {
-    "id": 131,
-    "name": "BANQUETAS",
-    "slug": "banquetas",
-    "parent_slug": "mobiliario-1",
-    "level": 3,
-    "url": "/banquetas",
-    "catalog_url": "/catalogo/banquetas",
-    "parent_id": null
-  },
-  {
-    "id": 132,
-    "name": "BASE TV",
-    "slug": "base-tv-1",
-    "parent_slug": "mobiliario-1",
-    "level": 3,
-    "url": "/base-tv-1",
-    "catalog_url": "/catalogo/base-tv-1",
-    "parent_id": null
-  },
-  {
-    "id": 110,
-    "name": "CABIDES",
-    "slug": "cabides",
-    "parent_slug": "decoracao-diversa",
-    "level": 3,
-    "url": "/cabides",
-    "catalog_url": "/catalogo/cabides",
-    "parent_id": null
-  },
-  {
-    "id": 133,
-    "name": "CADEIRAS",
-    "slug": "cadeiras-2",
-    "parent_slug": "mobiliario-1",
-    "level": 3,
-    "url": "/cadeiras-2",
-    "catalog_url": "/catalogo/cadeiras-2",
-    "parent_id": null
-  },
-  {
-    "id": 134,
-    "name": "COMODAS",
-    "slug": "comodas-1",
-    "parent_slug": "mobiliario-1",
-    "level": 3,
-    "url": "/comodas-1",
-    "catalog_url": "/catalogo/comodas-1",
-    "parent_id": null
-  },
-  {
-    "id": 102,
-    "name": "ESPELHOS",
-    "slug": "espelhos",
-    "parent_slug": "decoracao-de-parede",
-    "level": 3,
-    "url": "/espelhos",
-    "catalog_url": "/catalogo/espelhos",
-    "parent_id": null
-  },
-  {
-    "id": 49,
-    "name": "ESTRADOS ARTICULADOS",
-    "slug": "estrados-articulados",
-    "parent_slug": "estrados",
-    "level": 3,
-    "url": "/estrados-articulados",
-    "catalog_url": "/catalogo/estrados-articulados",
-    "parent_id": 47
-  },
-  {
-    "id": 48,
-    "name": "ESTRADOS DE RIPAS",
-    "slug": "estrados-de-ripas",
-    "parent_slug": "estrados",
-    "level": 3,
-    "url": "/estrados-de-ripas",
-    "catalog_url": "/catalogo/estrados-de-ripas",
-    "parent_id": 47
-  },
-  {
-    "id": 141,
-    "name": "MESAS",
-    "slug": "mesas",
-    "parent_slug": "mobiliario-1",
-    "level": 3,
-    "url": "/mesas",
-    "catalog_url": "/catalogo/mesas",
-    "parent_id": null
-  },
-  {
-    "id": 139,
-    "name": "MESAS JANTAR",
-    "slug": "mesas-jantar",
-    "parent_slug": "mobiliario-1",
-    "level": 3,
-    "url": "/mesas-jantar",
-    "catalog_url": "/catalogo/mesas-jantar",
-    "parent_id": null
-  },
-  {
-    "id": 51,
-    "name": "PÉS DE ESTRADOS",
-    "slug": "pes-de-estrados",
-    "parent_slug": "estrados",
-    "level": 3,
-    "url": "/pes-de-estrados",
-    "catalog_url": "/catalogo/pes-de-estrados",
-    "parent_id": 47
-  }
+    {
+        "id": null,
+        "name": {
+            "pt": "Acessórios decorativos",
+            "it": "Accessori decorativi"
+        },
+        "slug": "acessorios-decorativos",
+        "parent_slug": null,
+        "level": 1,
+        "url": "\/acessorios-decorativos",
+        "catalog_url": "\/catalogo\/acessorios-decorativos",
+        "parent_id": null
+    },
+    {
+        "id": null,
+        "name": {
+            "pt": "Ver tudo",
+            "it": "Vedi tutto"
+        },
+        "slug": "decoracao",
+        "parent_slug": null,
+        "level": 1,
+        "url": "\/decoracao",
+        "catalog_url": "\/catalogo\/decoracao",
+        "parent_id": null
+    },
+    {
+        "id": 294,
+        "name": {
+            "pt": "DECORAÇÃO",
+            "it": "DECORAZIONE"
+        },
+        "slug": "decoracao-1",
+        "parent_slug": null,
+        "level": 1,
+        "url": "\/decoracao-1",
+        "catalog_url": "\/catalogo\/decoracao-1",
+        "parent_id": null
+    },
+    {
+        "id": 41,
+        "name": {
+            "pt": "Ver tudo",
+            "it": "Vedi tutto"
+        },
+        "slug": "descanso",
+        "parent_slug": null,
+        "level": 1,
+        "url": "\/descanso",
+        "catalog_url": "\/catalogo\/descanso",
+        "parent_id": null
+    },
+    {
+        "id": null,
+        "name": {
+            "pt": "ELECTRODOMÉSTICOS",
+            "it": "ELETTRODOMESTICI"
+        },
+        "slug": "electrodomesticos",
+        "parent_slug": null,
+        "level": 1,
+        "url": "\/electrodomesticos",
+        "catalog_url": "\/catalogo\/electrodomesticos",
+        "parent_id": null
+    },
+    {
+        "id": null,
+        "name": {
+            "pt": "Ver tudo",
+            "it": "Vedi tutto"
+        },
+        "slug": "mobiliario",
+        "parent_slug": null,
+        "level": 1,
+        "url": "\/mobiliario",
+        "catalog_url": "\/catalogo\/mobiliario",
+        "parent_id": null
+    },
+    {
+        "id": 293,
+        "name": {
+            "pt": "MOBILIÁRIO",
+            "it": "MOBILI"
+        },
+        "slug": "mobiliario-2",
+        "parent_slug": null,
+        "level": 1,
+        "url": "\/mobiliario-2",
+        "catalog_url": "\/catalogo\/mobiliario-2",
+        "parent_id": null
+    },
+    {
+        "id": null,
+        "name": {
+            "pt": "Ver tudo",
+            "it": "Vedi tutto"
+        },
+        "slug": "mobiliario-de-exterior",
+        "parent_slug": null,
+        "level": 1,
+        "url": "\/mobiliario-de-exterior",
+        "catalog_url": "\/catalogo\/mobiliario-de-exterior",
+        "parent_id": null
+    },
+    {
+        "id": 1,
+        "name": {
+            "pt": "Ver tudo",
+            "it": "Vedi tutto"
+        },
+        "slug": "sofas",
+        "parent_slug": null,
+        "level": 1,
+        "url": "\/sofas",
+        "catalog_url": "\/catalogo\/sofas",
+        "parent_id": null
+    },
+    {
+        "id": 6,
+        "name": {
+            "pt": "2 lugares",
+            "it": "2 posti"
+        },
+        "slug": "2-lugares",
+        "parent_slug": "sofas",
+        "level": 2,
+        "url": "\/2-lugares",
+        "catalog_url": "\/catalogo\/2-lugares",
+        "parent_id": 1
+    },
+    {
+        "id": 5,
+        "name": {
+            "pt": "3 lugares",
+            "it": "3 posti"
+        },
+        "slug": "3-lugares",
+        "parent_slug": "sofas",
+        "level": 2,
+        "url": "\/3-lugares",
+        "catalog_url": "\/catalogo\/3-lugares",
+        "parent_id": 1
+    },
+    {
+        "id": 42,
+        "name": {
+            "pt": "Almofadas",
+            "it": "Cuscini"
+        },
+        "slug": "almofadas",
+        "parent_slug": "descanso",
+        "level": 2,
+        "url": "\/almofadas",
+        "catalog_url": "\/catalogo\/almofadas",
+        "parent_id": 41
+    },
+    {
+        "id": 18,
+        "name": {
+            "pt": "Aparadores",
+            "it": "Credenze"
+        },
+        "slug": "aparadores",
+        "parent_slug": "salas-de-jantar",
+        "level": 2,
+        "url": "\/aparadores",
+        "catalog_url": "\/catalogo\/aparadores",
+        "parent_id": null
+    },
+    {
+        "id": 290,
+        "name": {
+            "pt": "Armários",
+            "it": "Armadi"
+        },
+        "slug": "armarios",
+        "parent_slug": "moveis-auxiliares",
+        "level": 2,
+        "url": "\/armarios",
+        "catalog_url": "\/catalogo\/armarios",
+        "parent_id": null
+    },
+    {
+        "id": 196,
+        "name": {
+            "pt": "Baloiços",
+            "it": "Altalene"
+        },
+        "slug": "baloicos",
+        "parent_slug": "mobiliario-de-exterior",
+        "level": 2,
+        "url": "\/baloicos",
+        "catalog_url": "\/catalogo\/baloicos",
+        "parent_id": null
+    },
+    {
+        "id": 130,
+        "name": {
+            "pt": "Bancos",
+            "it": "Sgabelli"
+        },
+        "slug": "bancos",
+        "parent_slug": "mobiliario-1",
+        "level": 2,
+        "url": "\/bancos",
+        "catalog_url": "\/catalogo\/bancos",
+        "parent_id": null
+    },
+    {
+        "id": 287,
+        "name": {
+            "pt": "Bancos",
+            "it": "Sgabelli"
+        },
+        "slug": "bancos-2",
+        "parent_slug": "salas-de-jantar",
+        "level": 2,
+        "url": "\/bancos-2",
+        "catalog_url": "\/catalogo\/bancos-2",
+        "parent_id": null
+    },
+    {
+        "id": 21,
+        "name": {
+            "pt": "Base tv",
+            "it": "Base tv"
+        },
+        "slug": "base-tv",
+        "parent_slug": "salas-de-estar",
+        "level": 2,
+        "url": "\/base-tv",
+        "catalog_url": "\/catalogo\/base-tv",
+        "parent_id": null
+    },
+    {
+        "id": 54,
+        "name": {
+            "pt": "Bases",
+            "it": "Basi"
+        },
+        "slug": "bases",
+        "parent_slug": "camas",
+        "level": 2,
+        "url": "\/bases",
+        "catalog_url": "\/catalogo\/bases",
+        "parent_id": null
+    },
+    {
+        "id": 55,
+        "name": {
+            "pt": "Cabeceiras",
+            "it": "Testate"
+        },
+        "slug": "cabeceiras",
+        "parent_slug": "camas",
+        "level": 2,
+        "url": "\/cabeceiras",
+        "catalog_url": "\/catalogo\/cabeceiras",
+        "parent_id": null
+    },
+    {
+        "id": 16,
+        "name": {
+            "pt": "Cadeiras",
+            "it": "Sedie"
+        },
+        "slug": "cadeiras",
+        "parent_slug": "salas-de-jantar",
+        "level": 2,
+        "url": "\/cadeiras",
+        "catalog_url": "\/catalogo\/cadeiras",
+        "parent_id": null
+    },
+    {
+        "id": 192,
+        "name": {
+            "pt": "Cadeiras",
+            "it": "Sedie"
+        },
+        "slug": "cadeiras-exterior",
+        "parent_slug": "mobiliario-de-exterior",
+        "level": 2,
+        "url": "\/cadeiras-exterior",
+        "catalog_url": "\/catalogo\/cadeiras-exterior",
+        "parent_id": null
+    },
+    {
+        "id": 10,
+        "name": {
+            "pt": "Cadeirões",
+            "it": "Poltrone"
+        },
+        "slug": "cadeiroes",
+        "parent_slug": "sofas",
+        "level": 2,
+        "url": "\/cadeiroes",
+        "catalog_url": "\/catalogo\/cadeiroes",
+        "parent_id": 1
+    },
+    {
+        "id": null,
+        "name": {
+            "pt": "Camas",
+            "it": "Letti"
+        },
+        "slug": "camas",
+        "parent_slug": "descanso",
+        "level": 2,
+        "url": "\/camas",
+        "catalog_url": "\/catalogo\/camas",
+        "parent_id": 41
+    },
+    {
+        "id": 30,
+        "name": {
+            "pt": "Camas mobiliario",
+            "it": "Letti arredamento"
+        },
+        "slug": "camas-mobiliario",
+        "parent_slug": "quartos",
+        "level": 2,
+        "url": "\/camas-mobiliario",
+        "catalog_url": "\/catalogo\/camas-mobiliario",
+        "parent_id": null
+    },
+    {
+        "id": 34,
+        "name": {
+            "pt": "Camiseiros",
+            "it": "Cassettieri"
+        },
+        "slug": "camiseiros",
+        "parent_slug": "quartos",
+        "level": 2,
+        "url": "\/camiseiros",
+        "catalog_url": "\/catalogo\/camiseiros",
+        "parent_id": null
+    },
+    {
+        "id": 158,
+        "name": {
+            "pt": "Carpetes",
+            "it": "Tappeti"
+        },
+        "slug": "carpetes",
+        "parent_slug": "texteis-1",
+        "level": 2,
+        "url": "\/carpetes",
+        "catalog_url": "\/catalogo\/carpetes",
+        "parent_id": null
+    },
+    {
+        "id": 4,
+        "name": {
+            "pt": "Chaise longue",
+            "it": "Chaise Longue"
+        },
+        "slug": "chaise-longue",
+        "parent_slug": "sofas",
+        "level": 2,
+        "url": "\/chaise-longue",
+        "catalog_url": "\/catalogo\/chaise-longue",
+        "parent_id": 1
+    },
+    {
+        "id": 43,
+        "name": {
+            "pt": "Colchões",
+            "it": "Materassi"
+        },
+        "slug": "colchoes",
+        "parent_slug": "descanso",
+        "level": 2,
+        "url": "\/colchoes",
+        "catalog_url": "\/catalogo\/colchoes",
+        "parent_id": 41
+    },
+    {
+        "id": 33,
+        "name": {
+            "pt": "Comodas",
+            "it": "Cassettiere"
+        },
+        "slug": "comodas",
+        "parent_slug": "quartos",
+        "level": 2,
+        "url": "\/comodas",
+        "catalog_url": "\/catalogo\/comodas",
+        "parent_id": null
+    },
+    {
+        "id": 19,
+        "name": {
+            "pt": "Conjunto mesa + cadeiras",
+            "it": "Set tavolo + sedie"
+        },
+        "slug": "conjunto-mesa-cadeiras",
+        "parent_slug": "salas-de-jantar",
+        "level": 2,
+        "url": "\/conjunto-mesa-cadeiras",
+        "catalog_url": "\/catalogo\/conjunto-mesa-cadeiras",
+        "parent_id": null
+    },
+    {
+        "id": 193,
+        "name": {
+            "pt": "Conjuntos",
+            "it": "Set"
+        },
+        "slug": "conjuntos",
+        "parent_slug": "mobiliario-de-exterior",
+        "level": 2,
+        "url": "\/conjuntos",
+        "catalog_url": "\/catalogo\/conjuntos",
+        "parent_id": null
+    },
+    {
+        "id": 135,
+        "name": {
+            "pt": "Consolas",
+            "it": "Consolle"
+        },
+        "slug": "consolas",
+        "parent_slug": "mobiliario-1",
+        "level": 2,
+        "url": "\/consolas",
+        "catalog_url": "\/catalogo\/consolas",
+        "parent_id": null
+    },
+    {
+        "id": null,
+        "name": {
+            "pt": "Cozinha",
+            "it": "Cucina"
+        },
+        "slug": "cozinha",
+        "parent_slug": "decoracao",
+        "level": 2,
+        "url": "\/cozinha",
+        "catalog_url": "\/catalogo\/cozinha",
+        "parent_id": null
+    },
+    {
+        "id": null,
+        "name": {
+            "pt": "Decoração de parede",
+            "it": "Decorazione della parete"
+        },
+        "slug": "decoracao-de-parede",
+        "parent_slug": "decoracao",
+        "level": 2,
+        "url": "\/decoracao-de-parede",
+        "catalog_url": "\/catalogo\/decoracao-de-parede",
+        "parent_id": null
+    },
+    {
+        "id": null,
+        "name": {
+            "pt": "DECORAÇÃO DIVERSA",
+            "it": "DECORAZIONE VARIE"
+        },
+        "slug": "decoracao-diversa",
+        "parent_slug": "decoracao",
+        "level": 2,
+        "url": "\/decoracao-diversa",
+        "catalog_url": "\/catalogo\/decoracao-diversa",
+        "parent_id": null
+    },
+    {
+        "id": 59,
+        "name": {
+            "pt": "Edredons",
+            "it": "Piumoni"
+        },
+        "slug": "edredons",
+        "parent_slug": "texteis",
+        "level": 2,
+        "url": "\/edredons",
+        "catalog_url": "\/catalogo\/edredons",
+        "parent_id": null
+    },
+    {
+        "id": 195,
+        "name": {
+            "pt": "Espreguiçadeiras",
+            "it": "Sdraio"
+        },
+        "slug": "espreguicadeiras",
+        "parent_slug": "mobiliario-de-exterior",
+        "level": 2,
+        "url": "\/espreguicadeiras",
+        "catalog_url": "\/catalogo\/espreguicadeiras",
+        "parent_id": null
+    },
+    {
+        "id": 26,
+        "name": {
+            "pt": "Estantes",
+            "it": "Scaffali"
+        },
+        "slug": "estantes",
+        "parent_slug": "salas-de-estar",
+        "level": 2,
+        "url": "\/estantes",
+        "catalog_url": "\/catalogo\/estantes",
+        "parent_id": null
+    },
+    {
+        "id": 47,
+        "name": {
+            "pt": "Estrados",
+            "it": "Reti"
+        },
+        "slug": "estrados",
+        "parent_slug": "descanso",
+        "level": 2,
+        "url": "\/estrados",
+        "catalog_url": "\/catalogo\/estrados",
+        "parent_id": 41
+    },
+    {
+        "id": 122,
+        "name": {
+            "pt": "JARDIM",
+            "it": "GIARDINO"
+        },
+        "slug": "jardim",
+        "parent_slug": "decoracao",
+        "level": 2,
+        "url": "\/jardim",
+        "catalog_url": "\/catalogo\/jardim",
+        "parent_id": null
+    },
+    {
+        "id": 32,
+        "name": {
+            "pt": "Mesas de cabeceira",
+            "it": "Comodini"
+        },
+        "slug": "mesas-de-cabeceira",
+        "parent_slug": "quartos",
+        "level": 2,
+        "url": "\/mesas-de-cabeceira",
+        "catalog_url": "\/catalogo\/mesas-de-cabeceira",
+        "parent_id": null
+    },
+    {
+        "id": 22,
+        "name": {
+            "pt": "Mesas de centro",
+            "it": "Tavolini della salotto"
+        },
+        "slug": "mesas-de-centro",
+        "parent_slug": "salas-de-estar",
+        "level": 2,
+        "url": "\/mesas-de-centro",
+        "catalog_url": "\/catalogo\/mesas-de-centro",
+        "parent_id": null
+    },
+    {
+        "id": 17,
+        "name": {
+            "pt": "Mesas de jantar",
+            "it": "Tavoli della pranzo"
+        },
+        "slug": "mesas-de-jantar",
+        "parent_slug": "salas-de-jantar",
+        "level": 2,
+        "url": "\/mesas-de-jantar",
+        "catalog_url": "\/catalogo\/mesas-de-jantar",
+        "parent_id": null
+    },
+    {
+        "id": 143,
+        "name": {
+            "pt": "Mesas decorativas",
+            "it": "Tavoli decorativi"
+        },
+        "slug": "mesas-decorativas",
+        "parent_slug": "mobiliario-1",
+        "level": 2,
+        "url": "\/mesas-decorativas",
+        "catalog_url": "\/catalogo\/mesas-decorativas",
+        "parent_id": null
+    },
+    {
+        "id": 194,
+        "name": {
+            "pt": "Mesas",
+            "it": "Tavoli"
+        },
+        "slug": "mesas-exterior",
+        "parent_slug": "mobiliario-de-exterior",
+        "level": 2,
+        "url": "\/mesas-exterior",
+        "catalog_url": "\/catalogo\/mesas-exterior",
+        "parent_id": null
+    },
+    {
+        "id": null,
+        "name": {
+            "pt": "Mobiliário",
+            "it": "Mobili"
+        },
+        "slug": "mobiliario-1",
+        "parent_slug": "decoracao",
+        "level": 2,
+        "url": "\/mobiliario-1",
+        "catalog_url": "\/catalogo\/mobiliario-1",
+        "parent_id": null
+    },
+    {
+        "id": 25,
+        "name": {
+            "pt": "Modulos suspensos",
+            "it": "Moduli sospesi"
+        },
+        "slug": "modulos-suspensos",
+        "parent_slug": "salas-de-estar",
+        "level": 2,
+        "url": "\/modulos-suspensos",
+        "catalog_url": "\/catalogo\/modulos-suspensos",
+        "parent_id": null
+    },
+    {
+        "id": 44,
+        "name": {
+            "pt": "Molas",
+            "it": "Molle"
+        },
+        "slug": "molas",
+        "parent_slug": "colchoes",
+        "level": 2,
+        "url": "\/molas",
+        "catalog_url": "\/catalogo\/molas",
+        "parent_id": 43
+    },
+    {
+        "id": 35,
+        "name": {
+            "pt": "Molduras",
+            "it": "Cornici"
+        },
+        "slug": "molduras-2",
+        "parent_slug": "quartos",
+        "level": 2,
+        "url": "\/molduras-2",
+        "catalog_url": "\/catalogo\/molduras-2",
+        "parent_id": null
+    },
+    {
+        "id": null,
+        "name": {
+            "pt": "Móveis auxiliares",
+            "it": "Mobili ausiliari"
+        },
+        "slug": "moveis-auxiliares",
+        "parent_slug": "mobiliario",
+        "level": 2,
+        "url": "\/moveis-auxiliares",
+        "catalog_url": "\/catalogo\/moveis-auxiliares",
+        "parent_id": null
+    },
+    {
+        "id": 289,
+        "name": {
+            "pt": "Móveis de bar",
+            "it": "Mobili della bar"
+        },
+        "slug": "moveis-de-bar",
+        "parent_slug": "moveis-auxiliares",
+        "level": 2,
+        "url": "\/moveis-de-bar",
+        "catalog_url": "\/catalogo\/moveis-de-bar",
+        "parent_id": null
+    },
+    {
+        "id": 38,
+        "name": {
+            "pt": "Móveis de entrada",
+            "it": "Mobili d'ingresso"
+        },
+        "slug": "moveis-de-entrada",
+        "parent_slug": "moveis-auxiliares",
+        "level": 2,
+        "url": "\/moveis-de-entrada",
+        "catalog_url": "\/catalogo\/moveis-de-entrada",
+        "parent_id": null
+    },
+    {
+        "id": 45,
+        "name": {
+            "pt": "Nucleo",
+            "it": "Nucleo"
+        },
+        "slug": "nucleo",
+        "parent_slug": "colchoes",
+        "level": 2,
+        "url": "\/nucleo",
+        "catalog_url": "\/catalogo\/nucleo",
+        "parent_id": 43
+    },
+    {
+        "id": 268,
+        "name": {
+            "pt": "OUTROS",
+            "it": "ALTRI"
+        },
+        "slug": "outros",
+        "parent_slug": "electrodomesticos",
+        "level": 2,
+        "url": "\/outros",
+        "catalog_url": "\/catalogo\/outros",
+        "parent_id": null
+    },
+    {
+        "id": 56,
+        "name": {
+            "pt": "Packs",
+            "it": "Pack"
+        },
+        "slug": "packs",
+        "parent_slug": "camas",
+        "level": 2,
+        "url": "\/packs",
+        "catalog_url": "\/catalogo\/packs",
+        "parent_id": null
+    },
+    {
+        "id": 58,
+        "name": {
+            "pt": "Protectores de colchões",
+            "it": "Coprimaterassi"
+        },
+        "slug": "protectores-de-colchoes",
+        "parent_slug": "texteis",
+        "level": 2,
+        "url": "\/protectores-de-colchoes",
+        "catalog_url": "\/catalogo\/protectores-de-colchoes",
+        "parent_id": null
+    },
+    {
+        "id": 145,
+        "name": {
+            "pt": "Puffs",
+            "it": "Pouf"
+        },
+        "slug": "puffs-mobiliario",
+        "parent_slug": "mobiliario-1",
+        "level": 2,
+        "url": "\/puffs-mobiliario",
+        "catalog_url": "\/catalogo\/puffs-mobiliario",
+        "parent_id": null
+    },
+    {
+        "id": null,
+        "name": {
+            "pt": "Quartos",
+            "it": "Camere"
+        },
+        "slug": "quartos",
+        "parent_slug": "mobiliario",
+        "level": 2,
+        "url": "\/quartos",
+        "catalog_url": "\/catalogo\/quartos",
+        "parent_id": null
+    },
+    {
+        "id": 36,
+        "name": {
+            "pt": "Quartos",
+            "it": "Camere"
+        },
+        "slug": "quartos-completos",
+        "parent_slug": "quartos",
+        "level": 2,
+        "url": "\/quartos-completos",
+        "catalog_url": "\/catalogo\/quartos-completos",
+        "parent_id": null
+    },
+    {
+        "id": 9,
+        "name": {
+            "pt": "Relax",
+            "it": "Relax"
+        },
+        "slug": "relax",
+        "parent_slug": "sofas",
+        "level": 2,
+        "url": "\/relax",
+        "catalog_url": "\/catalogo\/relax",
+        "parent_id": 1
+    },
+    {
+        "id": 104,
+        "name": {
+            "pt": "Relógios",
+            "it": "Orologi"
+        },
+        "slug": "relogios",
+        "parent_slug": "decoracao-de-parede",
+        "level": 2,
+        "url": "\/relogios",
+        "catalog_url": "\/catalogo\/relogios",
+        "parent_id": null
+    },
+    {
+        "id": 31,
+        "name": {
+            "pt": "Roupeiros",
+            "it": "Armadi"
+        },
+        "slug": "roupeiros",
+        "parent_slug": "quartos",
+        "level": 2,
+        "url": "\/roupeiros",
+        "catalog_url": "\/catalogo\/roupeiros",
+        "parent_id": null
+    },
+    {
+        "id": null,
+        "name": {
+            "pt": "Salas de estar",
+            "it": "Soggiorni"
+        },
+        "slug": "salas-de-estar",
+        "parent_slug": "mobiliario",
+        "level": 2,
+        "url": "\/salas-de-estar",
+        "catalog_url": "\/catalogo\/salas-de-estar",
+        "parent_id": null
+    },
+    {
+        "id": null,
+        "name": {
+            "pt": "Salas de jantar",
+            "it": "Sale della pranzo"
+        },
+        "slug": "salas-de-jantar",
+        "parent_slug": "mobiliario",
+        "level": 2,
+        "url": "\/salas-de-jantar",
+        "catalog_url": "\/catalogo\/salas-de-jantar",
+        "parent_id": null
+    },
+    {
+        "id": 39,
+        "name": {
+            "pt": "Sapateiras",
+            "it": "Scarpiera"
+        },
+        "slug": "sapateiras",
+        "parent_slug": "moveis-auxiliares",
+        "level": 2,
+        "url": "\/sapateiras",
+        "catalog_url": "\/catalogo\/sapateiras",
+        "parent_id": null
+    },
+    {
+        "id": 27,
+        "name": {
+            "pt": "Secretárias",
+            "it": "Scrivanie"
+        },
+        "slug": "secretarias",
+        "parent_slug": "salas-de-estar",
+        "level": 2,
+        "url": "\/secretarias",
+        "catalog_url": "\/catalogo\/secretarias",
+        "parent_id": null
+    },
+    {
+        "id": 11,
+        "name": {
+            "pt": "Sofás cama",
+            "it": "Divani letto"
+        },
+        "slug": "sofas-cama",
+        "parent_slug": "sofas",
+        "level": 2,
+        "url": "\/sofas-cama",
+        "catalog_url": "\/catalogo\/sofas-cama",
+        "parent_id": 1
+    },
+    {
+        "id": 3,
+        "name": {
+            "pt": "Sofás de canto",
+            "it": "Divani angolari"
+        },
+        "slug": "sofas-de-canto",
+        "parent_slug": "sofas",
+        "level": 2,
+        "url": "\/sofas-de-canto",
+        "catalog_url": "\/catalogo\/sofas-de-canto",
+        "parent_id": 1
+    },
+    {
+        "id": 53,
+        "name": {
+            "pt": "Sommiers",
+            "it": "Sommier"
+        },
+        "slug": "sommiers",
+        "parent_slug": "camas",
+        "level": 2,
+        "url": "\/sommiers",
+        "catalog_url": "\/catalogo\/sommiers",
+        "parent_id": null
+    },
+    {
+        "id": 105,
+        "name": {
+            "pt": "Telas",
+            "it": "Tele"
+        },
+        "slug": "telas",
+        "parent_slug": "decoracao-de-parede",
+        "level": 2,
+        "url": "\/telas",
+        "catalog_url": "\/catalogo\/telas",
+        "parent_id": null
+    },
+    {
+        "id": null,
+        "name": {
+            "pt": "Texteis",
+            "it": "Tessili"
+        },
+        "slug": "texteis",
+        "parent_slug": "descanso",
+        "level": 2,
+        "url": "\/texteis",
+        "catalog_url": "\/catalogo\/texteis",
+        "parent_id": 41
+    },
+    {
+        "id": null,
+        "name": {
+            "pt": "Texteis",
+            "it": "Tessili"
+        },
+        "slug": "texteis-1",
+        "parent_slug": "decoracao",
+        "level": 2,
+        "url": "\/texteis-1",
+        "catalog_url": "\/catalogo\/texteis-1",
+        "parent_id": null
+    },
+    {
+        "id": 46,
+        "name": {
+            "pt": "Toppers",
+            "it": "Topper"
+        },
+        "slug": "toppers",
+        "parent_slug": "colchoes",
+        "level": 2,
+        "url": "\/toppers",
+        "catalog_url": "\/catalogo\/toppers",
+        "parent_id": 43
+    },
+    {
+        "id": 24,
+        "name": {
+            "pt": "Vitrines",
+            "it": "Vetrine"
+        },
+        "slug": "vitrines",
+        "parent_slug": "salas-de-estar",
+        "level": 2,
+        "url": "\/vitrines",
+        "catalog_url": "\/catalogo\/vitrines",
+        "parent_id": null
+    },
+    {
+        "id": 156,
+        "name": {
+            "pt": "ALMOFADAS DECORATIVAS",
+            "it": "CUSCINI DECORATIVAS"
+        },
+        "slug": "almofadas-decorativas",
+        "parent_slug": "texteis-1",
+        "level": 3,
+        "url": "\/almofadas-decorativas",
+        "catalog_url": "\/catalogo\/almofadas-decorativas",
+        "parent_id": null
+    },
+    {
+        "id": 129,
+        "name": {
+            "pt": "APARADORES",
+            "it": "CREDENZE"
+        },
+        "slug": "aparadores-1",
+        "parent_slug": "mobiliario-1",
+        "level": 3,
+        "url": "\/aparadores-1",
+        "catalog_url": "\/catalogo\/aparadores-1",
+        "parent_id": null
+    },
+    {
+        "id": 96,
+        "name": {
+            "pt": "BANDEJAS",
+            "it": "VASSOI"
+        },
+        "slug": "bandejas",
+        "parent_slug": "cozinha",
+        "level": 3,
+        "url": "\/bandejas",
+        "catalog_url": "\/catalogo\/bandejas",
+        "parent_id": null
+    },
+    {
+        "id": 131,
+        "name": {
+            "pt": "BANQUETAS",
+            "it": "BANQUETAS"
+        },
+        "slug": "banquetas",
+        "parent_slug": "mobiliario-1",
+        "level": 3,
+        "url": "\/banquetas",
+        "catalog_url": "\/catalogo\/banquetas",
+        "parent_id": null
+    },
+    {
+        "id": 132,
+        "name": {
+            "pt": "BASE TV",
+            "it": "BASE TV"
+        },
+        "slug": "base-tv-1",
+        "parent_slug": "mobiliario-1",
+        "level": 3,
+        "url": "\/base-tv-1",
+        "catalog_url": "\/catalogo\/base-tv-1",
+        "parent_id": null
+    },
+    {
+        "id": 110,
+        "name": {
+            "pt": "CABIDES",
+            "it": "CABIDES"
+        },
+        "slug": "cabides",
+        "parent_slug": "decoracao-diversa",
+        "level": 3,
+        "url": "\/cabides",
+        "catalog_url": "\/catalogo\/cabides",
+        "parent_id": null
+    },
+    {
+        "id": 133,
+        "name": {
+            "pt": "CADEIRAS",
+            "it": "SEDIE"
+        },
+        "slug": "cadeiras-2",
+        "parent_slug": "mobiliario-1",
+        "level": 3,
+        "url": "\/cadeiras-2",
+        "catalog_url": "\/catalogo\/cadeiras-2",
+        "parent_id": null
+    },
+    {
+        "id": 134,
+        "name": {
+            "pt": "COMODAS",
+            "it": "CASSETTIERE"
+        },
+        "slug": "comodas-1",
+        "parent_slug": "mobiliario-1",
+        "level": 3,
+        "url": "\/comodas-1",
+        "catalog_url": "\/catalogo\/comodas-1",
+        "parent_id": null
+    },
+    {
+        "id": 102,
+        "name": {
+            "pt": "ESPELHOS",
+            "it": "SPECCHI"
+        },
+        "slug": "espelhos",
+        "parent_slug": "decoracao-de-parede",
+        "level": 3,
+        "url": "\/espelhos",
+        "catalog_url": "\/catalogo\/espelhos",
+        "parent_id": null
+    },
+    {
+        "id": 49,
+        "name": {
+            "pt": "ESTRADOS ARTICULADOS",
+            "it": "RETI ARTICULADOS"
+        },
+        "slug": "estrados-articulados",
+        "parent_slug": "estrados",
+        "level": 3,
+        "url": "\/estrados-articulados",
+        "catalog_url": "\/catalogo\/estrados-articulados",
+        "parent_id": 47
+    },
+    {
+        "id": 48,
+        "name": {
+            "pt": "ESTRADOS DE RIPAS",
+            "it": "RETI DI RIPAS"
+        },
+        "slug": "estrados-de-ripas",
+        "parent_slug": "estrados",
+        "level": 3,
+        "url": "\/estrados-de-ripas",
+        "catalog_url": "\/catalogo\/estrados-de-ripas",
+        "parent_id": 47
+    },
+    {
+        "id": 141,
+        "name": {
+            "pt": "MESAS",
+            "it": "TAVOLI"
+        },
+        "slug": "mesas",
+        "parent_slug": "mobiliario-1",
+        "level": 3,
+        "url": "\/mesas",
+        "catalog_url": "\/catalogo\/mesas",
+        "parent_id": null
+    },
+    {
+        "id": 139,
+        "name": {
+            "pt": "MESAS JANTAR",
+            "it": "TAVOLI PRANZO"
+        },
+        "slug": "mesas-jantar",
+        "parent_slug": "mobiliario-1",
+        "level": 3,
+        "url": "\/mesas-jantar",
+        "catalog_url": "\/catalogo\/mesas-jantar",
+        "parent_id": null
+    },
+    {
+        "id": 51,
+        "name": {
+            "pt": "PÉS DE ESTRADOS",
+            "it": "PIEDI DI RETI"
+        },
+        "slug": "pes-de-estrados",
+        "parent_slug": "estrados",
+        "level": 3,
+        "url": "\/pes-de-estrados",
+        "catalog_url": "\/catalogo\/pes-de-estrados",
+        "parent_id": 47
+    }
 ]

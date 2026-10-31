@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Política de Cookies | DFP Interiores')
+@section('title', __('Política de Cookies').' | DFP Interiores')
 
 @push('scripts')
 <script src="/assets/vue/cookies.js"></script>
@@ -8,12 +8,11 @@
 @endpush
 
 @section('content')
-@verbatim
 <div class="container breadcrumb">
     <div>
-        <a href="/">Início</a>
-        <a href="/">Ajuda</a>
-        <h1>Política de Cookies</h1>
+        <a href="/">{{ __('Início') }}</a>
+        <a href="/">{{ __('Ajuda') }}</a>
+        <h1>{{ __('Política de Cookies') }}</h1>
     </div>
     <div class="actions"></div>
 </div>
@@ -22,13 +21,13 @@
     <div class="row">
         <div class="col-sm-12">
 
-            <h2>1. O que são cookies</h2>
+            <h2>{{ __('1. O que são cookies') }}</h2>
             <p>Cookies são pequenos ficheiros de texto que um sítio na Internet coloca no
             dispositivo do utilizador para guardar informação, nomeadamente sobre as suas
             preferências ou a sua atividade de navegação. São utilizadas também tecnologias
             equivalentes, como o armazenamento local do navegador (localStorage) e píxeis.</p>
 
-            <h2>2. Base legal e consentimento</h2>
+            <h2>{{ __('2. Base legal e consentimento') }}</h2>
             <p>Nos termos do artigo 5.º da Lei n.º 41/2004 e do Regulamento (UE) 2016/679
             (RGPD), a DFP Interiores apenas utiliza cookies não estritamente necessários
             mediante o <b>consentimento prévio e expresso</b> do utilizador, recolhido
@@ -37,11 +36,11 @@
             com o mesmo grau de simplicidade com que foi concedido. As cookies estritamente
             necessárias não carecem de consentimento.</p>
 
-            <h2>3. Categorias de cookies utilizadas</h2>
+            <h2>{{ __('3. Categorias de cookies utilizadas') }}</h2>
             <table border="1" cellpadding="6" cellspacing="0" style="border-collapse:collapse;width:100%;">
                 <thead>
                     <tr>
-                        <th>Categoria</th><th>Finalidade</th><th>Consentimento</th><th>Prazo</th>
+                        <th>{{ __('Categoria') }}</th><th>{{ __('Finalidade') }}</th><th>{{ __('Consentimento') }}</th><th>{{ __('Prazo') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -79,26 +78,25 @@
             só são ativadas após consentimento. Enquanto o utilizador não aceitar, os
             serviços de terceiros correspondentes não são carregados.</p>
 
-            <h2>4. Cookies de terceiros</h2>
+            <h2>{{ __('4. Cookies de terceiros') }}</h2>
             <p>Quando consentidas, podem ser utilizadas cookies dos seguintes terceiros,
             sujeitas às respetivas políticas de privacidade: Google (Analytics, Tag Manager,
             Ads/Merchant Center), Meta/Facebook, TikTok, Pinterest.</p>
 
-            <h2>5. Como gerir ou eliminar cookies</h2>
+            <h2>{{ __('5. Como gerir ou eliminar cookies') }}</h2>
             <p>Pode alterar a sua escolha a qualquer momento através do banner de cookies.
             Pode ainda configurar o seu navegador para bloquear ou eliminar cookies
             (Chrome, Firefox, Safari, Edge disponibilizam essa opção nas definições de
             privacidade). O bloqueio de cookies estritamente necessárias pode afetar o
             funcionamento do sítio, designadamente o carrinho e a finalização de compras.</p>
 
-            <h2>6. Contacto</h2>
+            <h2>{{ __('6. Contacto') }}</h2>
             <p>Para questões sobre esta política ou sobre proteção de dados:
             <a href="mailto:contacto@dfpinteriores.com">contacto@dfpinteriores.com</a>.
             Consulte também a nossa
-            <a href="/ajuda/politica-privacidade">Política de Privacidade</a>.</p>
+            <a href="/ajuda/politica-privacidade">{{ __('Política de Privacidade') }}</a>.</p>
 
         </div>
     </div>
 </div>
-@endverbatim
 @endsection

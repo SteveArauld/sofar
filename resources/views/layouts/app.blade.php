@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) === 'it' ? 'it-IT' : 'pt-PT' }}">
 
 
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
@@ -56,7 +56,106 @@
     <!-- Place this data between the <head> tags of your website -->
     <title>@yield('title', 'DFP Interiores')</title>
     <meta name="description"
-        content="DFP Interiores: Especialistas em Sofás e Mobiliário para a sua casa. Qualidade, design moderno e os melhores preços do mercado. Entrega rápida e garantida. Renove o seu lar hoje!" />
+        content="{{ __('DFP Interiores: Especialistas em Sofás e Mobiliário para a sua casa. Qualidade, design moderno e os melhores preços do mercado. Entrega rápida e garantida. Renove o seu lar hoje!') }}" />
+    <script>
+        window.APP_LOCALE = @json($currentLocale ?? app()->getLocale());
+        window.DFP_I18N = {
+            in_stock: @json(__('Em stock')),
+            in_stock_upper: @json(__('EM STOCK')),
+            to_order: @json(__('Por encomenda')),
+            to_order_upper: @json(__('POR ENCOMENDA')),
+            available: @json(__('Disponível')),
+            cart_empty: @json(__('O seu carrinho está vazio.')),
+            optionals: @json(__('Opcionais')),
+            qty_unavailable: @json(__('Qtd. indisponível')),
+            no_results: @json(__('Não foram encontrados resultados para')),
+            categories: @json(__('Categorias')),
+            search_history: @json(__('Histórico de pesquisa')),
+            account: @json(__('Conta')),
+            favorites: @json(__('Favoritos')),
+            cart: @json(__('Carrinho')),
+            close: @json(__('Fechar')),
+            total: @json(__('Total')),
+            view_cart: @json(__('Ver carrinho')),
+            checkout: @json(__('Finalizar encomenda')),
+            continue_shopping: @json(__('Continuar a comprar')),
+            email_placeholder: @json(__('O seu e-mail')),
+            subscribe: @json(__('Subscrever')),
+            newsletter_ok: @json(__('Registo concluído com sucesso!')),
+            search_placeholder: @json(__('Procurar produtos...'))
+        };
+        (function () {
+            var loc = window.APP_LOCALE || 'pt';
+            var skip = /^(assets|media|images|videos|img|css|js|storage|fonts|favicon|feeds|up)(\/|$)/;
+            function withLocale(href) {
+                if (!href || href.charAt(0) !== '/' || href.indexOf('//') === 0) return href;
+                var path = href.split('?')[0], q = href.indexOf('?') >= 0 ? href.slice(href.indexOf('?')) : '';
+                if (skip.test(path.replace(/^\//, ''))) return href;
+                if (/^\/(pt|it)(\/|$)/.test(path)) return href;
+                if (path === '/') return '/' + loc + q;
+                return '/' + loc + path + q;
+            }
+            document.addEventListener('click', function (e) {
+                var a = e.target.closest && e.target.closest('a[href^="/"]');
+                if (!a || a.hasAttribute('data-no-locale')) return;
+                var next = withLocale(a.getAttribute('href'));
+                if (next !== a.getAttribute('href')) a.setAttribute('href', next);
+            }, true);
+        })();
+    </script>
+    <style>
+        /* Switcher PT|IT — couleurs claires sur header sombre, sans casser .icons */
+        .Header .icons { display: inline-flex; align-items: center; flex-wrap: nowrap; }
+        .lang-switch {
+            display: inline-flex;
+            align-items: center;
+            gap: 0;
+            margin: 0 10px 0 0;
+            padding: 0;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .06em;
+            line-height: 1;
+            white-space: nowrap;
+            flex: 0 0 auto;
+            vertical-align: middle;
+        }
+        .lang-switch a {
+            display: inline-block !important;
+            margin: 0 !important;
+            padding: 6px 8px !important;
+            color: #ffffffb8 !important;
+            text-decoration: none !important;
+            border: 1px solid transparent;
+            border-radius: 3px;
+            width: auto !important;
+            text-align: center;
+        }
+        .lang-switch a:hover { color: #fff !important; border-color: rgba(255,255,255,.35); }
+        .lang-switch a.is-active {
+            color: #e5007d !important;
+            border-color: #e5007d;
+            background: rgba(229,0,125,.12);
+        }
+        .lang-switch .sep { color: rgba(255,255,255,.35); padding: 0 1px; font-weight: 400; }
+        .MenuMobile .head { position: relative; }
+        .lang-switch-mobile {
+            position: absolute;
+            right: 85px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 6;
+            margin: 0;
+            font-size: 11px;
+        }
+        .lang-switch-mobile a { color: #fff !important; padding: 4px 5px !important; }
+        .lang-switch-mobile a.is-active {
+            color: #fff !important;
+            border-color: rgba(255,255,255,.75);
+            background: rgba(255,255,255,.12);
+        }
+        .lang-switch-mobile .sep { color: rgba(255,255,255,.45); }
+    </style>
 
 
     <meta itemprop="image" content="/social.jpg">
@@ -237,332 +336,17 @@
                 <div class="offside">
                     <div :class="{ open: offside.mobilemenu }" class="content MobileMenu">
                         <div>
-                            <ul class="mobileMenu">
-                                <li>
-                                    <a href="/descontos70">
-                                        <svg width="30" height="30" class="icon"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="/media/categorias/icons/descontos70.svg#descontos70"
-                                                href="/media/categorias/icons/descontos70.svg#descontos70"></use>
-                                        </svg>
-                                        Descontos até 70%
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/artigosExclusivosOnline">
-                                        <svg width="30" height="30" class="icon"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="/media/categorias/icons/exclusivo_online.svg#exclusivo_online"
-                                                href="/media/categorias/icons/exclusivo_online.svg#exclusivo_online"></use>
-                                        </svg>
-                                        Exclusivo Online
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <svg width="30" height="30" class="icon"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="/media/categorias/icons/mobiliario.svg#mobiliario"
-                                                href="/media/categorias/icons/mobiliario.svg#mobiliario"></use>
-                                        </svg>
-                                        Mobiliário <span class='cross'></span></a>
-                                    <ul>
-
-                                        <li>
-                                            <a href="/salas-de-estar">Salas de estar <span class='cross'></span></a>
-                                            <ul>
-                                                <li style='order: 1;'>
-                                                    <a href="/base-tv">Base tv</a>
-                                                </li>
-                                                <li style='order: 2;'>
-                                                    <a href="/mesas-de-centro">Mesas de centro</a>
-                                                </li>
-                                                <li style='order: 3;'>
-                                                    <a href="/vitrines">Vitrines</a>
-                                                </li>
-                                                <li style='order: 4;'>
-                                                    <a href="/modulos-suspensos">Modulos suspensos</a>
-                                                </li>
-                                                <li style='order: 5;'>
-                                                    <a href="/estantes">Estantes</a>
-                                                </li>
-                                                <li style='order: 6;'>
-                                                    <a href="/secretarias">Secretárias</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-                                        <li>
-                                            <a href="/quartos">Quartos <span class='cross'></span></a>
-                                            <ul>
-                                                <li style='order: 1;'>
-                                                    <a href="/camas-mobiliario">Camas mobiliario</a>
-                                                </li>
-                                                <li style='order: 2;'>
-                                                    <a href="/roupeiros">Roupeiros</a>
-                                                </li>
-                                                <li style='order: 3;'>
-                                                    <a href="/mesas-de-cabeceira">Mesas de cabeceira</a>
-                                                </li>
-                                                <li style='order: 4;'>
-                                                    <a href="/comodas">Comodas</a>
-                                                </li>
-                                                <li style='order: 5;'>
-                                                    <a href="/camiseiros">Camiseiros</a>
-                                                </li>
-                                                <li style='order: 6;'>
-                                                    <a href="/molduras-2">Molduras</a>
-                                                </li>
-                                                <li style='order: 7;'>
-                                                    <a href="/quartos-completos">Quartos</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-                                        <li>
-                                            <a href="/moveis-auxiliares">Móveis auxiliares <span
-                                                    class='cross'></span></a>
-                                            <ul>
-                                                <li style='order: 1;'>
-                                                    <a href="/moveis-de-entrada">Móveis de entrada</a>
-                                                </li>
-                                                <li style='order: 2;'>
-                                                    <a href="/sapateiras">Sapateiras</a>
-                                                </li>
-                                                <li style='order: 3;'>
-                                                    <a href="/moveis-de-bar">Móveis de bar</a>
-                                                </li>
-                                                <li style='order: 4;'>
-                                                    <a href="/armarios">Armários</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-                                        <li>
-                                            <a href="/salas-de-jantar">Salas de jantar <span class='cross'></span></a>
-                                            <ul>
-                                                <li style='order: 1;'>
-                                                    <a href="/conjunto-mesa-cadeiras">Conjunto mesa + cadeiras</a>
-                                                </li>
-                                                <li style='order: 2;'>
-                                                    <a href="/bancos-2">Bancos</a>
-                                                </li>
-                                                <li style='order: 3;'>
-                                                    <a href="/cadeiras">Cadeiras</a>
-                                                </li>
-                                                <li style='order: 4;'>
-                                                    <a href="/mesas-de-jantar">Mesas de jantar</a>
-                                                </li>
-                                                <li style='order: 5;'>
-                                                    <a href="/aparadores">Aparadores</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class='Tudo'><a href='/mobiliario'>Ver tudo</a></li>
-                                    </ul>
-                                <li>
-                                    <a href="#">
-                                        <svg width="30" height="30" class="icon"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="/media/categorias/icons/sofa.svg#sofa"
-                                                href="/media/categorias/icons/sofa.svg#sofa"></use>
-                                        </svg>
-                                        Sofás <span class='cross'></span></a>
-                                    <ul>
-
-                                        <li>
-                                            <a href="/chaise-longue">Chaise longue </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="/3-lugares">3 lugares </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="/2-lugares">2 lugares </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="/relax">Relax </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="/sofas-de-canto">Sofás de canto </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="/cadeiroes">Cadeirões </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="/sofas-cama">Sofás cama </a>
-                                        </li>
-                                        <li class='Tudo'><a href='/sofas'>Ver tudo</a></li>
-                                    </ul>
-                                <li>
-                                    <a href="#">
-                                        <svg width="30" height="30" class="icon"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="/media/categorias/icons/decoracao.svg#decoracao"
-                                                href="/media/categorias/icons/decoracao.svg#decoracao"></use>
-                                        </svg>
-                                        Decoração <span class='cross'></span></a>
-                                    <ul>
-
-                                        <li>
-                                            <a href="/acessorios-decorativos">Acessórios decorativos </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="/cozinha">Cozinha </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="/mobiliario-1">Mobiliário <span class='cross'></span></a>
-                                            <ul>
-                                                <li style='order: 1;'>
-                                                    <a href="/bancos">Bancos</a>
-                                                </li>
-                                                <li style='order: 2;'>
-                                                    <a href="/consolas">Consolas</a>
-                                                </li>
-                                                <li style='order: 3;'>
-                                                    <a href="/mesas-decorativas">Mesas decorativas</a>
-                                                </li>
-                                                <li style='order: 4;'>
-                                                    <a href="/puffs-mobiliario">Puffs</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-                                        <li>
-                                            <a href="/decoracao-de-parede">Decoração de parede <span
-                                                    class='cross'></span></a>
-                                            <ul>
-                                                <li style='order: 1;'>
-                                                    <a href="/relogios">Relógios</a>
-                                                </li>
-                                                <li style='order: 2;'>
-                                                    <a href="/telas">Telas</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-                                        <li>
-                                            <a href="/texteis-1">Texteis <span class='cross'></span></a>
-                                            <ul>
-                                                <li style='order: 1;'>
-                                                    <a href="/carpetes">Carpetes</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class='Tudo'><a href='/decoracao'>Ver tudo</a></li>
-                                    </ul>
-                                <li>
-                                    <a href="#">
-                                        <svg width="30" height="30" class="icon"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="/media/categorias/icons/jardim.svg#jardim"
-                                                href="/media/categorias/icons/jardim.svg#jardim"></use>
-                                        </svg>
-                                        Mobiliário de exterior <span class='cross'></span></a>
-                                    <ul>
-
-                                        <li>
-                                            <a href="/cadeiras-exterior">Cadeiras </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="/conjuntos">Conjuntos </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="/mesas-exterior">Mesas </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="/espreguicadeiras">Espreguiçadeiras </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="/baloicos">Baloiços </a>
-                                        </li>
-                                        <li class='Tudo'><a href='/mobiliario-de-exterior'>Ver tudo</a>
-                                        </li>
-                                    </ul>
-                                <li>
-                                    <a href="#">
-                                        <svg width="30" height="30" class="icon"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="/media/categorias/icons/camas.svg#camas"
-                                                href="/media/categorias/icons/camas.svg#camas"></use>
-                                        </svg>
-                                        Descanso <span class='cross'></span></a>
-                                    <ul>
-
-                                        <li>
-                                            <a href="/almofadas">Almofadas </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="/colchoes">Colchões <span class='cross'></span></a>
-                                            <ul>
-                                                <li style='order: 1;'>
-                                                    <a href="/molas">Molas</a>
-                                                </li>
-                                                <li style='order: 2;'>
-                                                    <a href="/nucleo">Nucleo</a>
-                                                </li>
-                                                <li style='order: 3;'>
-                                                    <a href="/toppers">Toppers</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-                                        <li>
-                                            <a href="/estrados">Estrados </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="/camas">Camas <span class='cross'></span></a>
-                                            <ul>
-                                                <li style='order: 1;'>
-                                                    <a href="/sommiers">Sommiers</a>
-                                                </li>
-                                                <li style='order: 2;'>
-                                                    <a href="/bases">Bases</a>
-                                                </li>
-                                                <li style='order: 3;'>
-                                                    <a href="/cabeceiras">Cabeceiras</a>
-                                                </li>
-                                                <li style='order: 4;'>
-                                                    <a href="/packs">Packs</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-                                        <li>
-                                            <a href="/texteis">Texteis <span class='cross'></span></a>
-                                            <ul>
-                                                <li style='order: 1;'>
-                                                    <a href="/protectores-de-colchoes">Protectores de colchões</a>
-                                                </li>
-                                                <li style='order: 2;'>
-                                                    <a href="/edredons">Edredons</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class='Tudo'><a href='/descanso'>Ver tudo</a></li>
-                                    </ul>
-
-                                </li>
-                            </ul>
+                            @endverbatim
+                            @include('partials.nav-menu-mobile')
+                            @verbatim
                         </div>
                         <div class='FootMenu'>
-                            <a @click="offside.toggle('cliente')" class='fa fa-user'><span>CONTA</span></a>
-                            <a href='/wishlist' class='fa fa-heart'><span>FAVORITOS</span></a>
-                            <a href='/lojas' class='fa fa-map-marker'><span>LOJAS</span></a>
-                            <a @click="openApoioCliente" class='fa fa-phone'><span>APOIO AO CLIENTE</span></a>
+                            @endverbatim
+                            <a @click="offside.toggle('cliente')" class='fa fa-user'><span>{{ __('CONTA') }}</span></a>
+                            <a href="{{ locale_url('wishlist') }}" class='fa fa-heart'><span>{{ __('FAVORITOS') }}</span></a>
+                            <a href="{{ locale_url('lojas') }}" class='fa fa-map-marker'><span>{{ __('LOJAS') }}</span></a>
+                            <a @click="openApoioCliente" class='fa fa-phone'><span>{{ __('APOIO AO CLIENTE') }}</span></a>
+                            @verbatim
                         </div>
                     </div>
                     <div :class="{ open: offside.cliente }" class="content Cliente">
@@ -789,22 +573,28 @@
 
                             <div class="d-flex justify-content-between">
                                 <div class="logo">
-                                    <a href="/"><img alt="DFP Interiores" src="/assets/logos/logo-nav.png"
+                                    @endverbatim
+                                    <a href="{{ locale_url() }}"><img alt="DFP Interiores" src="/assets/logos/logo-nav.png"
                                             style="width: 100%;"></a>
+                                    @verbatim
                                 </div>
 
-                                <a href="/lojas" style="display: inline-flex;">
+                                @endverbatim
+                                <a href="{{ locale_url('lojas') }}" style="display: inline-flex;">
                                     <div class="descubraLojas">
                                         <img src="/assets/svg/pink_location.svg">
-                                        <span>DESCUBRA AS NOSSAS LOJAS</span>
+                                        <span>{{ __('DESCUBRA AS NOSSAS LOJAS') }}</span>
                                     </div>
                                 </a>
+                                @verbatim
 
                                 <div id='_Search' class="search">
                                     <div class="ProcuraDesktop Procurar">
-                                        <input type='text' placeholder='Procurar produtos...' value=''
-                                            v-model='searchField' @keyup='dooSearch()' @focus='openSearchBox'
-                                            @keyup.enter="searchGo" ref='campoProcura'>
+                                        @endverbatim
+                                        <input type="text" placeholder="{{ __('Procurar produtos...') }}" value=""
+                                            v-model="searchField" v-on:keyup="dooSearch()" v-on:focus="openSearchBox"
+                                            v-on:keyup.enter="searchGo" ref="campoProcura">
+                                        @verbatim
                                         <a @click="searchGo"><svg xmlns="http://www.w3.org/2000/svg" width="24"
                                                 height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -816,20 +606,20 @@
                                     <div class="caixaProcura" v-if="searchBox" ref="caixaProcura">
                                         <div class="sugestoes">
                                             <div v-if="Object.keys(searchResults?.sugestions).length > 0">
-                                                <a v-for="v in searchResults.sugestions" :href="'/catalogo/procura/' + v"
+                                                <a v-for="v in searchResults.sugestions" :href="'/' + (appLocale||'pt') + '/procura/' + v"
                                                     class="btn" :key="v">${ v }</a>
                                             </div>
                                         </div>
                                         <div class="categorias">
                                             <label
                                                 v-if="Object.keys(searchResults?.categorias).length > 0">Categorias</label>
-                                            <a :href="'/' + cat.seo"
+                                            <a :href="'/' + (appLocale||'pt') + '/' + cat.seo"
                                                 v-for="cat in searchResults.categorias">${cat.name}</a>
                                         </div>
                                         <div class="historico">
                                             <div v-if="searchResults.history?.length > 0">
                                                 <label>Histórico de pesquisa</label>
-                                                <a v-for="term in searchResults?.history" :href="'/procura/' + term"
+                                                <a v-for="term in searchResults?.history" :href="'/' + (appLocale||'pt') + '/procura/' + term"
                                                     :key="term" class="btn">${ term }</a>
                                             </div>
                                         </div>
@@ -838,14 +628,14 @@
                                                 <span>Não foram encontrados resultados para ""</span>
                                             </div>
                                             <div v-for="item in searchResults?.results" class="item">
-                                                <a :href="'/' + item.link">
+                                                <a :href="'/' + (appLocale||'pt') + '/' + item.link">
                                                     <img :src="'/images/150-150/' + item.image_link">
                                                     <span class="nome">${ item.title.substring(0, 90).concat('...')
                                                         }</span>
                                                     <span class="foot">
                                                         <span class="disponibilidade"
                                                             :class="item.availability == 'INSTOCK' ? 'available' : 'available'">${item.availability
-                                                            == 'INSTOCK' ? "Em stock" : "Disponível"}</span>
+                                                            == 'INSTOCK' ? (i18n.in_stock||'Em stock') : (i18n.available||'Disponível')}</span>
                                                         <span class="preco">
                                                             <span class="antes">${ item.old_price ? item.old_price+"€" :
                                                                 "" }</span>
@@ -859,13 +649,20 @@
                                 </div>
 
                                 <div class="icons">
+                                    @endverbatim
+                                    <nav class="lang-switch" aria-label="{{ __('Idioma') }}">
+                                        <a href="{{ $localeUrls['pt'] ?? locale_url('', 'pt') }}" class="{{ ($currentLocale ?? 'pt') === 'pt' ? 'is-active' : '' }}" hreflang="pt" data-no-locale>PT</a>
+                                        <span class="sep">|</span>
+                                        <a href="{{ $localeUrls['it'] ?? locale_url('', 'it') }}" class="{{ ($currentLocale ?? 'pt') === 'it' ? 'is-active' : '' }}" hreflang="it" data-no-locale>IT</a>
+                                    </nav>
+                                    @verbatim
                                     <a @click="openApoioCliente"><img src="/assets/svg/apoio_cliente.svg"><span>Apoio
                                             Cliente</span></a>
                                     @endverbatim
-                                    <a href="/cliente" class="_OpenCliente"><img
-                                            src="/assets/svg/pink_cliente.svg"><span>{{ $authUser ? \Illuminate\Support\Str::of($authUser->name)->before(' ')->limit(12, '') : 'Conta' }}</span></a>
-                                    <a href="/wishlist" class="wishlist-link"><img
-                                            src="/assets/svg/pink_wishlist.svg"><span>Favoritos</span>@if ($wishCount)<small class="wish-badge">{{ $wishCount }}</small>@endif</a>
+                                    <a href="{{ locale_url('cliente') }}" class="_OpenCliente"><img
+                                            src="/assets/svg/pink_cliente.svg"><span>{{ $authUser ? \Illuminate\Support\Str::of($authUser->name)->before(' ')->limit(12, '') : __('Conta') }}</span></a>
+                                    <a href="{{ locale_url('wishlist') }}" class="wishlist-link"><img
+                                            src="/assets/svg/pink_wishlist.svg"><span>{{ __('Favoritos') }}</span>@if ($wishCount)<small class="wish-badge">{{ $wishCount }}</small>@endif</a>
                                     @verbatim
                                     <a @click="offside.toggle('carrinho')" class="OpenCarrinho cart">
                                         <img src="/assets/svg/cart.svg">
@@ -880,457 +677,22 @@
                         <div class="NavBar">
                             <div class="container">
                                 <div class="MainMenuDesktop">
-                                    <ul>
-                                        <li>
-                                            <a href="/descontos70">
-
-                                                <svg width="30" height="30" class="icon"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <use xlink:href="/media/categorias/icons/descontos70.svg#descontos70"
-                                                        href="/media/categorias/icons/descontos70.svg#descontos70"></use>
-                                                </svg>
-
-                                                Descontos até 70%
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/artigosExclusivosOnline">
-                                                <svg width="30" height="30" class="icon"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <use xlink:href="/media/categorias/icons/exclusivo_online.svg#exclusivo_online"
-                                                        href="/media/categorias/icons/exclusivo_online.svg#exclusivo_online">
-                                                    </use>
-                                                </svg>
-                                                Exclusivo Online
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <svg width="30" height="30" class="icon"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <use xlink:href="/media/categorias/icons/mobiliario.svg#mobiliario"
-                                                        href="/media/categorias/icons/mobiliario.svg#mobiliario"></use>
-                                                </svg>
-
-                                                Mobiliário
-                                            </a>
-                                            <div class="menuBox">
-                                                <ul style="padding-bottom:20px">
-                                                    <li class='Tudo'><a href='/mobiliario'>Ver tudo</a></li>
-                                                </ul>
-                                                <ul style="padding-top:0px">
-
-
-
-                                                    <li>
-                                                        <a href="/salas-de-estar">Salas de estar</a>
-                                                        <ul>
-                                                            <li style='order: 1;'>
-                                                                <a href="/base-tv">Base tv</a>
-                                                            </li>
-                                                            <li style='order: 2;'>
-                                                                <a href="/mesas-de-centro">Mesas de centro</a>
-                                                            </li>
-                                                            <li style='order: 3;'>
-                                                                <a href="/vitrines">Vitrines</a>
-                                                            </li>
-                                                            <li style='order: 4;'>
-                                                                <a href="/modulos-suspensos">Modulos suspensos</a>
-                                                            </li>
-                                                            <li style='order: 5;'>
-                                                                <a href="/estantes">Estantes</a>
-                                                            </li>
-                                                            <li style='order: 6;'>
-                                                                <a href="/secretarias">Secretárias</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-
-
-
-
-                                                    <li>
-                                                        <a href="/quartos">Quartos</a>
-                                                        <ul>
-                                                            <li style='order: 1;'>
-                                                                <a href="/camas-mobiliario">Camas mobiliario</a>
-                                                            </li>
-                                                            <li style='order: 2;'>
-                                                                <a href="/roupeiros">Roupeiros</a>
-                                                            </li>
-                                                            <li style='order: 3;'>
-                                                                <a href="/mesas-de-cabeceira">Mesas de cabeceira</a>
-                                                            </li>
-                                                            <li style='order: 4;'>
-                                                                <a href="/comodas">Comodas</a>
-                                                            </li>
-                                                            <li style='order: 5;'>
-                                                                <a href="/camiseiros">Camiseiros</a>
-                                                            </li>
-                                                            <li style='order: 6;'>
-                                                                <a href="/molduras-2">Molduras</a>
-                                                            </li>
-                                                            <li style='order: 7;'>
-                                                                <a href="/quartos-completos">Quartos</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-
-
-
-
-                                                    <li>
-                                                        <a href="/moveis-auxiliares">Móveis auxiliares</a>
-                                                        <ul>
-                                                            <li style='order: 1;'>
-                                                                <a href="/moveis-de-entrada">Móveis de entrada</a>
-                                                            </li>
-                                                            <li style='order: 2;'>
-                                                                <a href="/sapateiras">Sapateiras</a>
-                                                            </li>
-                                                            <li style='order: 3;'>
-                                                                <a href="/moveis-de-bar">Móveis de bar</a>
-                                                            </li>
-                                                            <li style='order: 4;'>
-                                                                <a href="/armarios">Armários</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-
-
-
-
-                                                    <li>
-                                                        <a href="/salas-de-jantar">Salas de jantar</a>
-                                                        <ul>
-                                                            <li style='order: 1;'>
-                                                                <a href="/conjunto-mesa-cadeiras">Conjunto mesa +
-                                                                    cadeiras</a>
-                                                            </li>
-                                                            <li style='order: 2;'>
-                                                                <a href="/bancos-2">Bancos</a>
-                                                            </li>
-                                                            <li style='order: 3;'>
-                                                                <a href="/cadeiras">Cadeiras</a>
-                                                            </li>
-                                                            <li style='order: 4;'>
-                                                                <a href="/mesas-de-jantar">Mesas de jantar</a>
-                                                            </li>
-                                                            <li style='order: 5;'>
-                                                                <a href="/aparadores">Aparadores</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-
-
-                                                </ul>
-
-
-                                            </div>
-                                        <li>
-                                            <a href="#">
-                                                <svg width="30" height="30" class="icon"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <use xlink:href="/media/categorias/icons/sofa.svg#sofa"
-                                                        href="/media/categorias/icons/sofa.svg#sofa"></use>
-                                                </svg>
-
-                                                Sofás
-                                            </a>
-                                            <div class="menuBox">
-                                                <ul style="padding-bottom:20px">
-                                                    <li class='Tudo'><a href='/sofas'>Ver tudo</a></li>
-                                                </ul>
-                                                <ul style="padding-top:0px">
-
-
-
-                                                    <li>
-                                                        <a href="/chaise-longue">Chaise longue</a>
-                                                    </li>
-
-
-
-
-                                                    <li>
-                                                        <a href="/3-lugares">3 lugares</a>
-                                                    </li>
-
-
-
-
-                                                    <li>
-                                                        <a href="/2-lugares">2 lugares</a>
-                                                    </li>
-
-
-
-
-                                                    <li>
-                                                        <a href="/relax">Relax</a>
-                                                    </li>
-
-
-
-
-                                                    <li>
-                                                        <a href="/sofas-de-canto">Sofás de canto</a>
-                                                    </li>
-
-
-
-
-                                                    <li>
-                                                        <a href="/cadeiroes">Cadeirões</a>
-                                                    </li>
-
-
-
-
-                                                    <li>
-                                                        <a href="/sofas-cama">Sofás cama</a>
-                                                    </li>
-
-
-                                                </ul>
-
-
-                                            </div>
-                                        <li>
-                                            <a href="#">
-                                                <svg width="30" height="30" class="icon"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <use xlink:href="/media/categorias/icons/decoracao.svg#decoracao"
-                                                        href="/media/categorias/icons/decoracao.svg#decoracao"></use>
-                                                </svg>
-
-                                                Decoração
-                                            </a>
-                                            <div class="menuBox">
-                                                <ul style="padding-bottom:20px">
-                                                    <li class='Tudo'><a href='/decoracao'>Ver tudo</a></li>
-                                                </ul>
-                                                <ul style="padding-top:0px">
-
-
-
-                                                    <li>
-                                                        <a href="/acessorios-decorativos">Acessórios decorativos</a>
-                                                    </li>
-
-
-
-
-                                                    <li>
-                                                        <a href="/cozinha">Cozinha</a>
-                                                    </li>
-
-
-
-
-                                                    <li>
-                                                        <a href="/mobiliario-1">Mobiliário</a>
-                                                        <ul>
-                                                            <li style='order: 1;'>
-                                                                <a href="/bancos">Bancos</a>
-                                                            </li>
-                                                            <li style='order: 2;'>
-                                                                <a href="/consolas">Consolas</a>
-                                                            </li>
-                                                            <li style='order: 3;'>
-                                                                <a href="/mesas-decorativas">Mesas decorativas</a>
-                                                            </li>
-                                                            <li style='order: 4;'>
-                                                                <a href="/puffs-mobiliario">Puffs</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-
-
-
-
-                                                    <li>
-                                                        <a href="/decoracao-de-parede">Decoração de parede</a>
-                                                        <ul>
-                                                            <li style='order: 1;'>
-                                                                <a href="/relogios">Relógios</a>
-                                                            </li>
-                                                            <li style='order: 2;'>
-                                                                <a href="/telas">Telas</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-
-
-
-
-                                                    <li>
-                                                        <a href="/texteis-1">Texteis</a>
-                                                        <ul>
-                                                            <li style='order: 1;'>
-                                                                <a href="/carpetes">Carpetes</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-
-
-                                                </ul>
-
-
-                                            </div>
-                                        <li>
-                                            <a href="#">
-                                                <svg width="30" height="30" class="icon"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <use xlink:href="/media/categorias/icons/jardim.svg#jardim"
-                                                        href="/media/categorias/icons/jardim.svg#jardim"></use>
-                                                </svg>
-
-                                                Mobiliário de exterior
-                                            </a>
-                                            <div class="menuBox">
-                                                <ul style="padding-bottom:20px">
-                                                    <li class='Tudo'><a href='/mobiliario-de-exterior'>Ver tudo</a>
-                                                    </li>
-                                                </ul>
-                                                <ul style="padding-top:0px">
-
-
-
-                                                    <li>
-                                                        <a href="/cadeiras-exterior">Cadeiras</a>
-                                                    </li>
-
-
-
-
-                                                    <li>
-                                                        <a href="/conjuntos">Conjuntos</a>
-                                                    </li>
-
-
-
-
-                                                    <li>
-                                                        <a href="/mesas-exterior">Mesas</a>
-                                                    </li>
-
-
-
-
-                                                    <li>
-                                                        <a href="/espreguicadeiras">Espreguiçadeiras</a>
-                                                    </li>
-
-
-
-
-                                                    <li>
-                                                        <a href="/baloicos">Baloiços</a>
-                                                    </li>
-
-
-                                                </ul>
-
-
-                                            </div>
-                                        <li>
-                                            <a href="#">
-                                                <svg width="30" height="30" class="icon"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <use xlink:href="/media/categorias/icons/camas.svg#camas"
-                                                        href="/media/categorias/icons/camas.svg#camas"></use>
-                                                </svg>
-
-                                                Descanso
-                                            </a>
-                                            <div class="menuBox">
-                                                <ul style="padding-bottom:20px">
-                                                    <li class='Tudo'><a href='/descanso'>Ver tudo</a></li>
-                                                </ul>
-                                                <ul style="padding-top:0px">
-
-
-
-                                                    <li>
-                                                        <a href="/almofadas">Almofadas</a>
-                                                    </li>
-
-
-
-
-                                                    <li>
-                                                        <a href="/colchoes">Colchões</a>
-                                                        <ul>
-                                                            <li style='order: 1;'>
-                                                                <a href="/molas">Molas</a>
-                                                            </li>
-                                                            <li style='order: 2;'>
-                                                                <a href="/nucleo">Nucleo</a>
-                                                            </li>
-                                                            <li style='order: 3;'>
-                                                                <a href="/toppers">Toppers</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-
-
-
-
-                                                    <li>
-                                                        <a href="/estrados">Estrados</a>
-                                                    </li>
-
-
-
-
-                                                    <li>
-                                                        <a href="/camas">Camas</a>
-                                                        <ul>
-                                                            <li style='order: 1;'>
-                                                                <a href="/sommiers">Sommiers</a>
-                                                            </li>
-                                                            <li style='order: 2;'>
-                                                                <a href="/bases">Bases</a>
-                                                            </li>
-                                                            <li style='order: 3;'>
-                                                                <a href="/cabeceiras">Cabeceiras</a>
-                                                            </li>
-                                                            <li style='order: 4;'>
-                                                                <a href="/packs">Packs</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-
-
-
-
-                                                    <li>
-                                                        <a href="/texteis">Texteis</a>
-                                                        <ul>
-                                                            <li style='order: 1;'>
-                                                                <a href="/protectores-de-colchoes">Protectores de
-                                                                    colchões</a>
-                                                            </li>
-                                                            <li style='order: 2;'>
-                                                                <a href="/edredons">Edredons</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-
-
-                                                </ul>
-
-
-                                            </div>
-
-                                    </ul>
+                                    @endverbatim
+                                    @include('partials.nav-menu-desktop')
+                                    @verbatim
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="MenuMobile">
                         <div class='head'>
+                            @endverbatim
+                            <nav class="lang-switch lang-switch-mobile" aria-label="{{ __('Idioma') }}">
+                                <a href="{{ $localeUrls['pt'] ?? locale_url('', 'pt') }}" class="{{ ($currentLocale ?? 'pt') === 'pt' ? 'is-active' : '' }}" hreflang="pt" data-no-locale>PT</a>
+                                <span class="sep">|</span>
+                                <a href="{{ $localeUrls['it'] ?? locale_url('', 'it') }}" class="{{ ($currentLocale ?? 'pt') === 'it' ? 'is-active' : '' }}" hreflang="it" data-no-locale>IT</a>
+                            </nav>
+                            @verbatim
                             <a @click="offside.toggle('mobilemenu')" :class="{ 'open': offside.mobilemenu }"
                                 class='Buttons OpenMenu'>
                                 <svg fill="#FFFFFF" width="25px" height="25px" viewBox="0 0 32 32" version="1.1"
@@ -1373,140 +735,10 @@
 
                 @yield('content')
 
+                @include('partials.footer')
+
                 @verbatim
-                    <footer class="footer">
-
-                        <div class="newsletter">
-                            <div class="container">
-                                <div class="newsletter-content">
-                                    <h3>Subscreva a nossa Newsletter</h3>
-                                    <p>Receba promoções exclusivas e novidades no seu e-mail.</p>
-                                </div>
-                                <div v-if="!newsletter.success" class="newsletter-form">
-                                    <input v-model="newsletter.email" type="text" placeholder="O seu e-mail">
-                                    <button @click="addNewsletter">Subscrever</button>
-                                    <div v-if="newsletter.error" class="error">${newsletter.error[0]}</div>
-                                </div>
-                                <div v-else class="newsletter-success alert alert-success">
-                                    Registo concluído com sucesso!
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="destaques">
-                            <div class="container grid-4">
-                                <div class="item">
-                                    <svg class="sprite-icon">
-                                        <use href="/img/footer_icons.svg#apoio_cliente"></use>
-                                    </svg>
-                                    <div class="text">
-                                        <h4>Apoio ao Cliente</h4>
-                                        <p>Telefone, e-mail ou chat.</p>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <svg class="sprite-icon">
-                                        <use href="/img/footer_icons.svg#entrega"></use>
-                                    </svg>
-                                    <div class="text">
-                                        <h4>Entrega Rápida</h4>
-                                        <p>Em todo o país.</p>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <svg class="sprite-icon">
-                                        <use href="/img/footer_icons.svg#satisfacao"></use>
-                                    </svg>
-                                    <div class="text">
-                                        <h4>Satisfação garantida</h4>
-                                        <p>Feedback dos nossos clientes.</p>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <svg class="sprite-icon">
-                                        <use href="/img/footer_icons.svg#qualidade"></use>
-                                    </svg>
-                                    <div class="text">
-                                        <h4>Pagamento Seguro</h4>
-                                        <p>Vários métodos disponíveis.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="links">
-                            <div class="container grid-4">
-                                <div class="link-group">
-                                    <h3>Links Úteis</h3>
-                                    <ul>
-                                        <li><a href="/lojas">As nossas lojas</a></li>
-                                        <li><a href="/contactos">Contactos</a></li>
-                                        <li><a href="/ajuda/termos-e-condicoes">Termos e Condições</a></li>
-                                        <li><a href="/ajuda/politica-privacidade">Política de Privacidade</a></li>
-                                        <li><a href="/ajuda/politica-de-cookies">Política de Cookies</a></li>
-                                        <li><a href="/ajuda/politica-de-envios">Política de Envios e Entregas</a></li>
-                                        <li><a href="/ajuda/politica-de-devolucoes">Política de Devoluções e Reembolsos</a></li>
-                                        <li><a href="/ajuda/resolucao-alternativa-litigios">Resolução Alternativa de
-                                                Litígios</a></li>
-                                        <li><a href="https://www.livroreclamacoes.pt/inicio/" target="_blank" rel="noopener">Livro de Reclamações</a></li>
-                                        <li><a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">Resolução de Litígios em Linha (UE)</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="link-group">
-                                    <h3>Horário</h3>
-                                    <p>Segunda a Sexta: 09h - 22h</p>
-                                    <p>Sábado: 9h - 18h<br><small>Exclusivo loja online</small></p>
-                                </div>
-
-                                <div class="link-group">
-                                    <h3>Contactos</h3>
-                                    <p>DFP Interiores, Unipessoal Lda</p>
-                                    <p>Rua José Francisco Fragoso, n.º 45<br>7080-035 Vendas Novas</p>
-                                    <p><a href="mailto:contacto@dfpinteriores.com">contacto@dfpinteriores.com</a></p>
-                                    <p><a href="tel:+351912026453">+351 912 026 453</a></p>
-                                    <p><small>NIF 504074571</small></p>
-                                </div>
-<div class="link-group">
-                                    <h3>Métodos de Pagamento</h3>
-                                    <div class="payment-methods">
-                                        <img src="/img/payments/visa.svg" alt="Visa">
-                                        <img src="/img/payments/paypal.svg" alt="PayPal">
-                                        <img src="/img/payments/mastercard.svg" alt="Mastercard">
-                                        <img src="/img/payments/amex.svg" alt="American Express">
-                                        <img src="/img/mbway.png" alt="MB Way">
-                                        <img src="/img/mb.png" alt="Multibanco">
-                                        <img src="/img/payments/klarna.svg" alt="Klarna">
-                                        <img src="/img/payments/revolut.svg" alt="Revolut Pay">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footer-bottom">
-                            <div class="container">
-                                <div>
-                                    <p>
-                                        Preços válidos salvo erro de publicação e limitados ao stock existente.
-                                        <br>
-                                        Os preços riscados são os Preços de Venda recomendados pelos fabricantes. Válido
-                                        apenas na loja Online.
-                                        <br>
-                                        Copyright 2026 - DFP Interiores todos os direitos reservados.
-                                    </p>
-                                </div>
-                                <div>
-                                    <small>Cofinanciado por</small>
-                                    <div class="cofinanciado-logos">
-                                        <img src="/img/compete.png" alt="Portugal 2020">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-
-
-
-                <div class="backToTop">
+<div class="backToTop">
                     <a href="#"><img alt="Voltar ao topo" src='/assets/icons/chevron-circle-up-duotone.svg'
                             width='40' height="40"></a>
                 </div>

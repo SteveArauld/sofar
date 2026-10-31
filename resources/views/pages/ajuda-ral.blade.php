@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Resolução Alternativa de Litígios | DFP Interiores')
+@section('title', __('Resolução Alternativa de Litígios').' | DFP Interiores')
 
 @push('scripts')
 <script src="/assets/vue/cookies.js"></script>
@@ -8,13 +8,12 @@
 @endpush
 
 @section('content')
-@verbatim
 <div class="container breadcrumb">
     <div>
-        <a href="/">Início</a> 
-                                    <a href="/">Ajuda</a>
-                                                <h1>Resolução alternativa de disputa</h1>
-                        </div>
+        <a href="/">{{ __('Início') }}</a>
+        <a href="/">{{ __('Ajuda') }}</a>
+        <h1>{{ __('Resolução alternativa de disputa') }}</h1>
+    </div>
     <div class='actions'>
         
     </div>
@@ -24,9 +23,9 @@
     <div class="row">
         <div class="col-sm-12">
                 
-            <p>Em caso de litígio, informamos que o cliente pode recorrer às entidades de resolução alternativa de litígios de consumo abaixo indicadas.</p>
+            <p>{{ __('Em caso de litígio, informamos que o cliente pode recorrer às entidades de resolução alternativa de litígios de consumo abaixo indicadas.') }}</p>
 
-            <p>Direção-contacto do Consumidor<br>
+            <p>Direção-Geral do Consumidor<br>
                 <a href='https://www.consumidor.gov.pt/'>https://www.consumidor.gov.pt/</a></p>
 
             <p>Resolução de Litígios Online<br>
@@ -59,5 +58,4 @@
         </div>
     </div>
 </div>
-@endverbatim
 @endsection

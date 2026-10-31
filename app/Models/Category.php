@@ -6,12 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Spatie\Translatable\HasTranslations;
 
 class Category extends Model
 {
+    use HasTranslations;
+
     public $incrementing = false;
+
     protected $keyType = 'int';
+
     protected $guarded = [];
+
+    /** @var list<string> */
+    public array $translatable = [
+        'name',
+    ];
 
     protected $casts = [
         'level' => 'integer',
@@ -24,7 +34,9 @@ class Category extends Model
 
     public function children(): HasMany
     {
-        return $this->hasMany(Category::class, 'parent_id')->orderBy('name');
+        $col = 'name->'.app()->getLocale();
+
+        return $this->hasMany(Category::class, 'parent_id')->orderBy($col);
     }
 
     /** Produits dont c'est la catégorie feuille. */

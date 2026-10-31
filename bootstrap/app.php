@@ -12,10 +12,15 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        // SetLocale est appliqué sur le groupe de routes /{locale}/…
+
         // Le JS officiel (ListaArtigos) poste les filtres du catalogue sans token Laravel.
         // Ce site est un catalogue en lecture seule : on exclut ces requêtes du CSRF.
         $middleware->validateCsrfTokens(except: [
-            '_more/*', 'descontos70', 'artigosExclusivosOnline', '*',
+            '_more/*', '*/_more/*',
+            'descontos70', '*/descontos70',
+            'artigosExclusivosOnline', '*/artigosExclusivosOnline',
+            '*',
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

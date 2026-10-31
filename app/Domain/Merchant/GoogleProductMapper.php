@@ -183,7 +183,7 @@ final class GoogleProductMapper
             id: (string) $product->id,
             title: $title,
             description: Str::limit($description, 5000, ''),
-            link: MerchantPolicy::baseUrl().'/'.ltrim((string) $product->slug, '/'),
+            link: MerchantPolicy::baseUrl().'/'.app()->getLocale().'/'.ltrim((string) $product->slug, '/'),
             imageLink: (string) $imgUrls->first(),
             extraImages: $imgUrls->slice(1, 10)->values()->all(),
             availability: $this->availability($product),

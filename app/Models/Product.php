@@ -8,17 +8,30 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Spatie\Translatable\HasTranslations;
 
 class Product extends Model
 {
     /** @use HasFactory<ProductFactory> */
     use HasFactory;
 
+    use HasTranslations;
+
     public $incrementing = false;
 
     protected $keyType = 'int';
 
     protected $guarded = [];
+
+    /** @var list<string> */
+    public array $translatable = [
+        'name',
+        'category_name',
+        'short_description_html',
+        'long_description_html',
+        'logistic_data_html',
+        'delivery_assembly_html',
+    ];
 
     protected $casts = [
         'dimensions' => 'array',
@@ -78,5 +91,11 @@ class Product extends Model
     public function getHasDiscountAttribute(): bool
     {
         return $this->price_before !== null && (float) $this->price_before > (float) $this->price;
+    }
+
+    /** Colonne JSON Spatie pour la locale courante (recherche / tri). */
+    public static function translatedColumn(string $column): string
+    {
+        return $column.'->'.app()->getLocale();
     }
 }

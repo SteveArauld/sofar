@@ -8,6 +8,7 @@ use App\Models\ProductExtraService;
 use App\Models\ProductImage;
 use App\Models\ProductReview;
 use App\Models\ProductSpec;
+use App\Support\CatalogTranslator;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -35,15 +36,16 @@ class ImportCatalog extends Command
 
         $base = rtrim($this->option('path') ?: database_path('data'), '/');
         $prodFile = "$base/products.json";
-        $catFile  = "$base/categories.json";
+        $catFile = "$base/categories.json";
 
         if (! is_file($prodFile) || ! is_file($catFile)) {
             $this->error("Fichiers introuvables dans $base (products.json / categories.json).");
+
             return self::FAILURE;
         }
 
         $categories = json_decode(file_get_contents($catFile), true) ?: [];
-        $products   = json_decode(file_get_contents($prodFile), true) ?: [];
+        $products = json_decode(file_get_contents($prodFile), true) ?: [];
         $this->info(sprintf('Lecture : %d catégories, %d produits.', count($categories), count($products)));
 
         if ($this->option('fresh')) {
@@ -89,15 +91,18 @@ class ImportCatalog extends Command
         foreach ($slugToId as $slug => $id) {
             $c = $catBySlug[$slug] ?? ['slug' => $slug, 'name' => Str::of($slug)->replace('-', ' ')->title()];
             $parentSlug = $c['parent_slug'] ?? null;
+            $namePt = is_array($c['name'] ?? null)
+                ? (string) (($c['name']['pt'] ?? reset($c['name'])) ?: $slug)
+                : (string) ($c['name'] ?? $slug);
             Category::updateOrCreate(
                 ['id' => $id],
                 [
-                    'name'        => $c['name'] ?? $slug,
-                    'slug'        => $slug,
-                    'parent_id'   => $parentSlug ? ($slugToId[$parentSlug] ?? null) : null,
+                    'name' => CatalogTranslator::normalize($c['name'] ?? $namePt),
+                    'slug' => $slug,
+                    'parent_id' => $parentSlug ? ($slugToId[$parentSlug] ?? null) : null,
                     'parent_slug' => $parentSlug,
-                    'level'       => $c['level'] ?? 1,
-                    'url'         => $c['url'] ?? null,
+                    'level' => $c['level'] ?? 1,
+                    'url' => $c['url'] ?? null,
                     'catalog_url' => $c['catalog_url'] ?? null,
                 ]
             );
@@ -116,47 +121,68 @@ class ImportCatalog extends Command
             DB::transaction(function () use ($p, $slugToId, $imgSrcDir, $copyImages) {
                 $catSlug = $p['category_slug'] ?? null;
 
+                $nameFallback = is_array($p['name'] ?? null)
+                    ? (string) (($p['name']['pt'] ?? 'Sem nome'))
+                    : (string) ($p['name'] ?? 'Sem nome');
+
+                $breadcrumb = $p['breadcrumb'] ?? null;
+                if (is_array($breadcrumb)) {
+                    $breadcrumb = array_map(function ($node) {
+                        if (! is_array($node)) {
+                            return $node;
+                        }
+                        $nome = $node['nome'] ?? $node['name'] ?? null;
+                        if ($nome !== null) {
+                            $bi = CatalogTranslator::normalize($nome);
+                            $node['nome'] = $bi['pt'] ?? $nome;
+                            $node['nome_i18n'] = $bi;
+                        }
+
+                        return $node;
+                    }, $breadcrumb);
+                }
+
                 $product = Product::updateOrCreate(
                     ['id' => $p['id']],
                     [
-                        'erp_id'              => $p['erp_id'] ?? null,
-                        'name'                => $p['name'] ?? 'Sans nom',
-                        'slug'                => $p['slug'] ?? Str::slug($p['name'] ?? $p['id']),
-                        'url'                 => $p['url'] ?? null,
-                        'sku'                 => $p['sku'] ?? null,
-                        'ean'                 => $p['ean'] ?? null,
-                        'brand'               => $p['brand'] ?? null,
-                        'supplier_id'         => $p['supplier_id'] ?? null,
-                        'category_id'         => $catSlug ? ($slugToId[$catSlug] ?? null) : null,
-                        'category_name'       => $p['category_name'] ?? null,
-                        'category_slug'       => $catSlug,
-                        'price'               => $p['price'] ?? null,
-                        'price_before'        => $p['price_before'] ?? null,
-                        'currency'            => $p['currency'] ?? 'EUR',
-                        'vat_percent'         => $p['vat_percent'] ?? null,
-                        'availability'        => $p['availability'] ?? null,
-                        'in_stock'            => (bool) ($p['in_stock'] ?? false),
-                        'stock'               => $p['stock'] ?? null,
-                        'stock_global'        => $p['stock_global'] ?? null,
+                        'erp_id' => $p['erp_id'] ?? null,
+                        'name' => CatalogTranslator::normalize($p['name'] ?? $nameFallback),
+                        'slug' => $p['slug'] ?? Str::slug($nameFallback.'-'.$p['id']),
+                        'url' => $p['url'] ?? null,
+                        'sku' => $p['sku'] ?? null,
+                        'ean' => $p['ean'] ?? null,
+                        'brand' => $p['brand'] ?? null,
+                        'supplier_id' => $p['supplier_id'] ?? null,
+                        'category_id' => $catSlug ? ($slugToId[$catSlug] ?? null) : null,
+                        'category_name' => CatalogTranslator::normalize($p['category_name'] ?? null),
+                        'category_slug' => $catSlug,
+                        'price' => $p['price'] ?? null,
+                        'price_before' => $p['price_before'] ?? null,
+                        'currency' => $p['currency'] ?? 'EUR',
+                        'vat_percent' => $p['vat_percent'] ?? null,
+                        'availability' => $p['availability'] ?? null,
+                        'in_stock' => (bool) ($p['in_stock'] ?? false),
+                        'stock' => $p['stock'] ?? null,
+                        'stock_global' => $p['stock_global'] ?? null,
                         'delivery_time_stock' => $p['delivery_time_stock'] ?? null,
                         'delivery_time_order' => $p['delivery_time_order'] ?? null,
-                        'manufacturing_days'  => $p['manufacturing_days'] ?? null,
-                        'short_description_html' => $p['short_description_html'] ?? null,
-                        'long_description_html'  => $p['long_description_html'] ?? null,
-                        'logistic_data_html'     => $p['logistic_data_html'] ?? null,
-                        'delivery_assembly_html' => $p['delivery_assembly_html'] ?? null,
-                        'dimensions'          => $p['dimensions'] ?? null,
-                        'variations'          => $p['variations'] ?? null,
-                        'flags'               => $p['flags'] ?? null,
-                        'breadcrumb'          => $p['breadcrumb'] ?? null,
-                        'category_path'       => $p['category_path'] ?? null,
-                        'rating'              => $p['rating'] ?? null,
-                        'views_20d'           => $p['views_20d'] ?? null,
-                        'status'              => $p['status'] ?? null,
-                        'source_created_at'   => $p['created_at'] ?? null,
-                        'source_updated_at'   => $p['updated_at'] ?? null,
-                        'images_count'        => $p['images_count'] ?? count($p['images'] ?? []),
-                        'source_payload'      => $p,
+                        'manufacturing_days' => $p['manufacturing_days'] ?? null,
+                        'short_description_html' => CatalogTranslator::normalize($p['short_description_html'] ?? null),
+                        'long_description_html' => CatalogTranslator::normalize($p['long_description_html'] ?? null),
+                        'logistic_data_html' => CatalogTranslator::normalize($p['logistic_data_html'] ?? null),
+                        'delivery_assembly_html' => CatalogTranslator::normalize($p['delivery_assembly_html'] ?? null),
+                        'dimensions' => $p['dimensions'] ?? null,
+                        'variations' => $p['variations'] ?? null,
+                        'flags' => $p['flags'] ?? null,
+                        'breadcrumb' => $breadcrumb,
+                        'category_path' => $p['category_path'] ?? null,
+                        'rating' => $p['rating'] ?? null,
+                        'views_20d' => $p['views_20d'] ?? null,
+                        'status' => $p['status'] ?? null,
+                        'source_created_at' => $p['created_at'] ?? null,
+                        'source_updated_at' => $p['updated_at'] ?? null,
+                        'images_count' => $p['images_count'] ?? count($p['images'] ?? []),
+                        'source_payload' => $p,
                     ]
                 );
 
@@ -202,38 +228,46 @@ class ImportCatalog extends Command
 
                     ProductImage::create([
                         'product_id' => $product->id,
-                        'filename'   => $img['filename'] ?? basename($rel),
-                        'path'       => $rel,
+                        'filename' => $img['filename'] ?? basename($rel),
+                        'path' => $rel,
                         'source_url' => $img['source_url'] ?? null,
-                        'position'   => $pos++,
+                        'position' => $pos++,
                     ]);
                 }
 
                 // specs (dict attribut -> valeur)
                 $product->specs()->delete();
                 $sp = 0;
+                $attrI18n = $p['_spec_attrs_i18n'] ?? [];
                 foreach (($p['specs'] ?? []) as $attr => $value) {
-                    if (is_array($value)) {
+                    $attrKey = is_array($attr) ? (string) ($attr['pt'] ?? reset($attr)) : (string) $attr;
+                    if (is_array($value) && ! isset($value['pt']) && ! isset($value['it'])) {
                         $value = json_encode($value, JSON_UNESCAPED_UNICODE);
                     }
+                    $attrNorm = isset($attrI18n[$attrKey])
+                        ? CatalogTranslator::normalize($attrI18n[$attrKey])
+                        : CatalogTranslator::normalize($attrKey);
                     ProductSpec::create([
                         'product_id' => $product->id,
-                        'attr'       => (string) $attr,
-                        'value'      => $value === null ? null : (string) $value,
-                        'position'   => $sp++,
+                        'attr' => $attrNorm,
+                        'value' => $value === null || $value === ''
+                            ? null
+                            : CatalogTranslator::normalize($value),
+                        'position' => $sp++,
                     ]);
                 }
 
                 // services extra
                 $product->extraServices()->delete();
                 foreach (($p['extra_services'] ?? []) as $s) {
+                    $serviceName = $s['nome'] ?? $s['name'] ?? 'Serviço';
                     ProductExtraService::create([
-                        'product_id'   => $product->id,
-                        'name'         => $s['nome'] ?? 'Serviço',
-                        'price'        => $s['preco'] ?? null,
-                        'variation'    => $s['variation'] ?? null,
-                        'protec_id'    => $s['protec_id'] ?? null,
-                        'extra_erpid'  => $s['extra_erpid'] ?? null,
+                        'product_id' => $product->id,
+                        'name' => CatalogTranslator::normalize($serviceName),
+                        'price' => $s['preco'] ?? $s['price'] ?? null,
+                        'variation' => $s['variation'] ?? null,
+                        'protec_id' => $s['protec_id'] ?? null,
+                        'extra_erpid' => $s['extra_erpid'] ?? null,
                         'protec_erpid' => $s['protec_erpid'] ?? null,
                     ]);
                 }
@@ -242,12 +276,12 @@ class ImportCatalog extends Command
                 $product->reviews()->delete();
                 foreach (($p['reviews'] ?? []) as $r) {
                     ProductReview::create([
-                        'product_id'  => $product->id,
-                        'author'      => $r['author'] ?? $r['nome'] ?? null,
-                        'rating'      => $r['rating'] ?? $r['nota'] ?? null,
-                        'body'        => $r['body'] ?? $r['texto'] ?? null,
+                        'product_id' => $product->id,
+                        'author' => $r['author'] ?? $r['nome'] ?? null,
+                        'rating' => $r['rating'] ?? $r['nota'] ?? null,
+                        'body' => $r['body'] ?? $r['texto'] ?? null,
                         'reviewed_at' => $r['created'] ?? $r['data'] ?? null,
-                        'raw'         => $r,
+                        'raw' => $r,
                     ]);
                 }
             }, 5);

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Termos e Condições | DFP Interiores')
+@section('title', __('Termos e Condições').' | DFP Interiores')
 
 @push('scripts')
 <script src="/assets/vue/cookies.js"></script>
@@ -11,34 +11,34 @@
 @verbatim
 <div class="container breadcrumb">
     <div>
-        <a href="/">Início</a> 
-                                    <a href="/">Ajuda</a>
-                                                <h1>Termos e Condições</h1>
-                        </div>
+        <a href="/">@endverbatim{{ __('Início') }}@verbatim</a>
+        <a href="/">@endverbatim{{ __('Ajuda') }}@verbatim</a>
+        <h1>@endverbatim{{ __('Termos e Condições') }}@verbatim</h1>
+    </div>
     <div class='actions'>
         
     </div>
 </div>
 
     <div class="container">
-<p><strong>1. Âmbito e Objeto</strong></p>
+<p><strong>@endverbatim{{ __('1. Âmbito e Objeto') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>1.1.&nbsp;Os presentes Termos e Condições Gerais de Venda têm por objeto descrever as condições de acesso e de utilização do sítio da Internet&nbsp;www.dfpinteriores.com&nbsp;(doravante: “Site”) pelas pessoas singulares que acedem ao Site para fins não profissionais (“Utilizadores”), bem como explanar as condições contratuais aplicáveis à compra de produtos à distância através do Site, desde o ato da encomenda aos diversos serviços prestados pela&nbsp;DFP Interiores, incluindo os modos de pagamento e as condições de serviços de entrega dos produtos encomendados. Ao navegar no Site ou ao realizar uma compra&nbsp;online&nbsp;através do mesmo, os Utilizadores declaram ser maiores de 18 anos e ter capacidade legal para celebrar contratos e efetuar pagamentos.<br><br>1.2. O sítio da Internet&nbsp;www.dfpinteriores.com&nbsp;pertence à&nbsp;DFP Interiores, marca detida por&nbsp;DFP Interiores, Unipessoal Lda, com sede social na&nbsp;Rua José Francisco Fragoso, n.º 45, 7080-035 Vendas Novas, e o endereço de correio eletrónico&nbsp;<a href="mailto:contacto@dfpinteriores.com">contacto@dfpinteriores.com</a>, como pessoa coletiva n.º&nbsp;504074571, matriculada na conservatória do registo comercial de Vendas Novas sob o mesmo número, com o capital social de 500.000,00 €.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>2. Lei Aplicável</strong></p>
+<p><strong>@endverbatim{{ __('2. Lei Aplicável') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>2.1.&nbsp;&nbsp;As presentes condições gerais e todos os litígios emergentes que estejam relacionados com estas condições gerais, incluindo a sua validade, o uso do Site ou qualquer compra no mesmo, devem ser regidos pelo Direito Português.</p>
 <p>&nbsp;</p>
 <p>2.2.&nbsp;&nbsp;Todas as regras e procedimentos constantes no presente documento não contrariam, por qualquer meio ou forma, a legislação em vigor, sendo seu propósito enquadrar os direitos e deveres da relação do Utilizador enquanto visitante, com a&nbsp;DFP Interiores&nbsp;online. Tanto a navegação no Site, como a compra de qualquer produto, pressupõem a aceitação dos Termos e Condições Gerais de Utilização e de Venda descritas nesta página. O Utilizador deve ler estes Termos e Condições sempre que aceda a este Site, uma vez que podem ser alvo de modificações&nbsp;a posteriori.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>3. Alteração dos Termos e Condições</strong></p>
+<p><strong>@endverbatim{{ __('3. Alteração dos Termos e Condições') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>3.1.&nbsp;&nbsp; Estes Termos e Condições manter-se-ão em vigor e serão válidos durante todo o tempo em que estejam acessíveis através do Site. A&nbsp;DFP Interiores&nbsp;reserva-se ao direito de os modificar, sem aviso prévio, assim como de alterar qualquer um dos textos legais que estejam expostos no sítio da Internet, para os adequar à legislação em vigor aplicável em cada momento, às novidades jurisprudenciais e às práticas habituais de mercado. Em qualquer caso, o acesso ao Site após a sua modificação, inclusão e/ou substituição implica a aceitação dos mesmos por parte do Utilizador, que está sujeito aos princípios e termos em vigor à data da sua encomenda, salvo se a lei ou autoridade competente impuserem qualquer alteração aos mesmos.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>&nbsp;4. Informação de Produto e Conteúdos</strong></p>
+<p><strong>@endverbatim{{ __('4. Informação de Produto e Conteúdos') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>4.1.&nbsp;&nbsp;Apesar de a&nbsp;DFP Interiores&nbsp;trabalhar o seu Site com todo o cuidado, as informações, textos, documentos gráficos, filmes, música e/ou outros serviços podem conter erros ou estarem incompletos ou incorretos, sendo que os mesmos serão rapidamente corrigidos sempre que ocorram, e assim que forem detetados. Caso adquira um produto que tenha características diferentes das apresentadas&nbsp;online, tem o direito de proceder à resolução do contrato de compra nos termos legais aplicáveis.</p>
 <p>4.2. A&nbsp;DFP Interiores&nbsp;não poderá ser responsabilizada por quaisquer danos resultantes do uso (ou incapacidade de uso) do Site, incluindo danos causados por vírus ou qualquer inexatidão ou imperfeição das informações, salvo se tal dano for resultado de dolo ou negligência por parte da&nbsp;DFP Interiores.</p>
@@ -49,7 +49,7 @@
 <p>4.7. Cada loja da&nbsp;DFP Interiores&nbsp;poderá, em qualquer momento, adicionar novos produtos aos incluídos no sítio da Internet. De igual modo, as lojas reservam-se o direito de retirar ou deixar de oferecer, em qualquer momento, e sem aviso prévio, quaisquer produtos oferecidos no sítio da Internet.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>5. Marcas Registadas e Direitos Autorais do Site</strong></p>
+<p><strong>@endverbatim{{ __('5. Marcas Registadas e Direitos Autorais do Site') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>5.1. Todos os nomes das marcas, nomes de produtos e títulos usados no Site são marcas registadas ou nomes registados da&nbsp;DFP Interiores&nbsp;ou marcas registadas e nomes registados de outros detentores.</p>
 <p>5.2. O Utilizador do Site não está autorizado a utilizar ou a reproduzir qualquer uma dessas marcas registadas ou nomes registados, pois tal constitui uma violação dos direitos dos titulares.</p>
@@ -58,7 +58,7 @@
 <p>5.5. É proibido o uso deste Site com o intuito de lesar bens, direitos ou interesses do titular do Site ou de terceiros, assim como de fazer qualquer uso que altere, danifique ou inutilize as redes, servidores, equipamentos, produtos e programas informáticos do titular do Site ou de terceiros.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>6. Responsabilidade</strong></p>
+<p><strong>@endverbatim{{ __('6. Responsabilidade') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>6.1.&nbsp;A&nbsp;DFP Interiores&nbsp;só será responsável por danos sofridos pelo cliente no caso de tais danos resultarem de violações imputáveis às obrigações contratuais da&nbsp;DFP Interiores&nbsp;perante o cliente, ou no caso da responsabilidade da&nbsp;DFP Interiores&nbsp;resultar do direito legal aplicável.</p>
 <p>6.2. O titular deste Site não se responsabiliza por controlar a existência no mesmo de programas maliciosos, ou de qualquer outro elemento informático danoso, nem tão pouco pelos danos que aqueles podem provocar em equipamentos informáticos durante o acesso ao Site. É ao Utilizador que cabe, em qualquer um dos casos, dispor de ferramentas adequadas para a deteção e desinfeção destes elementos.</p>
@@ -71,7 +71,7 @@
 <p>6.9. No caso de o cliente sofrer danos que sejam resultado de negligência grave ou dolo por parte da&nbsp;DFP Interiores, não se aplica nenhuma das limitações constantes neste artigo.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>7. Obrigações do Utilizador</strong></p>
+<p><strong>@endverbatim{{ __('7. Obrigações do Utilizador') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>7.1.&nbsp;O Utilizador compromete-se a:</p>
 <p>7.1.1.&nbsp;Facultar dados pessoais e moradas corretas;</p>
@@ -84,7 +84,7 @@
 <p>7.6.&nbsp;Os presentes Termos e Condições são integralmente regulados pela legislação portuguesa. O Utilizador compromete-se a fazer um uso correto deste Site em conformidade com a Lei e responderá face ao titular deste Site, e face a terceiros, por quaisquer danos ou prejuízos que possam ser causados pelo incumprimento destas obrigações.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>8. Privacidade e Proteção de Dados Pessoais</strong></p>
+<p><strong>@endverbatim{{ __('8. Privacidade e Proteção de Dados Pessoais') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>8.1. A&nbsp;DFP Interiores&nbsp;é uma organização responsável e consolidada, uma referência em venda de móveis e artigos de decoração, que também presta serviços acessórios, tal como transporte e montagem, tanto através das lojas físicas como da loja&nbsp;online. Esta atividade heterogénea necessita e requer disponibilidade de comunicação, transparência de processos e partilha de sistemas de informação por todas as empresas do grupo, áreas de serviços e parceiros, assim como o processamento e tratamento de diversas categorias de titulares e tipos de informação, incluindo dados e informação pessoal.</p>
 <p>8.2.&nbsp;A&nbsp;DFP Interiores&nbsp;está comprometida em proteger a privacidade e confidencialidade da informação e dados pessoais dos seus colaboradores, clientes, parceiros (incluindo os dados de contactos de clientes e parceiros) e quaisquer outros indivíduos identificáveis.</p>
@@ -97,7 +97,7 @@
 <p>8.9. O Utilizador pode configurar o seu navegador da Internet para a notificação da gravação de um&nbsp;cookie&nbsp;no computador ou para a ‘não aceitação’ de&nbsp;cookies&nbsp;deste Site. No entanto, a ‘não aceitação’ de&nbsp;cookies&nbsp;limitará o acesso e utilização de determinadas funcionalidades do Site</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>9. Política Comercial</strong></p>
+<p><strong>@endverbatim{{ __('9. Política Comercial') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>9.1.&nbsp;A&nbsp;DFP Interiores&nbsp;tem produtos para venda no Site&nbsp;www.dfpinteriores.com, sendo que os serviços de&nbsp;e-commerce&nbsp;estão disponíveis exclusivamente para os utilizadores finais/consumidores. Estas condições e termos gerais de venda regulam exclusivamente a oferta, transmissão e aceitação de encomendas efetuadas no Site entre os consumidores da loja&nbsp;online&nbsp;e a&nbsp;DFP Interiores.</p>
 <p>9.2.&nbsp;Só as pessoas com a capacidade jurídica necessária para subscreverem contratos relativos ao tipo de bens e serviços propostos neste Site é que podem efetuar pedidos no mesmo.</p>
@@ -107,7 +107,7 @@
 <p>9.6.&nbsp;Qualquer Utilizador, oriundo de qualquer ponto da União Europeia, pode navegar no nosso Site e finalizar uma encomenda. A&nbsp;DFP Interiores&nbsp;garante o envio de produtos para todo o Portugal (Portugal Continental e Regiões Autónomas dos Açores e da Madeira), com envio gratuito e entrega em 1 a 3 dias úteis (preparação: 1 dia útil). Um Utilizador que não resida em território nacional, mas que mesmo assim queira fazer uma encomenda, poderá fazê-lo, desde que para isso indique uma morada em Portugal, para a qual o produto possa ser expedido.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>10. Processo de Compra</strong></p>
+<p><strong>@endverbatim{{ __('10. Processo de Compra') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>10.1.&nbsp;Para encomendar em&nbsp;www.dfpinteriores.com&nbsp;é necessário que o Utilizador disponha de uma conta de&nbsp;e-mail&nbsp;e que o seu&nbsp;browser&nbsp;esteja configurado para aceitar&nbsp;&nbsp;cookies&nbsp;e&nbsp;pop-ups, no sentido de permitir o usufruto de todas as condições de navegabilidade da loja&nbsp;online&nbsp;da&nbsp;DFP Interiores.</p>
 <p>10.2.&nbsp;Para realizar qualquer compra na loja&nbsp;online&nbsp;da&nbsp;DFP Interiores&nbsp;o Utilizador terá sempre que fazer o Registo de Utilizador no Site.</p>
@@ -131,14 +131,14 @@
 <p>10.10.&nbsp;Caso o artigo que pretende adquirir esteja assinalado como ‘Esgotado’ poderá utilizar a opção ‘Avise-me quando o produto estiver disponível’ para que possa ter conhecimento na altura em que o produto estiver novamente em&nbsp;stock. Também se poderá dar o caso de haver produtos que não estejam em&nbsp;stock&nbsp;no momento da encomenda, mas que contudo já tenham datas de reposição estipuladas. Neste caso, é-lhe permitida fazer a encomenda, sendo-lhe comunicada a previsão da data de aprovisionamento. Deste modo, poderá usufruir de promoções relativas a esse produto no momento da encomenda.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>11. Disponibilidade dos Produtos</strong></p>
+<p><strong>@endverbatim{{ __('11. Disponibilidade dos Produtos') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>11.1.&nbsp;Todas as encomendas de produtos estão sujeitas a disponibilidade de&nbsp;stock. No caso de existirem dificuldades de fornecimento de produtos, ou caso se esgotem as existências de um produto, a&nbsp;DFP Interiores&nbsp;informará o cliente imediatamente da indisponibilidade, podendo o mesmo optar por cancelar a encomenda e solicitar o reembolso do valor pago, ou por encomendar outro produto equivalente, no mesmo preço.</p>
 <p>11.2.&nbsp;Em caso de indisponibilidade do produto, a&nbsp;DFP Interiores&nbsp;informará o cliente acerca de produtos de substituição de qualidade equivalente ou superior.</p>
 <p>11.3.&nbsp;Se o cliente optar por cancelar a encomenda ou não realizar nova encomenda no prazo de 3 dias após a comunicação da indisponibilidade do produto inicialmente solicitado, procederemos ao reembolso de qualquer montante pago em relação aos produtos indisponíveis no mais curto intervalo de tempo possível, e, em todo o caso, antes do prazo máximo de 30 dias após o conhecimento da indisponibilidade.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>12. Direito a não aceitar a Encomenda ou Cancelar a compra</strong></p>
+<p><strong>@endverbatim{{ __('12. Direito a não aceitar a Encomenda ou Cancelar a compra') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>12.1.&nbsp;A&nbsp;DFP Interiores&nbsp;reserva-se ao direito de recusar qualquer encomenda, por qualquer motivo. Reservamo-nos igualmente ao direito de cancelar qualquer compra (mesmo que já tenha sido aceite por nós), nas seguintes situações (entre outras), isenta de responsabilização por quaisquer danos ou custos:</p>
 <p>12.1.1.&nbsp;O produto já não se encontra disponível/em&nbsp;stock&nbsp;(os pagamentos serão devolvidos ao cliente);</p>
@@ -152,13 +152,13 @@
 <p>12.2. A&nbsp;DFP Interiores&nbsp;reserva-se ao direito de limitar a quantidade máxima de compra dos consumidores finais.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>13. Verificação de Dados</strong></p>
+<p><strong>@endverbatim{{ __('13. Verificação de Dados') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>13.1.&nbsp;Após rececionar a encomenda podemos executar algumas verificações sobre a mesma antes desta ser preparada.</p>
 <p>13.2.&nbsp;Estas verificações podem incluir a verificação de endereço, credibilidade e verificação de fraude. Em relação a esta última, executamos verificações parcialmente automatizadas em todas as encomendas, para filtrar transações incomuns, suspeitas ou identificadas como suscetíveis de fraude. As suspeitas de fraude serão investigadas e, se necessário, processadas. Ao confirmar o seu pedido significa que concorda com estas condições.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>14. Política de Preços e Custos de Envio</strong></p>
+<p><strong>@endverbatim{{ __('14. Política de Preços e Custos de Envio') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>14.1.&nbsp;Os Preços de Venda ao Público (PVP) na nossa loja&nbsp;online&nbsp;são apresentados em euros (€) e incluem o IVA à taxa legal em vigor.</p>
 <p>14.2.&nbsp;Sempre que se verifiquem promoções, saldos ou liquidações, estas são identificadas como tal, assim como as suas datas de vigência e, para além disso, surge a percentagem de desconto aplicada.</p>
@@ -173,7 +173,7 @@
 <p>&nbsp;14.11.&nbsp;Estes preços não incluem a utilização de meios de transporte ou de acesso especiais, como sejam escadas externas ou gruas, ou alterações de construção civil em portas, janelas, escadas ou outras estruturas do imóvel.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>15. Métodos de Pagamento</strong></p>
+<p><strong>@endverbatim{{ __('15. Métodos de Pagamento') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>15.1.&nbsp;A&nbsp;DFP Interiores&nbsp;coloca à disposição do Utilizador várias formas de pagamento:</p>
 <p>15.1.1.&nbsp;Multibanco:&nbsp;Após a finalização da encomenda, o Utilizador deverá efetuar o pagamento através de uma ATM ou&nbsp;Home Banking&nbsp;o mais brevemente possível, de modo a garantir que o&nbsp;stock&nbsp;fica cativo. Deve utilizar para isso os dados que lhe são facultados no fim do processo de compra. As encomendas pagas por referência Multibanco, só serão tratadas após confirmação do pagamento.</p>
@@ -182,12 +182,12 @@
 <p>15.4. O cliente tem um prazo de 3 dias a partir do momento em que finaliza a encomenda na loja&nbsp;online&nbsp;para efetuar o pagamento. Se no fim desse prazo a&nbsp;DFP Interiores&nbsp;não rececionar o pagamento a encomenda será cancelada.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>16. Reserva de Propriedade</strong></p>
+<p><strong>@endverbatim{{ __('16. Reserva de Propriedade') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>16.1.&nbsp;A&nbsp;DFP Interiores&nbsp;detém a propriedade dos produtos da empresa até que tenha recebido o pagamento integral de todos esses produtos.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>17.Envios e Modalidades de Entrega</strong></p>
+<p><strong>@endverbatim{{ __('17. Envios e Modalidades de Entrega') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>17.1.&nbsp;Independentemente do produto que possa ter escolhido, a&nbsp;DFP Interiores&nbsp;compromete-se a garantir um serviço de entrega de qualidade no endereço de entrega que o cliente assinalar no formulário de pedido. Pode solicitar a entrega dos artigos noutro domicílio ou com outra pessoa singular diferente da que subscreve o pedido, desde que o domicílio de entrega esteja situado em território nacional.&nbsp;(Se for residente nas Ilhas, a sua encomenda terá que ser feita sob consulta para o email&nbsp;<a href="mailto:contacto@dfpinteriores.com">contacto@dfpinteriores.com</a>).</p>
 <p>17.2.&nbsp;A&nbsp;DFP Interiores&nbsp;seleciona o tipo de transporte ideal de acordo com as características do pedido do cliente e pretende garantir que a entrega dos produtos se faça em bom estado. Em todo o caso, assim que receber a sua encomenda, aconselhamos a que verifique a mesma&nbsp;antes de assinar a guia junto do estafeta.</p>
@@ -197,7 +197,7 @@
 <p>17.6.&nbsp;Qualquer reclamação de não receção de encomenda deverá ser efetuada num prazo máximo de 30 dias a partir da data da realização da encomenda. Findo este prazo, a&nbsp;DFP Interiores&nbsp;não se poderá responsabilizar pelo extravio da mesma.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>18. Prazos de Entrega</strong></p>
+<p><strong>@endverbatim{{ __('18. Prazos de Entrega') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>18.1.&nbsp;O período de tempo para os diferentes métodos de entrega são estimados e começam a contar a partir do momento em que o pagamento é rececionado. No caso de Portugal Continental, a entrega da encomenda é, normalmente, efetuada num prazo de&nbsp;1 a 3 dias úteis, com preparação de 1 dia útil (mediante a disponibilidade de todos os artigos da encomenda).</p>
 <p>18.2.&nbsp;O prazo de entrega dos artigos que não se encontrem disponíveis no armazém irá variar de acordo com a disponibilidade do fornecedor.</p>
@@ -211,20 +211,20 @@
 <p>18.10.&nbsp;Se se verificar a condição anterior, em 18.9, a&nbsp;DFP Interiores&nbsp;reserva-se no direito de cobrar custos de armazenagem, contados diariamente até à data de entrega efetiva, não podendo ultrapassar os 180 dias, contados desde a data da encomenda. Ultrapassado este prazo, o valor pago pelo cliente reverte a favor da empresa e o cliente perde o direito de reclamar a sua entrega.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>19. Aspetos Logísticos da Entrega</strong></p>
+<p><strong>@endverbatim{{ __('19. Aspetos Logísticos da Entrega') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>19.1.&nbsp;O cliente deverá garantir que o espaço de montagem está limpo e desimpedido. O serviço de entrega e montagem não inclui qualquer tipo de remoção ou desmontagem de materiais existentes no local.</p>
 <p>19.2.&nbsp;Sempre que o objeto a entregar não couber nos acessos, a entrega considera-se efetuada no rés-do-chão da morada em causa.</p>
 <p>&nbsp;19.3. No caso dos serviços de entrega verificarem risco elevado de danos no transporte dos artigos até ao local de entrega, podem desaconselhar a sua realização. Neste caso, se o cliente pretender contrariar este aconselhamento, o transporte decorrerá sob sua responsabilidade e risco, não aceitando a&nbsp;DFP Interiores&nbsp;custos que resultem dos danos daí decorrentes.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>20. Serviços Disponíveis</strong></p>
+<p><strong>@endverbatim{{ __('20. Serviços Disponíveis') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>20.1.&nbsp;Neste momento na loja&nbsp;online, temos disponível somente o serviço de Montagem. Este serviço só se aplica a entregas efetuadas em Portugal Continental e o seu custo depende da tipologia dos artigos que incluem este serviço, e que se encontram repartidos por classes, dependendo do grau de complexidade associado à sua montagem.</p>
 <p>20.2.&nbsp;De ressalvar, que há determinados tipos de produto que, pelas suas características, estão sujeitos ao serviço de montagem obrigatória&nbsp;caso se pretenda entrega em casa. Se o cliente não quiser o serviço de montagem, terá que escolher a opção levantamento em loja.&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>21. Garantias Legais e Comerciais</strong></p>
+<p><strong>@endverbatim{{ __('21. Garantias Legais e Comerciais') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>21.1.&nbsp;Todos os equipamentos disponíveis na Loja estão devidamente certificados pelas entidades internacionais competentes.</p>
 <p>21.2.&nbsp;De acordo com o Decreto-Lei n.º 67/2003 de 8 de Abril, e com as alterações introduzidas pelo Decreto-Lei n.º 84/2008 de 21 de Maio, todos os produtos possuem um período de garantia definido pelo fabricante, que nos termos legais é, no mínimo,&nbsp;3 (trê) anos, de acordo com a lei em vigor e respectiva aplicação. Este período é considerado a partir da data da fatura do equipamento e só pode ser exercido mediante apresentação do certificado de garantia e/ou comprovativo de compra (fatura) devidamente preenchidos.&nbsp;</p>
@@ -236,7 +236,7 @@
 <p>21.5.&nbsp;&nbsp;Para qualquer pergunta, reclamação ou pedido de informação, pode entrar em contacto com o serviço de pós venda&nbsp;<a href="mailto:contacto@dfpinteriores.com">contacto@dfpinteriores.com</a>.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>22. Devoluções e Cancelamentos</strong></p>
+<p><strong>@endverbatim{{ __('22. Devoluções e Cancelamentos') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>22.1.&nbsp;Cancelamento da encomenda antes do envio:</p>
 <p>22.1.1.&nbsp;Pode cancelar a sua encomenda num prazo de 48 horas, desde que a sua mercadoria não tenha saído dos nossos armazéns. Para isso deve entrar em contacto connosco através do&nbsp;e-mail&nbsp;<a href="mailto:contacto@dfpinteriores.com">contacto@dfpinteriores.com</a>&nbsp;indicando o número da encomenda, a referência do produto e os motivos da anulação.</p>
@@ -265,20 +265,20 @@
 <p>22.4.4.&nbsp;Após avaliação do caso, os nossos serviços entrarão em contacto consigo para determinar se haverá lugar à substituição do produto, ao reembolso ou a outro tipo de solução. O reembolso, quando aplicável, será efetuado após a validação do cumprimento das condições descritas anteriormente, tendo a&nbsp;DFP Interiores&nbsp;um prazo de até 14 dias para o efeito, a partir do momento em que recebe os artigos devolvidos. O reembolso é efetuado no mesmo método de pagamento através do qual a compra foi realizada (se o cliente efetuar o pagamento por referência de multibanco é necessário que dê os seus dados bancários ao nosso apoio ao cliente, no momento em que iniciar o processo de devolução). Tenha em consideração que o depósito poderá demorar a estar visível na sua conta bancária, estando este facto dependente do método de pagamento.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>23. Sugestões e Reclamações</strong></p>
+<p><strong>@endverbatim{{ __('23. Sugestões e Reclamações') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>23.1.&nbsp;&nbsp;O Utilizador poderá enviar qualquer sugestão ou reclamação relativa aos serviços da&nbsp;DFP Interiores&nbsp;para&nbsp;<a href="mailto:contacto@dfpinteriores.com">contacto@dfpinteriores.com</a></p>
 <p>&nbsp;</p>
 <p>&nbsp;23.2.&nbsp;Quaisquer reclamações poderão ainda ser feitas presencialmente, nos Livros de Reclamações das lojas&nbsp;DFP Interiores, ou através do&nbsp;<a href="https://www.livroreclamacoes.pt/inicio/reclamacao">Livro de ReclamaçõesEletrónico</a>.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>24. Apoio ao Cliente</strong></p>
+<p><strong>@endverbatim{{ __('24. Apoio ao Cliente') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>24.1.&nbsp;Para informações adicionais, pode contactar-nos através do nosso formulário de contacto ou pode igualmente fazê-lo através do nosso formulário de contacto. Pode também obter informações no menu de ajuda do Site.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><strong>25. Resolução de Litígios</strong></p>
+<p><strong>@endverbatim{{ __('25. Resolução de Litígios') }}@verbatim</strong></p>
 <p>&nbsp;</p>
 <p>25.1.&nbsp;Para qualquer litígio decorrente da aplicação dos presentes Termos e Condições o consumidor pode recorrer a&nbsp;Entidades de Resolução Alternativa de Litígios de Consumo&nbsp;que procedem à resolução de litígios através de procedimentos de mediação, conciliação e arbitragem, fora dos tribunais. O cliente tem à sua disposição:</p>
 <p>25.1.1.&nbsp;Centro de Arbitragem de Conflitos de Consumo de Lisboa -&nbsp;<a href="http://www.centroarbitragemlisboa.pt/">http://www.centroarbitragemlisboa.pt/</a></p>
